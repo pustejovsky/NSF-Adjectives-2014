@@ -1,0 +1,63 @@
+Hi,
+
+This should go in the whatever James was going to put up but as I
+haven’t seen it, I just send it as an email. 
+
+To clarify things (?) , I tried the list the research steps that I see
+in the epistemic adjective part. I don’t know how similar the ones in
+the other sections are. I also point out a couple of things that are
+not clear to me. 
+
+Steps:
+1. existing claims, e.g. NP is ADJ to VP is factive
+
+2. corpus research (no stats, just examples); they suggest that the
+existing claim is wrong 
+
+3. formulation of a hypothesis based on the corpus data and the
+insights of the research team; e.g. harmonicity plays a role
+
+4. construction of experimental data to test that hypothesis; 
+
+5. experiment; e.g. MT experiment 
+
+6. analysis of the experimental data; e.g. building statistical models
+
+7. corpus search for naturally occurring data that can be used to see
+how the experimental data hold up in real life; e.g. ‘snippets’ that
+are used in the RTE way (text and hypothesis) 
+
+8. annotation of the snippets by research team in the RTE style
+
+9. annotation of the snippets by naive subjects; e.g. 100 Mts
+
+10. final annotation of the snippets, with probabilities 
+
+11. evaluation: new set of snippets, annotation by 100 MTs and
+automatic annotation based on the factors isolated earlier
+
+12. comparative analysis of the two evaluation annotations to see
+whether the hypothesized variables are captured.
+
+
+Probabilistic annotation:
+
+there are two probabilistic dimensions:
+
+1. we ask the annotators to give probabilistic judgments (that is what
+Roser did) and they are used directly as part of the annotation; each
+sentence gets a mark as ‘certain’, ‘probable’ etc. 
+
+2. we have 100 Mts annotate the sentences (most like less that 100 for
+each individual sentence, we have about 30 I think) and we have a
+distribution of judgments for the relevant part of each
+sentence/snippet (e.g. 30% think that John wasn’t stupid to waste
+money means that he didn’t waste money). It is not clear to me how to
+represent these result in the final annotation. But what we should get
+from the evaluation in 11 is similar distributions for the Mts and for
+the automatic annotation. 
+
+
+Automatic annotation: we need to work with somebody’s system 
+
+Annie
