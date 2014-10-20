@@ -16,7 +16,6 @@
 \setlength{\parskip}{1 mm}
 
 
-
 \renewcommand{\baselinestretch}{1}
 \newcommand{\concept}[1]{\textit{#1}}
 \renewcommand{\theenumi}{\alph{enumi}}
@@ -84,65 +83,26 @@ Discovering Inference Patterns for Adjectives in Language}
 
 \vspace {-3mm}
 
-%Effective 
-%human 
-%communication relies on the ability of speakers to recover information that is not explicitly expressed in an utterance. %According to \cite{graesser1985implicit}'s estimate, 90\% of what 
-%is communicated is implicit and must be inferred. \cite{grice1975logic}, in his investigation 
-%of the pragmatics of human communication, postulated principles of cooperative 
-%conversation, by which context-dependent meanings can be recognized and interpreted 
-%without being expressed literally or even at all. 
-%While some of this is due to the pragmatics of the situation and the conversation, much of such covert information can be identified as ``semantic inferences'', and as such, can be associated with identifiable structural or lexical patterns in natural language.
-%An understanding of how speakers identify and exploit systematic covert inferences in language can enrich our models of compositionally derived inferences. At the same time, it can enhance the capabilities of natural language understanding systems to read beyond the surface forms of the text.
-
 Linguistic communication relies on the ability of language users to identify the often implicit semantic dependencies in an utterance. 
-%While some semantic relations follow directly from the syntax accompanying a verb and its arguments, there are many dependencies that are not explicitly expressed by a simple interpretation of the structure. 
-%
-%Effective communication relies on the ability of language users to recover information that is not explicitly expressed in utterances. 
-%
-%Much of this covert information can be identified as 
 It is on the basis of decoding of the structural and lexical patterns encoding these implicit dependencies that we make ``semantic inferences''.
 An understanding of how speakers identify and exploit such structural and lexical inference patterns thus has the potential to enrich models in theoretical linguistics. 
 At the same time, it can support a major goal of current {\sc nlp} research: allowing natural language understanding systems to recover more of the rich semantic information encoded in the text: did the event mentioned in the text actually happen? was it considered desirable?
-%Are they deemed desirable? 
 what qualities are being attributed to entities in the text?
-%To answer  questions such as these, careful analysis of the lexical semantics of adjectives is needed.
-%% still seems to be selling the whole enterprise short. There are MANY more questions enabled by adjective annotation and inferences.
 
-
-Identifying such inferences in a computational setting requires the reconstruction of %subtle 
-lexical, syntactic, 
-%constructional,
-and contextual information in texts, for the same reason that effective communication requires language users to recover information not expressed explicitly. Existing systems typically rely on training or development corpora annotated manually or automatically, using information derived from lexical classes or from syntax-semantics correspondences (SYSTEMS REFS). 
-%found in the linguistic literature. 
+Identifying such inferences in a computational setting requires the reconstruction of lexical, syntactic, and contextual information in texts, for the same reason that effective communication requires language users to recover information not expressed explicitly. Existing systems typically rely on training or development corpora annotated manually or automatically, using information derived from lexical classes or from syntax-semantics correspondences (SYSTEMS REFS). 
 To date, most research in the field has concentrated on identifying events and their participants; this has led to a focus on
-identifying verbs and verb senses, and nouns within {\it named entities}. While many of these semantic relations follow directly from the syntax accompanying a verb and its associated semantic roles, there are many other ones that cannot be read off the syntactic structure as readily. These tend to express the stance of the author towards the events described rather than encode events. One class that has been neglected as a consequence of the focus on 'events', are adjectives. 
+identifying verbs and verb senses, and nouns within {\it named entities}. While many of these semantic relations follow directly from the syntax accompanying a verb and its associated semantic roles, there are many crucial semantic relations that cannot be read off the syntactic structure as readily: for example, comparative information about graded properties of individuals and events described, and information about the stance of the author of a text towards the events described. This important but subtle information is frequently conveyed by the use of adjectives.
 
-%What is sorely missing, however, is any serious computational examination of the semantic behavior of adjectives in language. 
+Adjectives make up a significant portion of typical English texts, usually about 5\%, and their influence on the interpretation of texts is typically greater than this statistic suggests. The most common treatment of adjectives is to assume that they are, by default, intersective: an American man is something that is both American and a man, a tall building is something that is both tall and a building, and so on. When exceptions are noted, they are usually encoded by simply blocking inferences: an alleged thief cannot be inferred to be a thief, or to be `alleged' (whatever this would mean). This model limits the influence of adjectives on inferences that can be derived to the word itself or---for non-intersective adjectives---the word and the noun that it modifies. 
 
-% has concentrated on coarse-grained semantic tasks such as identifying events and their participants; this has led to a focus on verbs and nouns. 
+However, the inferential reach of adjectives is far greater than the usual treatment allows. Each of the three classes of adjectives that we propose to study below---scalar, veridicity, and intensional---will typically influence the interpretation of significant portions of surrounding linguistic material and/or generate robust but implicit inferences. They do this by taking semantic scope over significant portions of text in a context-sensitive way, or by generating entailments and implicatures involving other adjectives which are not overtly present in the text. As we will demonstrate below, even two of the examples given in this paragraph---\emph{tall} and \emph{alleged}---are associated with inferences of this type, and are not well-treated on the standard model. Indeed, our preliminary investigations suggest that truly intersective, non-scalar adjectives are extremely rare in natural corpora.
 
-%More recently, attention has shifted to exploiting information about the stance of the participants in the textual information exchange.  
+Considering the importance of adjectives in conveying information in texts, their semantic variability, and the poor fit of a one-size-fits-all model of their meaning, it is perhaps surprising that there are currently no resources for adjectives that are comparable to those available for nouns and verbs (e.g., WordNet and FrameNet). Most major lexical resources available do not even attempt to model adjective senses, reflecting the fact that adjectives have received little attention and no consistent methodology has been developed for characterizing and encoding their meanings. While WordNet does contain a certain amount of adjective information, the `dumbbell' model is still fairly impoverished for these purposes, as discussed below. As a consequence, most of the shared tasks in the SemEval challenges in the field have had to largely ignore the semantic role and inferential impact contributed by adjectives in the language. 
 
-The research proposed here addresses this problem
-%in two ways: (a) we provide 
-by providing a coherent methodology for how to identify and annotate the semantic inferences associated with adjectives in texts. This will enable language comprehension tasks in computational linguistics to examine the rich semantics of adjectives in a general and consistent manner, much like is currently done with verbs and nouns. 
+There is a serious gap between current practice and available resources, on the one hand, and the needs of robust RTE systems on the other. The research proposed here addresses this issue with an in-depth investigation of the lexical semantics of three well-attested adjective classes, using a coherent methodology for identifying and annotating the semantic inferences associated with adjectives in texts. This methodology will aid computational linguists in using the rich information contained in adjectives in a general and consistent manner, as is already done with verbs and nouns. 
 
-The fact that most of the major lexical resources in the field (besides WordNet) do not even attempt to model adjective senses reflects  that there has been no consistent methodology on how to characterize adjectival meaning and behavior, and, as a result, no serious attempt to annotate adjective semantics and word senses in text. For example, OntoNotes (Weischedel et al, 2012) examines sense distinctions for verbs, nouns, and nominalized verbs, but not adjectives.  ANOTHER EXAMPLE?
-As a consequence, most of the shared tasks in the SemEval challenges in the field have had to largely ignore the semantic role and inferential impact contributed by adjectives in the language. 
-
-%We address questions whether or not mentioned events are implied to have
-%occurred, to be likely to occur, to be desirable, and for entities,
-%how their qualities compare to those of other entities.
-%% Our work goes beyond the mere identification of entities and events and addresses questions as to whether or not events have  occurred, might be likely to occur, are desirable, and for entities, how their qualities compare to those of other entities. 
-%These questions point naturally to 
-%Our solution is to assign
-%a more prominent role to the semantics of adjectives and adverbs.
-%for how adjectives and adverbs are semantically interpreted. 
-
-Currently there is very little  linguistic information available for annotating adjectives, and it is not even clear how their relations should be modeled. (cf. RASKIN/NIRENBURG)
+Currently there is little linguistic information available for annotating adjectives, and it is not even clear how their relations should be modeled. (cf. RASKIN/NIRENBURG)
 Moreover, the few studies reported in the linguistic literature do not address the questions that motivate this proposal: 
-%they ignore 
-%important semantic interactions between the various textual elements as well as 
 \begin{itemize}
 \moveup
 \item they ignore the usage of linguistically untrained  speakers. 
@@ -152,64 +112,30 @@ Moreover, the few studies reported in the linguistic literature do not address t
 \item they consider only a very limited set of the semantic interactions of the textual elements involved
 \moveup
 \end{itemize}
-%, ignoring inferences that arise reliably but are not entailments.
-% non-negligible groups of speakers. 
 
 We propose to develop a methodology that addresses these shortcomings and to validate it on three subsets of adjectives.
-This approach will result in a more complete characterization of how  these adjectives are interpreted, 
-%in the wild, 
-through a better integration of lexical resources and corpus annotation. 
+This approach will result in a more complete characterization of how  these adjectives are interpreted, through a better integration of lexical resources and corpus annotation. 
  
-%Our proposed research then, consists  in developing 
-We develop a methodology for the discovery and exploitation of systematic linguistic inferences identified with specific lexical classes in natural language by
-constructing an inferential model for adjectival semantics
-% and using paired annotation. 
-Specifically, we propose to:
-%% We develop this methodology in the construction of an inferential model for adjectival semantics in natural language. To this end, the specific aims of this proposal are:
-
+We develop a methodology for the discovery and exploitation of systematic linguistic inferences identified with specific lexical classes in natural language by constructing an inferential model for adjectival semantics. Specifically, we propose to:
 %%% end of edits [JDP 9/23/14]
 \begin{itemize}
-
 \moveup
 \item Establish an initial model for each adjective class, combining existing background from linguistic theory with data mining over large corpora to identify structure-to-inference mappings, i.e., syntactic and distributional correlates of judgments by trained annotators.
 \moveup
 \item Create larger labeled data sets using linguistically untrained annotators recruited on crowdsourcing platforms, notably Amazon Mechanical Turk (AMT).
-%\moveup 
-%\item Draw systematic comparisons between the judgments of trained and untrained annotators, iteratively refining experimental techniques with the goal of establishing practical methods to create larger-scale annotated corpora than is achievable using small groups of trained annotators; 
 \moveup
-
 \item Revise and enrich models in light of results, with the goal of enriching lexical resources, e.g.,  WordNet.  
-
 \end{itemize}
 \moveup
-
-%
-%\begin{itemize}
-%
-%\moveup
-%\item Establish an initial  model for each adjective class,   and identify templates of structure-to-inference mappings from corpora constructed using data mining techniques over the Web, using expert annotators. 
-%\moveup
-%\item Have the same data interpreted  ``in the wild'',  with crowdsourced judgments and  larger textual contexts, using    Amazon Mechanical Turk (AMT) annotators. 
-%\moveup 
-%\item Incorporate results from non-expert annotators into the model. Where the annotations diverge from expected judgments, test to see if AMT results are capturing or identifying aspects of usage in the context that have not been accounted for. Revise or enrich the model accounting for these newly identified parameters. 
-%%\item Determine whether the ``non-expert'' annotations diverge from the expected  judgments. Where they do differ, if inter-annotator agreement is high,  identify what previously untagged contextual parameters are contributing to the interpretation. Revise and enrich the model accordingly.  
-%
-%\end{itemize}
-%\moveup
-
- \vspace {-1mm}
  
 We concentrate on three diverse semantic types of adjectives, 
 in order to: (a) test the applicability of the methodology to different semantic classes; and (b) to articulate just how the structure-to-inference mapping can be modeled within each lexical class. The adjective types studied are: 
-(i) dimensional and evaluative adjectives with scalar values and associated scalar implicatures, e.g., \textit{pretty, beautiful, large, huge}; (ii) veridicity-related
-%evidentiality 
-adjectives, showing varying implications of veridicity over a clausal complement, e.g., \textit{rude, annoying, likely}, etc.; and (iii) intensional adjectives, introducing implications of modal subordination, e.g., \textit{alleged, supposed, so-called}. 
+(i) dimensional and evaluative adjectives with scalar values and associated scalar implicatures, e.g., \textit{pretty, beautiful, large, huge}; (ii) veridicity-related adjectives, showing varying implications of veridicity over a clausal complement, e.g., \textit{rude, annoying, likely}, etc.; and (iii) intensional adjectives, introducing implications of modal subordination, e.g., \textit{alleged, supposed, so-called}. 
 
 Together these classes cover attributive as well as predicative uses of adjectives and the major non-intersective classes that have rich and unexpected inferential properties (intersective adjectives do not present inferential challenges beyond these addressed in event-focused research) \footnote{Classic 
 semantic field analysis (cf. \cite{dixon:91,lyons:77,raskin1995lexical}) categorizes attributes denoted by adjectives according to a thematic organization lexically encoded in the language.\footnote{It should be noted that \cite{raskin1995lexical} , however, also discuss inferential patterns for distinct classes.}
 \noindent 
 An alternative is to adopt a more formally descriptive and operational distinction which grouping adjectives into inferential classes. \cite{amoia2006adjective,amoia2008test} make such a move, adopting a four-class distinction based on inferential properties noted by \cite{Kamp75twotheories,Kamp95prototypetheory}:
-\vspace {-3mm}
  \enumsentence{
  Suppose the construction, [A N], is used to describe object O. Then A can be classified as: \\
 \vspace{-.25in}
@@ -232,74 +158,29 @@ the description does not determine whether O is N.
 }
 .
 
-The work will start out with a standard inference corpus created by using a standard linguistic annotation effort following explicit guidelines indicating the structure-to-inference mapping for each type of adjective (some work already done in FactBank will be repurposed here). Unlike most previous efforts, this standard is not the end product to be used in learning but constitutes a baseline: 
-%we will construct paired annotations by comparing the baseline structure-to-inference mappings to 
-based on it we will construct test sets to elicit inferential judgments from non-expert native speakers, in particular Mechanical Turk workers (MTurkers). Our preliminary studies have lead us to expect that there will be variance from the baseline. We hypothesize that an important part of this variance is caused by textual factors that are abstracted away in linguistic studies, but are important to explain the non-expert judgments. 
-
-%We will use these differential measurements in judgment (trained linguist vs.\ non-expert annotator) to classify inferences according to how stable they are regardless of linguistic context and which (if any) contextual factors contribute to blocking the inference. 
+The work will start out with a standard inference corpus created by using a standard linguistic annotation effort following explicit guidelines indicating the structure-to-inference mapping for each type of adjective (some work already done in FactBank will be repurposed here). Unlike most previous efforts, this standard is not the end product to be used in learning but constitutes a baseline: based on it we will construct test sets to elicit inferential judgments from non-expert native speakers, in particular Mechanical Turk workers (MTurkers). Our preliminary studies have lead us to expect that there will be variance from the baseline. We hypothesize that an important part of this variance is caused by textual factors that are abstracted away in linguistic studies, but are important to explain the non-expert judgments. 
 
 On the basis of this study, we will develop an improved gold standard and test it again with non-expert native speakers. We will then build a model to gauge how well our distinctions explain the behavior of these speakers. Our approach will allow us to account for the interactions of different structural and lexical factors instead of seeing them as independent from each other. 
 
 For each class of adjectives we will develop
 \begin{itemize}
 \moveup
-\item a small annotated corpus
+\item annotation guidelines for crowd source annotation
 \moveup
-\item annotation guidelines
+\item small annotated corpora in the RTE style (TH pairs)
 \moveup
-\item models that evaluate how well the isolated factors explain the data of the experiments
+\item conceptual models that capture the behavior of the adjective classes studied.
+\moveup
+\item statistical models that evaluate how well the isolated factors explain the data of the experiments
 \moveup
 \item a RTE style evaluation 
 \moveup
 \end{itemize} 
 
-%%The contributions of this research are significant to the computational linguistics community 
-This research is significant
-in two major respects.  First, it lays theoretical and methodological groundwork for a large-scale annotation of adjectives in order to support automatic systems in inferencing tasks. Second, it leads to
-% contribute to 
-a more sophisticated theory of textual inferencing. By studying inferencing ``in the wild'' 
-%and how it differs from the baseline established from gold standard corpora, 
-we begin to identify the pragmatic factors contributing to the interpretation of lexical items in richer contexts.
-
-
- %To illustrate the utility and enabling power of this work, consider the following.
- 
-% 
-%We propose to study the inferential properties of three classes of adjectives:  (i) dimensional adjectives, demonstrating scalar values and associated scalar implicatures, e.g., {\it pretty, beautiful, large, huge}; (ii) evidentiality adjectives, showing varying implicatures of veridicity over a clausal complement, e.g., {\it rude, annoying, likely}, etc.; and (iii) intensional adjectives, introducing implicatures of modal subordination, e.g., {\it alleged, supposed, so-called}.
-
-%Adjectives can be divided into different classes, depending on what dimensions of analysis are being used.
-
- 
-
-===========================================================================
-%\noindent These constructions   constitute  patterns that license specific inferences associated with classes of adjectives, and  can be exploited in the context  of text-based inference systems, such as the RTE (\cite{amoia2006adjective}). 
-%This classification, however, is both too broadly defined to model the finer inferential distinctions  within each class, and too narrow to include the behavior of other adjective classes, in particular, those taking clausal complements. 
-
-%For these reasons, We have chosen to study the three different classes of adjectives mentioned above, which require refinements and additions to the recognized inference patterns. 
+This research is significant in two major respects.  First, it lays theoretical and methodological groundwork for a large-scale annotation of adjectives in order to support automatic systems in inferencing tasks. Second, it leads to a more sophisticated theory of textual inferencing. By studying inferencing ``in the wild'' we begin to identify the pragmatic factors contributing to the interpretation of lexical items in richer contexts.
 
 Examples of the types of inferences we intend to capture are the following:
 
-%given above. These classes are:
-%%  \vspace{-.1in}
-
-
-%% \vspace {-1mm}
-
-
-%% \eenumsentence{
-%% \item Scalar adjectives: both dimensional ({\it big, small}) and evaluative ({\it happy, pretty}) scalars have been categorized as subsective adjectives; 
-
-%% \vspace {-3mm}
-
-%% \item Adjectives with clausal complements: adjectives such as {\it annoying} and {\it smart}, when governing clausal complements, do not fit nicely into any of the above classes;
-%% \item Intensional adjectives: adjectives such as {\it alleged} and {\it supposed} are non-subsective, but in complex ways that are dependent on the semantics of the nominal head. 
-%% }
-
-%NLP has moved beyond recognizing entities and events and aims to build systems that mimic the human ability of drawing inferences from texts (we limit ourselves here to written language). This requires that they recognize not only entities and events but also the stance authors take with respect to  the described entities or events and the relations between the properties of these entities and events. 
-% \vspace{-.1in}
-%Examples of the types of inferences we intend to capture are the following:
-
- \vspace{-.15in}
 \paragraph{Scalar Adjectives.} The {\sc pascal} Recognizing Textual Entailment task (\cite{rte,dagan+glickman+magnini:2005}) requires automatic systems to evaluate the truth or falsity of a 
 statement (the Hypothesis, $H$), given a prior statement (the Text, $T$). The system must decide whether or not $H$ is true or false given $T$, as in:
  \vspace{-.1in}
@@ -312,27 +193,16 @@ statement (the Hypothesis, $H$), given a prior statement (the Text, $T$). The sy
 
  \vspace{-.1in}
 \noindent
-%Apart from recognizing that New Jersey is the Garden State (information available in WordNet: see \cite{clark2008using,clark2008augmenting,clark2007role}) and the relation between weather and temperature, 
-% demonstrate 
-%that the semantic knowledge 
-%encoded in WordNet can be harnessed to extract information that is not present 
-%on the surface and measurably improve a system's performance. Thus, 
-%WordNet tells us that \emph{New Jersey} 
-%and \emph{the Garden State} are synonymous, increasing the probability 
-%that the Hypothesis is true. (If the Hypothesis includes \emph{Empire State}, 
-%systems would evaluate it as less likely to be true.) 
-%knowing that \emph{arctic} asymmetrically entails \emph{cool} would allow a more confident evaluation of the Hypothesis. 
 A system which hypothesizes a symmetric synonymy relation between \emph{cool} and \emph{Arctic} would incorrectly infer an entailment relation also if T and H were switched: an awareness of the asymmetry of entailment encoded in our model is crucial to making the correct judgment here.
 In addition, scalar adjectives license inferences based on complex contextual and probabilistic considerations, as in (\ref{4}).
  \vspace{-.1in}
-
 \eenumsentence{\label{4}
 \item[$T$:] The Empire State Building is {\bf huge}. 
  \vspace{-.1in}
 \item [$H$:] New York City's most famous building is {\bf tall}. 
 }
  \vspace{-.1in}
-Even an RTE system that could manage the difficult coreference task here would generally fail to infer that this is a valid entailment in context, because \emph{huge} does not entail \emph{tall} in a context-independent way. However, these adjectives overlap in the scalar dimensions that they refer to (size, including height as a special case), and a system which is able to recognize this fact as well as the fact that height is the most relevant form of size for a typical building could capture this very common type of inference. %An {\sc rte} system with knowledge of asymmetric intensity relations and contextual and probabilistic connections among adjectives would thus be more powerful.
+Even an RTE system that could manage the difficult coreference task here would generally fail to infer that this is a valid entailment in context, because \emph{huge} does not entail \emph{tall} in a context-independent way. However, these adjectives overlap in the scalar dimensions that they refer to (size, including height as a special case), and a system which is able to recognize this fact as well as the fact that height is the most relevant form of size for a typical building could capture this very common type of inference. 
 
  \vspace{-.15in}
 \paragraph{Adjectives with clausal complements.}  In order to recognize that the Text does not entail the Hypothesis in the following example, it is not enough to recognize events and their participants;  one has additionally to understand the stance the Text takes with respect to the described event:
@@ -369,25 +239,8 @@ The inference from $T$ from $H$ would not be justified here, since it is not kno
 %%%
 Supervised or unsupervised annotation is typically used to improve automatic inference based on the lexical items in texts. These annotations reflect the inferential potential associated with lexical items. Some aspects of this potential have been studied in the linguistic literature; computational approaches tend to take these results for granted. 
 In the case of nouns, the WordNet hierarchies have proved useful in numerous studies (e.g., \cite{snow04}); for verbs, lists of special inference patterns have been constructed starting from the work of \cite{kiparsky+kiparsky:1970,karttunen:1971} by \cite{nairn+condoravdi+karttunen:2006,sauri:2008phd,factbank:2009,lotan:2012}. Information about the inferential properties of adjectives is, however, much less easy to come by. 
-%Our preliminary studies show that, 
-For the categories of adjectives that we are interested in, the existing resources have severe shortcomings or are non-existent, in part because 
-%One of the reasons is that 
-the contribution of adjectives tends to be more subtle and more dependent on the rest of the linguistic context. This difficulty requires
-%, in our view, 
-adopting a more careful methodology 
-%than the one that has been used up to now 
-for syntactic and semantic lexical categorization tasks. The availability of
-%, on the one hand, 
-digital corpora (the biggest one being the Web itself) and
-%, on the other, 
-crowd-sourcing techniques to elicit the judgments of a larger and more diverse group of native speakers allow us to go beyond the narrow base that traditionally lexical studies were based on. Moreover, the development of statistical modeling techniques allow us to test theoretical hypotheses with large datasets. This should allow us to obtain better data to feed into automatic inferencing systems (such as BiuTee \cite{stern+dagan:2011} or \cite{clark2007role}).
+For the categories of adjectives that we are interested in, the existing resources have severe shortcomings or are non-existent, in part because the contribution of adjectives tends to be more subtle and more dependent on the rest of the linguistic context. This difficulty requires adopting a more careful methodology for syntactic and semantic lexical categorization tasks. The availability of digital corpora (the biggest one being the Web itself) and crowd-sourcing techniques to elicit the judgments of a larger and more diverse group of native speakers allow us to go beyond the narrow base that traditionally lexical studies were based on. Moreover, the development of statistical modeling techniques allow us to test theoretical hypotheses with large datasets. This should allow us to obtain better data to feed into automatic inferencing systems (such as BiuTee \cite{stern+dagan:2011} or \cite{clark2007role}).
  
-%Although we will start from the known linguistic literature, our main effort will be focused on crowd-sourcing experiments and on analysis of a variety of corpus resources, including the web and corpora derived from it. The combination of these approaches will insure that our results are representative for a larger community of users of English but they will also help us notice textual interactions that tend to be ignored in studies based on linguists' armchair intuitions. It is important to have a solid understanding of these interactions before embarking upon a large scale annotation task: it is only if we can characterize the contribution of the targeted lexical items in its various linguistic contexts securely enough that corpus or lexicon annotation is truly useful. 
-%To estimate the contribution of the factors we have isolated we will build statistical models and run them against corpus data. 
-
-%Our methodological changes might seem minor departure from past practice but applying them jointly to the study of one adjective, \emph{lucky}, has found 1. that '{\sc np} is lucky to {\sc vp}' has an idiomatic meaning in the future that was never noticed by formal semanticists or pragmatists (discovered through the consultation of corpora), 2. that in the past lucky can be implicative and not just factive for an important subgroup of native speakers of English (discovered through the web and crowdsourcing), 3. that curated corpora only show the idiomatic meaning of lucky in the future but that the web has many examples of literal meaning in the future as well as in the past, 4. that the two meanings can often be distinguished through co-occuring structural features (discovered through crowdsourcing and model building) (cf. \cite{karttunen:2012b}). 
-%and to the slides of the summer students).
-
 \vspace{-.15in}
 
 \vspace {-2mm}
@@ -397,27 +250,12 @@ crowd-sourcing techniques to elicit the judgments of a larger and more diverse g
 \subsection{Methodological Preliminaries\label{prelim}}
 \vspace {-3mm}
 
-
 Much work in modern computational linguistics relies on the creation of annotated datasets focused on one or more related linguistic phenomena. Such gold standard corpora are essential for training and tuning the statistical models on which natural language processing tasks largely rely.
 
 In the development of a gold standard corpus using rich linguistic annotation, it is typical to establish an initial model for the phenomena being studied. This includes a triple, $M = \langle T,R,I \rangle$, consisting of a
 vocabulary of terms, $T$, the relations between these terms, $R$, and their interpretation,
 $I$. This is often a partial  characterization of quite extensive theoretical research in an area, encoded as specification elements for subsequent annotation. These annotations provide the features that are then used for training and testing classification or labeling algorithms over the dataset. Depending on a system's performance, various aspects of the model or related specification will be revised, retrained, and then retested. 
 For this reason, we can refer to this methodology as the MATTER cycle: {\it Model}-{\it Annotate}-{\it Train}-{\it Test}-{\it Evaluate}-{\it Revise}  \cite{pustejovsky2012natural}, as illustrated in Figure (\ref{fig:matter}). 
-
-%\begin{figure}[h]
-%  \centering
-%  \scalebox{.5}{\includegraphics{matter.pdf}}
-%  \caption{The \textsc{matter} Methodology}
-%  \label{fig:matter}
-%\end{figure}
-
-%
-% wrapfig as an optional space-saver, if we want to use the MATTER graphic:
-% 
-% !! CHECK POSITIONING OF THIS FIGURE IN FINAL VERSION!!
-%
-
 
 \begin{wrapfigure}{r}{.48\textwidth}
 \vspace {-9mm}
@@ -444,23 +282,11 @@ In the present work, we propose a significant enrichment to this methodology, in
 model  contextual and pragmatic factors that are often ignored or down-played in this strategy. 
 These involve linguistic phenomena (such as the adjective classes studied here) for which contextual factors and pragmatic effects are critical in how the annotations are interpreted.  
 
-
-%% Annie's prose revised by Dan 10/9/13
-%For practical reasons, 
-The corpora that can be created using linguistically trained annotators are rather limited and rarely exhibit all the combinations of 
-%possibly 
-relevant context factors, resulting in
-%. The result, in many domains, is a 
-lack of data capturing what a rich, human-like understanding of texts should be. This limits the usefulness of many machine learning methods that are widely used in natural language understanding \cite{manning1999foundations,wasserman2004all,murphy2012machine}: sophisticated statistical models cannot produce rich understanding without a linguistically informed understanding of what is being modeled. Our project seeks to use standard annotation, new experimental methods based on crowdsourcing, and corpus studies together in order to address this lacuna for the important, understudied category of adjectives.
+The corpora that can be created using linguistically trained annotators are rather limited and rarely exhibit all the combinations of  relevant context factors, resulting in lack of data capturing what a rich, human-like understanding of texts should be. This limits the usefulness of many machine learning methods that are widely used in natural language understanding \cite{manning1999foundations,wasserman2004all,murphy2012machine}: sophisticated statistical models cannot produce rich understanding without a linguistically informed understanding of what is being modeled. Our project seeks to use standard annotation, new experimental methods based on crowdsourcing, and corpus studies together in order to address this lacuna for the important, understudied category of adjectives.
 
 Crowdsourced annotations tasks, when carefully constructed and analyzed, have been shown in previous work to have reliability comparable to traditional expert annotations in some domains including certain RTE tasks \cite{snow:08,munroetal2010}. Adopting this method as part of our approach will help us achieve three related goals. First, it makes possible systematic testing of contextual factors that have been claimed in the linguistic literature to be relevant to the inferences licensed by the use of an adjective, as well as patterns isolated on the basis of existing annotations. Second, statistical analysis of the results of larger-scale annotations gathered by experimental means make it possible to reliably identify inferences which are probabilistic, rather than deterministic, in nature; for example, the defeasible inference that someone described as \emph{attractive} is probably not \emph{stunning}. Third, systematic use of untrained annotators will make available data on the interpretations of people with linguistic backgrounds that go beyond those associated with the narrow socioeconomic groups typically involved in standard annotation efforts. 
 
-%It is well known that 
-Isolating the factors that contribute to the perception of an inference is 
-%extremely 
-notoriously difficult. Testing contrastive contexts with a large number of native speakers is one way to discover the precise factors at work.
-%check whether the hypothesized factors are indeed the ones that are at work and whether they have been circumscribed sufficiently.
-For instance, from FactBank we learn that 'NP be lucky to VP' has the meaning 'it is highly unlikely that NP VP'. In previous work project consultants Karttunen and Zaenen \cite{karttunen:2012b,zaenen+karttunen:2013} observe that this definition is far too general, and that the ``unlikely'' meaning is mainly found in future-tense sentences. However, they show that the facts are more subtle even when tense is taken into account: in (\ref{lucky-1}), the (a) example has the highly unlikely meaning, whereas the (b) example does not (note that replacing `at least' with `in any case' makes the highly unlikely reading again more prominent).
+Isolating the factors that contribute to the perception of an inference is notoriously difficult. Testing contrastive contexts with a large number of native speakers is one way to discover the precise factors at work. For instance, from FactBank we learn that 'NP be lucky to VP' has the meaning 'it is highly unlikely that NP VP'. In previous work project consultants Karttunen and Zaenen \cite{karttunen:2012b,zaenen+karttunen:2013} observe that this definition is far too general, and that the ``unlikely'' meaning is mainly found in future-tense sentences. However, they show that the facts are more subtle even when tense is taken into account: in (\ref{lucky-1}), the (a) example has the highly unlikely meaning, whereas the (b) example does not (note that replacing `at least' with `in any case' makes the highly unlikely reading again more prominent).
  \vspace{-.1in}
 
 \enumsentence{
@@ -471,45 +297,25 @@ b.  At least your son will be lucky to escape a jail term.
 Here and in many other cases, linguistic and non-linguistic context influences the inferences associated with the use of an adjective, though in general non-deterministically. The discovery and treatment of such data involving evaluative adjectives in \cite{karttunen:2012b,zaenen+karttunen:2013,csli-gang-cssp13} relied crucially on a mixture of experimental investigation, standard annotation, corpus work, and linguistic analysis of the type proposed here, and serves as an example of the promise of the methods. 
 
 Four key elements play a role in our methodology:
-%\eenumsentence{\label{ }
-
-%\item 		\label{ a}
-
-%\item 		\label{ a}
-
-%\item 		\label{ b}
-%}
 \eenumsentence{
 \vspace{-.1in}
-\item The interpretation, $I$, focuses on {\it structure-to-inference mappings} (SIMs), indicating how a given adjective type contributes to or enables inferences associated with its embedding syntactic contexts.  This is achieved by the conventional expert annotation.
-\item The  conventional ``expert'' annotation cycle is followed by a separate annotation of data by Amazon Mechanical Turk workers, using instructions developed on the basis of features isolated by expert annotators but adapted for use by linguistically untrained native speakers, borrowing methods from experimental psychology where appropriate and using larger linguistic contexts as warranted.
-\item Iterative refinement and enrichment of SIM models to include contextual and probabilistic factors is accomplished on the basis of data from both trained and untrained annotators. This can be referred to as {\it context-based adjudication},  revealing unseen contextual features that can then be added as model-based primitives. 
-\item In several key places, machine learning techniques applied to large corpora will be used to extend conclusions beyond what it is feasible for even crowdsourced human annotators to accomplish. These studies will make crucial use of probabilistic information from large-scale annotation.
+\item The interpretation, $I$, focuses on {\it structure-to-inference mappings} (SIMs), indicating how a given adjective type associated with its embedding syntactic contexts, which we will call a PATTERN, contributes to or enables inferences  This is achieved by experts  who formulate hypotheses based on small scale conventional annotation.
+\item The  conventional ``expert'' identification of SIMs is followed by an annotation of data by Amazon Mechanical Turk workers, using instructions developed on the basis of features isolated by expert annotators but adapted for use by linguistically untrained native speakers, borrowing methods from experimental psychology where appropriate and using larger linguistic contexts as warranted.
+\item Iterative refinement and enrichment of SIM models to include contextual and probabilistic factors through the interaction of hypothesis construction by the experts and experimental evaluation through native annotators.  
+\item The probabilistic nature of the annotations provided. Whereas traditionally annotations give a discrete value, based on the judgments of two annotators with an adjudicator to resolve ties, our methods provide probabilistic information based on large scale annotation. If desired, these probabilities can be reduced to categorical judgments but we hypothesize that using the probabilistic data will improve results. 
 }
 
 \vspace{-.1in}
 \noindent 
-We proceed by establishing for each adjective class being studied (Scalar, Veridicity-related, Intensional), 
-%%We proceed as follows. For each adjective class being studied (Scalar,
-%%Veridicity-related, Intensional), we establish
-an initial model, incorporating the appropriate SIM as the interpretation function. Expert and non-expert
-%na\'ive 
-annotations create corresponding gold standards, from which we perform context-based adjudication. 
+We proceed by establishing for each adjective class being studied (Scalar, Veridicity-related, Intensional), an initial model, incorporating the appropriate SIM as the interpretation function. Expert and non-expert annotations create corresponding gold standards, from which we perform context-based adjudication. 
  
-
-
 \vspace {-5mm}
-
 
 \subsection{\label{scalar-theory}Scalar adjectives}
 
 \vspace {-3mm}
 
-
 As discussed in the introduction, language understanding requires active reconstruction of information which is merely implicit in an utterance, or which can be reconstructed on the basis of an utterance together with its linguistic, social, and worldly context \cite{grice1975logic,hobbs1993interpretation,clark1996using,hanna2003effects,piantadosi2012communicative}.
-%
-%
-%
 This is true in particular for scalar adjectives, which have highly context-sensitive meanings (e.g., compare \emph{big baby}, \emph{big tree}, and \emph{big planet}). Many scalar adjectives are organized into entailment scales, where items high on the scale asymmetrically entail items lower on the scale \cite{horn89,horn2000pick}. The use of items lower on the scale, in turn, can lead to a defeasible inference that the sentence would be false if the lower item were replaced by the higher \cite{grice1975logic,horn89}.
  \vspace{-.05in} 
 \eenumsentence{
@@ -566,69 +372,7 @@ In constructing a formal model of the inferences associated with scalar adjectiv
 Adjectival polarity for sentiment analysis \cite{williams2009predicting}
 correlates only weakly with polarity in our formal sense (see fn.\ \ref{polarity}). More directly related are methods for identifying total entailment relations between adjective pairs developed in \cite{sheinman2009adjscales,sheinmanetal2013}. 
 These methods can be improved 
-by using semi- and un-supervised methods for learning lexical relations from parsed corpora rather than hand-specified patterns on raw text (cf. \cite{snow04,davidov2008unsupervised,turney2008uniform}). Moreover, there has been virtually no investigation of the other issues that we will consider: the semantic and pragmatic effects of partial scalar overlap, or of the effects of differing scalar distance on the strength of pragmatic inferences. Notably, the use of crowdsourced annotation will be a crucial in enabling us to pursue these fine-grained aspects of lexical structure. This is because quantitative information is needed to discover scalar distance, partial overlap relations, and strength of pragmatic inference in context, and gathering this information requires 
-%us to perform 
-statistical analyses on the responses of many annotators.
-
-
-
-%\cite{hirschberg1991theory} shows how speakers generate and interpret scalar implicatures in a number of specific linguistic contexts characterizing everyday, natural conversation. 
-%
-%\cite{horn89,horn2000pick} establishes some intuitive scales among adjectives and notes 
-%that the affirmation of a weak(er) term implies the inappropriateness of a stronger term. 
-%For example, affirming \textit{Mary is gorgeous} implies that \textit{Mary is pretty}, an implication 
-%understood by the listener. 
-%
-%\cite{bierwisch1989semantics} distinguishes dimensional adjectives like \textit{cold, long, high, large} 
-%from evaluative adjectives such as \textit{lazy, diligent, beautiful, ugly, comfortable, 
-%gentle, tired}. Like dimensional adjectives, these are mostly gradable but a given scale 
-%of evaluative adjectives tends to be more richly lexicalized, perhaps reflecting a need to specify 
-%qualities of everyday objects as well as a human tendency to judge people's personal, physical and intellectual traits. 
-%Scales for such attributes include a good number of 
-%adjectives that each express a different degree of intensity of the shared attribute.
-%
-%For a few points on a given scale, the adjectives'
-%relative intensity is easy to judge intuitively. Speakers would probably agree that 
-%\textit{excellent} entails \textit{good}, and not vice versa.  But where exactly do 
-%adjectives like \textit{superb, stellar, outstanding, terrific, wonderful} fall 
-%on the scale? A related question is, does each adjective on a given scale 
-%express a different degree of a shared attribute or are some roughly synonymous for a given speaker 
-%or across speaker groups? 
-%
-%In prior work, the direction (positive or negative) of orientation has been widely studied, 
-%but the degree has not. \cite{hatzivassiloglou1997predicting} extract adjectives 
-%with ``positive'' and ``negative'' orientation from the Wall Street Journal corpus. They show 
-%that conjunctions such as {\it and}
-% link predominantly adjectives of the 
-%same orientation, whereas {\it but} links mostly adjective pairs with opposed orientation. 
-%Relying on the observation that the most frequent member of an 
-%antonymic pair has positive orientation, they assign orientation labels to the adjective 
-%clusters they derived. \cite{turney2003measuring} derive orientation through association 
-%(measured with {\sc lsa} and {\sc pmi}), based on the assumption that words with a given 
-%orientation co-occur with other words of the same orientation. Other related work such as 
-%\cite{chklovski2004verbocean} measured the relative strength of 
-%pairs only rather than that of all scale mates. \cite{maasmulti} learn subtle sentiment analysis 
-%in an unsupervised manner using a vector space model. 
-%
-%This(possibly) goes elsewhere: The answers have wide-ranging consequences 
-%for the representation 
-%of lexical semantics in NLP resources like WordNet. The intellectual merits of this work 
-%thus are a better understanding of specific areas of the lexicon, in particular those 
-%lexemes that have an evaluative component that is measurable with respect to other, 
-%semantically similar lexemes. The broader impact resulting from this work are (a) shared 
-%resources that enable automatic systems to better analyze and understand texts where 
-%evaluation and the speaker/writerâs attitudes are central components; (b) empirical data 
-%with the potential to enhance teaching materials for English as a Second Language. 
-%
-%We propose an empirical large-scale and in-depth investigation of gradability among adjectives 
-%in different semantic domains. We cover a representative sample of twelve different semantic classes 
-%(\cite{bierwisch1989semantics}, \cite{frawley1992linguistic}, \cite{dixon1982have}) comprising 100 
-%dimensional and evaluative adjectives.  For each scale we manually identify the target lexemes using WordNet's adjective 
-%clusters and ``similarit'' relation as a point of departure. We exclude adjectives with low frequency (based on the 
-%BNC), as we do not expect to find enough corpus data nor reliable human judgments to 
-%allow us to place them on a given point on the scale. We build on, and extend, the work of \cite{sheinman2009adjscales}, who
-%developed a method for constructing full scales. 
-
+by using semi- and un-supervised methods for learning lexical relations from parsed corpora rather than hand-specified patterns on raw text (cf. \cite{snow04,davidov2008unsupervised,turney2008uniform}). Moreover, there has been virtually no investigation of the other issues that we will consider: the semantic and pragmatic effects of partial scalar overlap, or of the effects of differing scalar distance on the strength of pragmatic inferences. Notably, the use of crowdsourced annotation will be a crucial in enabling us to pursue these fine-grained aspects of lexical structure. This is because quantitative information is needed to discover scalar distance, partial overlap relations, and strength of pragmatic inference in context, and gathering this information requires statistical analyses on the responses of many annotators.
 
 \vspace {-3mm}
 
@@ -638,7 +382,6 @@ statistical analyses on the responses of many annotators.
 
 
 Another common and inferentially rich class of adjectives are predicative adjectives with clausal arguments (\emph{that} {\sc s}, \emph{to} {\sc vp}, or \emph{ing} complements). These adjectives are typically used to communicate an agent's epistemic stance or the likelihood that an eventuality will occur, and some convey in addition an emotive or evaluative attitude of the agent. 
-%As we discuss below, 
 A precise inferential classification of this class poses interesting challenges.
 %% With these adjectives the inferences are about the (likelihood of the) occurrence or non-occurrence of the events or states described in the embedded clauses.
 %It is fair to say that WordNet doesn$(Bc`QU(B pay much attention to the predicative use of adjectives. Most examples show the attributive form.  When one is interested in inferences, however, the predicative use can be revealing because 
@@ -647,8 +390,7 @@ A precise inferential classification of this class poses interesting challenges.
 
 %%These inferences will not depend on the adjective alone but need to take at the very least the syntactic frame into account. 
 The relevant agent as well as the type of inferences that arise depend
-on both the adjective and its syntactic frame.  The agent with the
-implied epistemic stance is sometimes the speaker/writer and sometimes
+on both the adjective and its syntactic frame.  We will call such a combination, a PATTERN. The agent with the implied epistemic stance is sometimes the speaker/writer and sometimes
 the referent of the subject of the predicative construction (the
 `protagonist').  For instance, \textit{John is sure that Bill left}
 ascribes the belief that Bill left to John (the protagonist) and
@@ -1241,14 +983,16 @@ With these results in hand, we will revisit the original, context-independent ju
 
 \vspace {-3mm}
 
-We will select the 100 most frequent adjectives with clausal complements in the en-Ten-Ten corpus. We will extract 1,000 corpus snippets from the Web based on these adjectives with their frame. (A corpus snippet is a text that contains the sentence in which the target adjective with its pattern occurs and the sentence before and the sentence after it. The en-Ten-Ten corpus, unfortunately, doesnÕt give enough context). We will balance this corpus so that each adjective occurs at least 10 times. Following the MATTER methodology, linguist annotators will annotate these snippets with their epistemic inference pattern and the factors that are judged to be relevant for this interpretation.
+We start with an existing linguistic claim about the nature of a pattern [pattern should be defined as an adjective+syntactic structure combination] and test it by searching the web and other large corpora. We select an initial set of examples of the pattern and submit them to the initial judgments of the research team. On the basis of these judgments we formulate an hypothesis about the use of the pattern, e.g. contrary to exisiting linguistic literature, the NP be evaluative ADJ to VP pattern is used implicatively as well as factively and the judgment is influenced by harmonicity. We then construct experimental data to test that conjecture on the 20 adjectives that are most used with the pattern in the en-ten-ten corpus. We submit these experimentally constructed texts for judgment to MT workers, insuring we get at least 30 judgments per text. We analyze the data, using statistical models to evaluate how well the hypothesized factors account for the experimental results. If necessary we revise our conjectures and do another round of experiments. We then do a web search for naturally occurring data exhibiting the factors we have isolated as relevant influencing the type of inference found (in the example case: factive or implicative).On the basis of these web texts we construct an RTE-like test (using the snippets as Text and constructing Hypotheses based on our conjectures) for the 20 most used adjectives, developing at least 5 pairs per pattern. We test these by submitting them again to a set of naive native MT workers, insuring we get at least 30 judgments per TH pair. We use the results of this test to construct a profile for each pattern.  
 
-On the basis of these snippets we will construct examples that exhibit variation in the proposed features. These stimuli will be submitted to MTurkers. 
-The possible interpretations will be presented according to two different conditions: in one case the subjects will have to chosen between a positive, a negative and a ``donÕt know'' answer; in the other, they will choose on the 7-point scale, developed in \cite{sauri:2008phd,sauri-pustejovsky2012} and validated in \cite{demarneff+manning+potts:2012}.
-For inference patterns that are not recognized by linguists we will add follow-up tests, to find out whether the MTurker considers the expression as part of his/her language or not.
-
-On the basis of these judgments we will estimate whether the different features based on the linguistic annotations correspond to those used in the real world. In the cases there is no fit, the linguist annotators will propose new features that will be tested as described above. 
-The annotators will annotate 1,000 new, naturally occurring snippets. These 1,000 snippets will again be annotated by the MTurkers using both the 7-point and the 3-point scale. We will use these data to estimate how well the factors we have isolated capture the MTurkers data by building statistical models.
+%We will select the 100 most frequent adjectives with clausal complements in the en-Ten-Ten corpus. We will extract 1,000 corpus snippets from the Web based on these adjectives with their frame. (A corpus snippet is a text that contains the sentence in which the target adjective with its pattern occurs and the sentence before and the sentence after it. The en-Ten-Ten corpus, unfortunately, doesnÕt give enough context). We will balance this corpus so that each adjective occurs at least 10 times. Following the MATTER methodology, linguist annotators will annotate these snippets with their epistemic inference pattern and the factors that are judged to be relevant for this interpretation.
+%
+%On the basis of these snippets we will construct examples that exhibit variation in the proposed features. These stimuli will be submitted to MTurkers. 
+%The possible interpretations will be presented according to two different conditions: in one case the subjects will have to chosen between a positive, a negative and a ``donÕt know'' answer; in the other, they will choose on the 7-point scale, developed in \cite{sauri:2008phd,sauri-pustejovsky2012} and validated in \cite{demarneff+manning+potts:2012}.
+%For inference patterns that are not recognized by linguists we will add follow-up tests, to find out whether the MTurker considers the expression as part of his/her language or not.
+%
+%On the basis of these judgments we will estimate whether the different features based on the linguistic annotations correspond to those used in the real world. In the cases there is no fit, the linguist annotators will propose new features that will be tested as described above. 
+%The annotators will annotate 1,000 new, naturally occurring snippets. These 1,000 snippets will again be annotated by the MTurkers using both the 7-point and the 3-point scale. We will use these data to estimate how well the factors we have isolated capture the MTurkers data by building statistical models.
 
 
 
@@ -1337,7 +1081,9 @@ points on the scale. This preserves the original WordNet representation for one 
 adjective (e.g., \emph{rich}) and a set of ``semantically similar'' adjectives (\emph{wealthy, comfortable}, etc.) while also indicating their intensity relative to the central adjective and one another.
 This representation is amenable to external evaluation with systems like \cite{clark2007role}.
 
-Concerning the evaluation of predicative adjectives with clausal complements, we base a first, controlled evaluation on the Brandeis TARSQI system.  We submit our final 1,000 snippets to the system and consider a baseline markup where all the events are factual. We then develop a set of rules based on our findings and evaluate how well the resulting TARSQI system identifies the events.  Larger-scale evaluation proceeds by incorporating our rules and lexical patterns to BiuTee and evaluating the resulting improvement.
+For the predicative adjectives, the statistical models built after the experiments give a first evaluation as they will tell us how well our variables capture the variation we find. A final evaluation will consist in translating the pattern profiles we have developed into probabilistic rules to be used in Biutee and create a new set of RTE TH pairs (again 5 pairs per pattern) which we submit again to MT Turkers and to the Biutee system. The measure of success is the agreement between the Biutee score and the MT score for each adjective.   
+
+%Concerning the evaluation of predicative adjectives with clausal complements, we base a first, controlled evaluation on the Brandeis TARSQI system.  We submit our final 1,000 snippets to the system and consider a baseline markup where all the events are factual. We then develop a set of rules based on our findings and evaluate how well the resulting TARSQI system identifies the events.  Larger-scale evaluation proceeds by incorporating our rules and lexical patterns to BiuTee and evaluating the resulting improvement.
 
 %Concerning the evaluation of the predicative adjectives with clausal complements,  we will use
 %the same 1,000 snippets and submit them to the Brandeis TARSQI system to mark up the events. We consider all the events as being factual. We develop a set of rules based on our classifications and evaluate how well the resulting system identifies the events using the scale used in the last MTurker experiment. 
@@ -1382,7 +1128,7 @@ Q2 & Derive initial semantic classifications and structure-to-inference mappings
 
 \hline
 
-Q3 & Pilot MTurking experiments;  Evaluate corpus data; Linguists annotate first sets of snippets.    \\
+Q3 & Pilot MTurking experiments;  Evaluate corpus data; Linguists develop hypotheses.    \\
  
 \hline
 
@@ -1402,11 +1148,11 @@ Q4 & Update classifications and mappings; Begin MTurking work; First sets of HIT
 
 \hline
 
-Q1 	&  Complete gold standard for expert annotators; Run experiments with MTurkers. \\
+Q1 	&  Develop guidelines for MTurkers; Run experiments with MTurkers. \\
 
 \hline
 
-Q2	& Analyze/Evaluate results of MTurker data with/against gold standard. \\
+Q2	& Analyze/Evaluate results of MTurker data with/against hypotheses. \\
 
 \hline
 
@@ -1437,7 +1183,7 @@ Q1 & Revise the annotation specs based on analysis in Y2Q4; develop semantic int
 
 \hline
 
-Q2 & Develop enhanced, layered gold standard.  \\
+Q2 &  Develop adjective profiles and prepare evaluation material. \\ %Develop enhanced, layered gold standard.  \\
 
 \hline
 
@@ -1669,7 +1415,7 @@ annotation of all senses of the targeted word forms in the American National Cor
 %annotation of all senses of the targeted word forms in the American National Corpus. {\bf Publications:}~\cite{fellbaumbakerLRE};~\cite{bakerfellbaum2008}~\cite{bakerfellbaum2009}~\cite{demelo2012}.
 %
 % 
-
+ 
 %%% References
 \newpage
 \pagenumbering{arabic}
