@@ -67,7 +67,8 @@
  
 \subsection*{IIS-RI MEDIUM: Collaborative Research\\
 %Inference Discovery through Paired Annotation: A Case Study with Adjectives}
-Discovering Inference Patterns for Adjectives in Language}
+Discovering Inference Patterns for Adjectives}
+% in Language}
 %Lexical Inference Patterns for Adjectives in Natural Language}
 \end{center}
 
@@ -261,38 +262,36 @@ Discovering Inference Patterns for Adjectives in Language}
 %%and how it differs from the baseline established from gold standard corpora, 
 %we begin to identify the pragmatic factors contributing to the interpretation of lexical items in richer contexts.
 %
-Linguistic communication relies on the ability of language users to identify the often implicit semantic dependencies in an utterance. It is on the basis of decoding of the structural and lexical patterns encoding these implicit dependencies that we make ``semantic inferences''. An understanding of how speakers identify and exploit such structural and lexical inference patterns has the potential to enrich models in theoretical linguistics. 
-At the same time, it can support a major goal of current {\sc nlp} research: allowing natural language understanding systems to recover more of the rich semantic information encoded in the text: did the event mentioned in the text actually happen? was it considered desirable? what qualities are being attributed to entities in the text?
+Linguistic communication relies on the ability of language users to identify the often implicit semantic dependencies in an utterance. It is on the basis of 
+%decoding 
+interpreting the lexical and structural  patterns encoding these implicit dependencies that we make ``semantic inferences''. An understanding of how speakers identify and exploit such lexical and structural inference patterns has the potential to significantly enrich models in theoretical linguistics. 
+At the same time, it furthers a major goal of current {\sc nlp} research: allowing natural language understanding systems to recover more of the rich semantic information encoded in the text, e.g.: Did the event mentioned in the text actually occur? When did it happen? What sentiment was conveyed regarding the event? What qualities are being attributed to the participants in the event? 
+%was it considered desirable? what qualities are being attributed to entities in the text?
 
-Identifying such inferences in a computational setting requires the reconstruction of lexical, syntactic, and contextual information in texts, for the same reason that effective communication requires language users to recover information not expressed explicitly. Existing systems typically rely on training or development corpora annotated manually or automatically, using information derived from lexical classes or from syntax-semantics correspondences (SYSTEMS REFS). 
-To date, most research in the field has concentrated on identifying events and their participants; this has led to a focus on identifying verbs and verb senses, and nouns within {\it named entities}. While many of these semantic relations follow directly from the syntax accompanying a verb and its associated semantic roles, there are many crucial semantic relations that cannot be read off the syntactic structure as readily: for example, comparative information about [graded] properties of individuals and events described, and information about the stance of the author of a text towards the events described. This information that is more \emph{evaluative} in nature is frequently conveyed by the use of adjectives. For instance, in scalar adjectives, the entity characterized is evaluated against others of the same class; in intensional adjectives the truth of the description given to an entity is evaluated and and predicative evaluative, emotive and epistemic adjectives express both the author's stance wrt the truth of the event described in the complement and, in the case of evaluative and emotive ones, an evaluation of the character of the protagonist of that event. 
+Identifying such inferences in a computational setting requires the reconstruction of lexical, syntactic, and contextual information in texts, for the same reason that effective communication requires language users to recover information not expressed explicitly. Existing systems typically rely on training or development corpora annotated manually or automatically, using information derived from lexical classes or from syntax-semantics correspondences.
+% (SYSTEMS REFS). 
+To date, most research in the field has concentrated on identifying events and their participants; this has led to a focus on identifying verbs and verb senses, and nouns within {\it named entities}. While many of these semantic relations follow directly from the syntax accompanying a verb and its associated semantic roles, there are many crucial semantic relations that cannot be read off the syntactic structure as readily: for example, comparative information about graded properties of the  individuals and events described, and information about the stance of the author of a text towards the events described. This information that is more \emph{evaluative} in nature is frequently conveyed by the use of adjectives. For instance, in scalar adjectives, the entity characterized is evaluated against others of the same class; in intensional adjectives the truth of the description given to an entity is evaluated and and predicative evaluative, emotive and epistemic adjectives express both the author's stance with respect to the truth of the event described in the complement and, in the case of evaluative and emotive ones, an evaluation of the character of the protagonist of that event. 
 
-Adjectives make up a significant portion of typical English texts, usually between 5\%, and 10\%. They influence the interpretation of texts in ways that make their study particularly interesting now that information extraction is moving towards taking into account [modal and subjective factors]. For instance, Wiebe (2000) notes that the presence of an adjective is a good indicator of the subjective stance of an utterance. This statistic could be improved upon if instead of looking at the simple POS, one would have more refined adjective classes. The most common treatment of adjectives is to assume that they are, by default, intersective: an American man is something that is both American and a man, a tall building is something that is both tall and a building, and so on.  These uses are typically objective but most adjectives [betraying a stance or invoking graded properties] are not intersective. These non-intersective uses are typically ignored. When exceptions are noted, they are usually encoded by simply blocking inferences: an alleged thief cannot be inferred to be a thief, or to be `alleged' (whatever this would mean). 
+Adjectives make up a significant portion of typical English texts, usually between 5\%, and 10\%. They influence the interpretation of texts in ways that make their study particularly interesting, now that information extraction is going beyond simple entity and event identification, in order to take into account both modal and subjective factors in the text. For instance, Wiebe \cite{wiebe2000learning} notes that the presence of an adjective is a good indicator of the subjective stance of an utterance. This statistic could be improved upon if instead of looking at a simple POS tag, we had  tagging and patterns based on a more refined  classification of adjective types. For example, the most common treatment of adjectives is to assume that they are, by default, {\sc intersective} -- that is, an  object described by [A N] is both ``an A" and ``an N". Hence, an ``American woman'' is both an American and a woman; a ``tall building" is both tall and a building, and so on. 
+It is usually assumed that such uses are objective, but in fact most adjectives are rarely interpreted  intersectively. Nevertheless, most computational treatments  within the field have  ignored the non-intersective behavior of adjectives in language.   When exceptions are noted, they are usually handled by simply blocking the inference: e.g., an ``alleged thief" cannot be inferred to be a thief, or to be alleged (whatever this would mean). 
+
+%% make reference to 
+% \cite{giegerich2005associative}
+% jdp
+
 
 %This model limits the influence of adjectives on inferences that can be derived to the word itself or---for non-intersective adjectives---the word and the noun that it modifies. 
 
-However, the inferential reach of adjectives is greater than the treatment of the adjective on its own allows even if we extend the treatment to take into account subsective, privative and non-sbusective adjectives\footnote{
-\enumsentence{
- Suppose the construction, [A N], is used to describe object O. Then A can be classified as: \\
-\vspace{-.25in}
-\begin{multicols}{2}
-a. {\sc intersective}: 
-O is both A and N. 
-\\
-b. {\sc subsective}: 
-O is A relative to N, but not necessarily in general. 
-\\
-c. {\sc privative}: 
-O is not an N, by virtue of being A. 
-\\
-d. {\sc non-subsective}: 
-the description does not determine whether O is N.  
-\end{multicols}
-}}: 
-each of the three classes of adjectives that we propose to study below---scalar, veridicity, and intensional---will typically influence the interpretation of significant portions of surrounding linguistic material and/or generate robust inferences. They do this by taking semantic scope over significant portions of text in a context-sensitive way, or by generating entailments and implicatures involving comparisons that are not overtly present in the text. 
-%[don't understand the original text: my first reaction: how can something be an adjective that is not in the text? I kinda see what you want to say but i don't think it is a clear way to state it.]
 
-As we will demonstrate below, two of the examples given in this paragraph---\emph{tall} and \emph{alleged}---are associated with inferences of this type, and are not well-treated on the standard model. Indeed, our preliminary investigations suggest that simply intersective, non-scalar adjectives are rare in natural corpora.
+%However,
+As we demonstrate here, however,  the inferential reach of adjectives extends far beyond the treatment of the adjective on its own,  even if we extend the classification to  account for subsective, privative, and non-subsective adjectives.\footnote{
+In the construction, [A N], an adjective A is:  {\sc subsective} if the object is A relative to N, but not necessarily in general; {\sc privative} if the object 
+ is not an N, by virtue of being A; and 
+ {\sc non-subsective} if the A  does not determine whether object is N.}
+ Each of the three classes of adjectives that we propose to study below---scalar, veridicity, and intensional---will typically influence the interpretation of significant portions of the surrounding linguistic context, generating robust inferences. They do this by taking semantic scope over significant portions of text in a context-sensitive way, or by generating entailments and implicatures involving comparisons that are not overtly present in the text. 
+%[don't understand the original text: my first reaction: how can something be an adjective that is not in the text? I kinda see what you want to say but i don't think it is a clear way to state it.]
+%
+As we will demonstrate below, two of the examples given above---\emph{tall} and \emph{alleged}---are associated with inferences of this type, and are not well-treated on the standard model. Indeed, our preliminary investigations suggest that simply intersective, non-scalar adjectives are rare in natural corpora.
 
 %Considering the importance of adjectives in conveying information in texts, their semantic variability, and the poor fit of a one-size-fits-all model of their meaning, it is perhaps surprising that 
 
