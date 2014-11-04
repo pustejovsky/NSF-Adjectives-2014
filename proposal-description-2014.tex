@@ -282,28 +282,23 @@ In the construction, [A N], an adjective A is:  {\sc subsective} if the object i
  Each of the three classes of adjectives that we propose to study below---scalar, veridicity, and intensional---will typically influence the interpretation of significant portions of the surrounding linguistic context, generating robust inferences. They do this by taking semantic scope over significant portions of text in a context-sensitive way, or by generating entailments and implicatures involving comparisons that are not overtly present in the text. 
 %[don't understand the original text: my first reaction: how can something be an adjective that is not in the text? I kinda see what you want to say but i don't think it is a clear way to state it.]
 %
-As we will demonstrate below, two of the examples given above---\emph{tall} and \emph{alleged}---are associated with inferences of this type, and are not well-treated on the standard model. Indeed, our preliminary investigations suggest that simply intersective, non-scalar adjectives are rare in natural corpora.
+Even two of the examples given above---\emph{tall} and \emph{alleged}---are associated with inferences of this type, and are not well-treated on the standard model. Our preliminary investigations suggest that this a common profile, and that simply intersective, non-scalar adjectives are rare in natural corpora.
 
 %Considering the importance of adjectives in conveying information in texts, their semantic variability, and the poor fit of a one-size-fits-all model of their meaning, it is perhaps surprising that 
 
 
 In the case of nouns, the WordNet hierarchies have proved useful in numerous studies (e.g., \cite{snow04}); for verbs, there is VerbNet and FrameNet as well as lists of special inference patterns have been constructed starting from the work of \cite{kiparsky+kiparsky:1970,karttunen:1971} by \cite{nairn+condoravdi+karttunen:2006,sauri:2008phd,factbank:2009,lotan:2012}. Information about the inferential properties of adjectives is, however, much less easy to come by. For the categories of adjectives that we are interested in, the existing resources have severe shortcomings or are non-existent, in part because the contribution of adjectives tends to be more subtle and more dependent on the rest of the linguistic context. A few resources have been developed in the area of sentiment analysis (e.g. H\&K) but even in those, as in the few proposals to annotate adjectives (cf. RASKIN/NIRENBURG), there is no attempt to model adjective senses, and no consistent methodology has been developed for characterizing and encoding their inferences or their relations. While WordNet does contain a certain amount of adjective information, the `dumbbell' model is fairly impoverished for these purposes, as discussed below. As a consequence most of the shared tasks in the SemEval challenges in the field have had to largely ignore the semantic role and inferential impact contributed by adjectives in the language.
 
-There is thus a serious gap between current practice and available resources, on the one hand, and the needs of robust inference-enabled systems on the other. The research proposed here addresses this issue with an in-depth investigation of the lexical semantics of three well-attested adjective classes, using a new and coherent methodology for identifying and annotating the semantic inferences associated with adjectives in texts. The methodology proposed goes beyond what is the practice in the NLT annotation community by integrating corpus research and experimental data and by relying on the judgments of non expert native speakers rather than on those of students in linguistics. We expect that this methodology will be of a general use to computational linguists in obtaining richer information that is currently the case but it is motivated by the fact that the use of adjectives specifically tends to be more oriented towards the evaluation of states of affairs rather than to the plain description of them and that this leads to more variation in their interpretation. 
+There is thus a serious gap between current practice and available resources, on the one hand, and the needs of robust inference-enabled systems on the other. The research proposed here addresses this issue with an in-depth investigation of the lexical semantics of three well-attested adjective classes, using a new and coherent methodology for identifying and annotating the semantic inferences associated with adjectives in texts. The methodology proposed goes beyond what is the practice in the NLT annotation community by integrating corpus research and experimental data and by relying on the judgments of non expert native speakers rather than on those of students in linguistics.
+% I don't understand the following sentence, now commented out. -DL
+% We expect that this methodology will be useful to computational linguists in obtaining richer information than is currently the case but it is motivated by the fact that the use of adjectives specifically tends to be more oriented towards the evaluation of states of affairs rather than to the plain description of them and that this leads to more variation in their interpretation. 
 
-%contained in adjectives in a general and consistent manner, as is already done with verbs and nouns. 
-
-%Currently there are few proposals available for annotating adjectives, and in the existing ones it is not made clear how  their relations should be modeled. (cf. RASKIN/NIRENBURG)
-%Moreover, the few studies reported in the linguistic literature do not address the questions that motivate this proposal: 
-
-The availability of digital corpora (the biggest one being the Web itself) and crowd-sourcing techniques to elicit the judgments of a larger and more diverse group of native speakers allow us to go beyond the narrow base that traditionally lexical studies were based on. Moreover, the development of statistical modeling techniques allow us to test theoretical hypotheses with large datasets. Our methodology aims to discover systematic linguistic inferences of specific lexical classes in natural language through an integration of lexical resources and corpus annotation and to construct  inferential model for these classes of lexical items. 
-
-It differs from current annotation methodology by
+The availability of digital corpora (the biggest one being the Web itself) and crowd-sourcing techniques to elicit the judgments of a larger and more diverse group of native speakers allow us to go beyond the narrow evidential base o traditional lexical semantic studies. Our methodology aims to discover systematic linguistic inferences of specific lexical classes in natural language through an integration of lexical resources and corpus annotation and to construct  inferential model for these classes of lexical items. It differs from current annotation methodology by
 \begin{itemize}
 \moveup
-\item using many linguistically untrained speakers instead of a few experts. 
+\item using many linguistically untrained speakers instead of a few experts;
 \moveup
-\item treating inference probabilistically instead of as an all-or-nothing matter. 
+\item treating inference as graded rather than categorical;
 \moveup
 \item taking into consideration a rich set of semantic interactions of the textual elements involved instead of artificially constraining them.
 \moveup
@@ -326,7 +321,7 @@ It differs from current annotation methodology by
 %\end{itemize}
 %\moveup
  
-In this proposal, we concentrate on three diverse semantic types of adjectives, in order to: (a) test the applicability of the methodology to different semantic classes; and (b) to articulate precise conceptual models for each lexical class. The adjective types studied are: (i) dimensional and evaluative adjectives with scalar values and associated scalar implicatures, e.g., \textit{pretty, beautiful, large, huge}; (ii) veridicity-related adjectives, showing varying implications of veridicity over a clausal complement, e.g., \textit{rude, annoying, likely}, etc.; and (iii) intensional adjectives, introducing implications of modal subordination, e.g., \textit{alleged, supposed, so-called}. 
+In this proposal, we concentrate on three diverse semantic classes of adjectives, with the aim of testing the validity of this methodology and articulating precise conceptual models for each lexical class. The adjective types studied are: (i) dimensional and evaluative adjectives with scalar values and associated scalar implicatures, e.g., \textit{pretty, beautiful, large, huge}; (ii) veridicity-related adjectives, showing varying implications of veridicity over a clausal complement, e.g., \textit{rude, annoying, likely}, etc.; and (iii) intensional adjectives, introducing implications of modal subordination, e.g., \textit{alleged, supposed, so-called}. 
 
 Together these classes cover attributive as well as predicative uses of adjectives and the major non-intersective classes that have rich and unexpected inferential properties\footnote{Classic semantic field analysis (cf. \cite{dixon:91,lyons:77,raskin1995lexical}) categorizes attributes denoted by adjectives according to a thematic organization lexically encoded in the language. Only \cite{raskin1995lexical} discusses inferential patterns for distinct classes.}. Quantitatively, these classes contain hundreds of the most frequently used adjectives. A list of the 2000 most used words in the BNC (AK), contains 274 adjectives. Among these, 13 are epistemic adjectives and 94 can have either emotive or evaluative propositional complements; 81 are scalar adjectives. 
 
@@ -334,28 +329,25 @@ Together these classes cover attributive as well as predicative uses of adjectiv
 %\noindent 
 %An alternative is to adopt a more formally descriptive and operational distinction which grouping adjectives into inferential classes. \cite{amoia2006adjective,amoia2008test} make such a move, adopting a four-class distinction based on inferential properties noted by \cite{Kamp75twotheories,Kamp95prototypetheory}:
  
-The work will start out with developing initial inferential models for our classes of adjectives based on existing literature on a on existing annotation efforts, specifically, FactBank (ref) will be used in this stage.
+The work will start out with developing initial inferential models for our classes of adjectives based on existing annotation efforts, focusing in particular on FactBank (ref).
 % standard inference corpus created by using a standard linguistic annotation effort following explicit guidelines indicating the structure-to-inference mapping for each type of adjective (some work already done in FactBank will be repurposed here). 
- 
 % Unlike most previous efforts, this standard is not the end product to be used in learning but constitutes a baseline: 
-We will first impressionistically test these models against large corpus data. We will then construct test sets to elicit inferential judgments from non-expert native speakers, in particular Mechanical Turk workers (MTurkers). Our preliminary studies have lead us to expect that there will be variance from the baseline. We hypothesize that an important part of this variance is caused by textual factors that are abstracted away in linguistic studies, but are important to explain the non-expert judgments. 
+We will then test these models against large corpus data and analyze sources of deviation from the models. We will then use this information to design test sets to elicit inferential judgments from non-expert native speakers, in particular Mechanical Turk workers (MTurkers). Our preliminary studies have lead us to expect that there will be considerable deviation from the linguistically-derived models. We hypothesize that an important part of this variance is caused by textual factors that are abstracted away in linguistic studies, but are important to explain the non-expert judgments. On the basis of this study, we will develop a gold standard and test it again with non-expert native speakers. We will then build a model to gauge how well our distinctions explain the behavior of these speakers. Our approach will allow us to account for the interactions of different structural and lexical factors instead of seeing them as independent from each other. 
 
-On the basis of this study, we will develop a gold standard and test it again with non-expert native speakers. We will then build a model to gauge how well our distinctions explain the behavior of these speakers. Our approach will allow us to account for the interactions of different structural and lexical factors instead of seeing them as independent from each other. 
-
-For each class of adjectives we will develop
+The end product will be, for each class of adjectives,
 \begin{itemize}
 \moveup
-\item annotation guidelines for crowd source annotation
+\item annotation guidelines for crowd source annotation;
 \moveup
-\item annotated corpora in the RTE style (TH pairs)
+\item annotated corpora in the RTE style (T-H pairs);
 \moveup
-\item conceptual models that capture the behavior of the adjective classes studied.
+\item conceptual models that capture the behavior of the adjective classes studied;
 \moveup
-\item statistical models that evaluate how well the hypothesized factors explain the data of the experiments.
+\item statistical models that evaluate how well the hypothesized factors explain the data of the experiments;
 \moveup
 \moveup
 \moveup
-\item a RTE style corpus and an evaluation study on that corpus
+\item a RTE style corpus and an evaluation study on that corpus.
 \moveup
 \end{itemize} 
 
