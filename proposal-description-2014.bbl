@@ -56,11 +56,6 @@ Dmitry Davidov and Ari Rappoport.
   clusters and its evaluation by automatically generated sat analogy questions.
 \newblock In {\em Proceedings of ACL-08: HCL}, pages 692--700, 2008.
 
-\bibitem{de2006generating}
-Marie-Catherine De~Marneffe, Bill MacCartney, Christopher~D Manning, et~al.
-\newblock Generating typed dependency parses from phrase structure parses.
-\newblock In {\em Proceedings of LREC}, volume~6, pages 449--454, 2006.
-
 \bibitem{demelo2012}
 G.~de~Melo, C.~Baker, N.~Ide, R.~Passonneau, and C.~Fellbaum.
 \newblock Empirical comparisons of {\sc masc} word sense annotations.
@@ -103,6 +98,11 @@ Christiane Fellbaum and Piek Vossen.
 Michael~C Frank and Noah~D Goodman.
 \newblock Predicting pragmatic reasoning in language games.
 \newblock {\em Science}, 336(6084):998--998, 2012.
+
+\bibitem{giegerich2005associative}
+Heinz~J Giegerich.
+\newblock Associative adjectives in english and the lexicon--syntax interface.
+\newblock {\em Journal of Linguistics}, 41(03):571--591, 2005.
 
 \bibitem{goodman2013knowledge}
 Noah~D Goodman and Andreas Stuhlm{\"u}ller.

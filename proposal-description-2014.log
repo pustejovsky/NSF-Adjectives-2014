@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  1 NOV 2014 16:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  7 NOV 2014 11:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -265,90 +265,89 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 70.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 77.
-LaTeX Font Info:    Try loading font information for U+msa on input line 287.
+LaTeX Font Info:    Try loading font information for U+msa on input line 279.
  (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 287.
+LaTeX Font Info:    Try loading font information for U+msb on input line 279.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 285.
+
+
+LaTeX Warning: Citation `lassiter14adjectives' on page D--1 undefined on input 
+line 285.
+
+[1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 313.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 315.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 313.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 315.
  [2]
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 459.
- [3]
 
-LaTeX Warning: Reference `4' on page D--4 undefined on input line 490.
+LaTeX Warning: Citation `lassiter10a' on page D--3 undefined on input line 448.
 
-[4] [5]
+
+[3] [4] [5]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 613.
- [6] [7] <matter.pdf, id=36, 369.38pt x 223.83624pt>
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 612.
+ [6] [7] <matter.pdf, id=37, 369.38pt x 223.83624pt>
 File: matter.pdf Graphic file (type pdf)
- <use matter.pdf>
-Package pdftex.def Info: matter.pdf used on input line 793.
+
+<use matter.pdf>
+Package pdftex.def Info: matter.pdf used on input line 792.
 (pdftex.def)             Requested size: 369.37909pt x 223.8357pt.
+ [8 <./matter.pdf>]
 
-[8]
-
-LaTeX Warning: Citation `Peters et al' on page D--9 undefined on input line 819
+LaTeX Warning: Citation `Peters et al' on page D--9 undefined on input line 818
 .
 
-[9 <./matter.pdf>] [10]
-Missing character: There is no â in font pplr7t!
-Missing character: There is no € in font pplr7t!
-Missing character: There is no œ in font pplr7t!
-Missing character: There is no â in font pplr7t!
-Missing character: There is no € in font pplr7t!
-Missing character: There is no  in font pplr7t!
- [11] [12] [13]
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1161--1186
+[9] [10] [11] [12]
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1145--1170
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1161--1186
+Underfull \hbox (badness 10000) in paragraph at lines 1145--1170
 
  []
 
 
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1190--1214
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1174--1198
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1190--1214
+Underfull \hbox (badness 10000) in paragraph at lines 1174--1198
 
  []
 
 
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1220--1245
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1204--1229
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1220--1245
+Underfull \hbox (badness 10000) in paragraph at lines 1204--1229
 
  []
 
-[14]
-Overfull \hbox (1.47044pt too wide) in paragraph at lines 1313--1318
+[13]
+Overfull \hbox (1.47044pt too wide) in paragraph at lines 1297--1302
 \OT1/ppl/m/n/10 James Puste-jovsky) 9/2008-8/2013; $503,620. This col-lab-o-ra-
 tive ef-fort with the EU-funded FLaReNet project
  []
 
-[15] [16] (./proposal-description-2014.bbl
+[14] [15] (./proposal-description-2014.bbl
 Missing character: There is no Ò in font pplr7t!
 Missing character: There is no Ð in font pplr7t!
  [1] [2]
@@ -371,10 +370,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2536 strings out of 493117
- 35480 string characters out of 6135433
- 97582 words of memory out of 5000000
- 5919 multiletter control sequences out of 15000+600000
+ 2537 strings out of 493117
+ 35520 string characters out of 6135433
+ 98583 words of memory out of 5000000
+ 5920 multiletter control sequences out of 15000+600000
  25003 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,10n,26p,1612b,257s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -392,10 +391,10 @@ ive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014
 dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2014/texmf-dist/f
 onts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/ty
 pe1/urw/palatino/uplri8a.pfb>
-Output written on proposal-description-2014.pdf (20 pages, 237548 bytes).
+Output written on proposal-description-2014.pdf (19 pages, 234204 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
+ 159 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

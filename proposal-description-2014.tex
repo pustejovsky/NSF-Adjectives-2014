@@ -275,17 +275,33 @@ To date, most research in the field has concentrated on identifying events and t
 Adjectives make up a significant portion of typical English texts, usually between 5\%, and 10\%. They influence the interpretation of texts in ways that make their study particularly interesting, now that information extraction is going beyond simple entity and event identification, in order to take into account both modal and subjective factors in the text. For instance, Wiebe \cite{wiebe2000learning} notes that the presence of an adjective is a good indicator of the subjective stance of an utterance. This statistic could be improved upon if instead of looking at a simple POS tag, we had  tagging and patterns based on a more refined  classification of adjective types. For example, the most common treatment of adjectives is to assume that they are, by default, {\sc intersective} -- that is, an  object described by [A N] is both ``an A" and ``an N". Hence, an ``American woman'' is both an American and a woman; a ``tall building" is both tall and a building, and so on. 
 It is usually assumed that such uses are objective, but in fact most adjectives are rarely interpreted intersectively \cite{giegerich2005associative}. Nevertheless, most computational treatments  within the field have ignored the non-intersective behavior of most adjectives.   When exceptions are noted, they are usually handled by simply blocking the inference: e.g., an ``alleged thief" cannot be inferred to be a thief, or to be alleged (whatever this would mean). 
 
+
 As we demonstrate here, however,  the inferential reach of adjectives extends far beyond the treatment of the adjective on its own,  even if we extend the classification to  account for subsective, privative, and non-subsective adjectives.\footnote{
 In the construction, [A N], an adjective A is:  {\sc subsective} if the object is A relative to N, but not necessarily in general; {\sc privative} if the object 
  is not an N, by virtue of being A; and 
  {\sc non-subsective} if the A  does not determine whether object is N.}
- Each of the three classes of adjectives that we propose to study below---scalar, veridicity, and intensional---will typically influence the interpretation of significant portions of the surrounding linguistic context, generating robust inferences. They do this by taking semantic scope over significant portions of text in a context-sensitive way, or by generating entailments and implicatures involving comparisons that are not overtly present in the text \cite{lassiter14adjectives}. 
+ Each of the three classes of adjectives that we investigate ---scalar, veridicity, and intensional---will typically influence the interpretation  of the surrounding linguistic context, and generate robust but  predictable inferences.  They do this by taking semantic scope over significant portions of text in a context-sensitive way, or by generating entailments and implicatures involving comparisons to non-textual material 
+ % are not overtly present in the text
+  \cite{lassiter14adjectives}. 
 %[don't understand the original text: my first reaction: how can something be an adjective that is not in the text? I kinda see what you want to say but i don't think it is a clear way to state it.]
 %
-Even two of the examples given above---\emph{tall} and \emph{alleged}---are associated with inferences of this type, and are not well-treated on the standard model. Our preliminary investigations suggest that this a common profile, and that simply intersective, non-scalar adjectives are rare in natural corpora.
+Even two of the examples given above---\emph{tall} and \emph{alleged}---are associated with inferences of this type, and are not well-treated on the standard model. Our preliminary investigations suggest that this a common profile, and that simply intersective or non-scalar adjectives are rare in natural corpora.
 
+To capture the manner in which adjectives impact the interpretation of text in what appear to be  non-compositional ways, 
+it is necessary to identify those contextual factors at work when making such inferences. In this research, we propose both a methodology that identifies these contextual interpretive factors, and an encoding scheme that associates an adjective with specific inferences and implicatures, as interpreted from a context. We call these {\it Context-dependent Inferences (CDIs)}. 
+
+% (Previous text Nov. 6, 2014)
+%As we demonstrate here, however,  the inferential reach of adjectives extends far beyond the treatment of the adjective on its own,  even if we extend the classification to  account for subsective, privative, and non-subsective adjectives.\footnote{
+%In the construction, [A N], an adjective A is:  {\sc subsective} if the object is A relative to N, but not necessarily in general; {\sc privative} if the object 
+% is not an N, by virtue of being A; and 
+% {\sc non-subsective} if the A  does not determine whether object is N.}
+% Each of the three classes of adjectives that we propose to study below---scalar, veridicity, and intensional---will typically influence the interpretation of significant portions of the surrounding linguistic context, generating robust inferences. They do this by taking semantic scope over significant portions of text in a context-sensitive way, or by generating entailments and implicatures involving comparisons that are not overtly present in the text \cite{lassiter14adjectives}. 
+%%[don't understand the original text: my first reaction: how can something be an adjective that is not in the text? I kinda see what you want to say but i don't think it is a clear way to state it.]
+%%
+%Even two of the examples given above---\emph{tall} and \emph{alleged}---are associated with inferences of this type, and are not well-treated on the standard model. Our preliminary investigations suggest that this a common profile, and that simply intersective, non-scalar adjectives are rare in natural corpora.
+%
 %Considering the importance of adjectives in conveying information in texts, their semantic variability, and the poor fit of a one-size-fits-all model of their meaning, it is perhaps surprising that 
-
+% (end of Previous text Nov. 6, 2014)
 
 In the case of nouns, the WordNet hierarchies have proved useful in numerous studies (e.g., \cite{snow04}); for verbs, there is VerbNet and FrameNet as well as lists of special inference patterns have been constructed starting from the work of \cite{kiparsky+kiparsky:1970,karttunen:1971} by \cite{nairn+condoravdi+karttunen:2006,sauri:2008phd,factbank:2009,lotan:2012}. Information about the inferential properties of adjectives is, however, much less easy to come by. For the categories of adjectives that we are interested in, the existing resources have severe shortcomings or are non-existent, in part because the contribution of adjectives tends to be more subtle and more dependent on the rest of the linguistic context. A few resources have been developed in the area of sentiment analysis (e.g. H\&K) but even in those, as in the few proposals to annotate adjectives (cf. RASKIN/NIRENBURG), there is no attempt to model adjective senses, and no consistent methodology has been developed for characterizing and encoding their inferences or their relations. While WordNet does contain a certain amount of adjective information, the `dumbbell' model is fairly impoverished for these purposes, as discussed below. As a consequence most of the shared tasks in the SemEval challenges in the field have had to largely ignore the semantic role and inferential impact contributed by adjectives in the language.
 
@@ -465,7 +481,17 @@ As a further example of importance of rich linguistic context, compare these thr
 \end{multicols}
  \vspace{-.1in}
 \noindent
-(\ref{10}) illustrates a standard scalar implicature, where the choice to use ``hot'' when ``scorching'' is relevant leads to an inference that Dallas is not scorching. In (\ref{11}), this inference is much less robust, presumably because it is not clear whether ``scorching'' is a relevant alternative. In (\ref{12}) no implicature regarding ``scorching'' arises, but (perhaps surprisingly) there is a robust inference that Dallas is not beautiful. These examples illustrate the importance of taking context into account when drawing inferences from scalar adjectives.
+(\ref{10}) illustrates a standard scalar implicature, where the choice to use ``hot'' when ``scorching'' is relevant leads to an inference that Dallas is not scorching. In (\ref{11}), this inference is much less robust, presumably because it is not clear whether ``scorching'' is a relevant alternative. In (\ref{12}) no implicature regarding ``scorching'' arises, but (perhaps surprisingly) there is a robust inference that Dallas is not beautiful. These examples illustrate the importance of taking context into account when drawing inferences from scalar adjectives. 
+
+For each scalar adjective, we define a context-dependent inference (CDI). 
+
+\enumsentence{
+a. $ [ \mbox{NP} \; \; \mbox{be} \;\;  \mbox{A$_i$} ] $ \\
+b.  $\nvDash  \;\;  [ \mbox{NP} \;\; \mbox{be} \;\;  \mbox{A$_j$} ] $, given a scale, where $A_i < A_j $
+}
+\vspace{-0.5em}
+
+
 
 A second complication in modeling inferences from scalar adjectives involves their \textsc{dimensionality}. While \emph{tall} and \emph{heavy} pick out a single scalar dimension (height and weight, respectively), multidimensional adjectives such as \emph{big} and \emph{huge} are more complex, placing requirements on multiple scalar dimensions (e.g., 3-D size and perhaps weight, in the case of \emph{big}). Emotive adjectives such as \emph{happy} are even more complex, since the dimensions that they rely on are not easy to identify or quantify. These relationships among adjectives thus raise difficult questions for an inferential model of adjective semantics. Since it is possible for something to be \emph{big} without being \emph{tall} (e.g., a \emph{big city}), these expressions do not share all of their dimensions and thus are not in an asymmetric entailment relationship. In addition, there are many cases in which it is simply not clear whether two adjectives are in a scalar relationship: does \emph{happy} asymmetrically entail \emph{content}? 
 
