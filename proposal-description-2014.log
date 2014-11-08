@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  7 NOV 2014 21:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  7 NOV 2014 21:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -264,8 +264,19 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 70.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 77.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 275.
+
+
+LaTeX Warning: Citation `wiebe2000learning' on page D--1 undefined on input lin
+e 275.
+
+
+LaTeX Warning: Citation `giegerich2005associative' on page D--1 undefined on in
+put line 276.
+
 LaTeX Font Info:    Try loading font information for U+msa on input line 279.
- (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 279.
@@ -273,9 +284,6 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 279.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 285.
-
 
 LaTeX Warning: Citation `lassiter14adjectives' on page D--1 undefined on input 
 line 285.
@@ -318,46 +326,38 @@ Overfull \hbox (5.08014pt too wide) in paragraph at lines 996--996
 a-tion to Ama-zon Me-chan-i-cal Turk work-ers (AMT).
  []
 
-[9] [10]
-
-LaTeX Warning: Citation `biutee' on page D--11 undefined on input line 1173.
-
-[11]
-
-LaTeX Warning: Citation `pascal' on page D--12 undefined on input line 1267.
-
-[12]
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1312--1337
+[9] [10] [11] [12]
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1313--1338
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1312--1337
+Underfull \hbox (badness 10000) in paragraph at lines 1313--1338
 
  []
 
 
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1341--1365
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1342--1366
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1341--1365
+Underfull \hbox (badness 10000) in paragraph at lines 1342--1366
 
  []
 
 
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1371--1396
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1372--1397
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1371--1396
+Underfull \hbox (badness 10000) in paragraph at lines 1372--1397
 
  []
 
 [13]
-Overfull \hbox (1.47044pt too wide) in paragraph at lines 1464--1469
+Overfull \hbox (1.47044pt too wide) in paragraph at lines 1465--1470
 \OT1/ppl/m/n/10 James Puste-jovsky) 9/2008-8/2013; $503,620. This col-lab-o-ra-
 tive ef-fort with the EU-funded FLaReNet project
  []
@@ -377,18 +377,15 @@ tan-ley Pe-ters.  A po-lar-ity lex-i-
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 2518 strings out of 493315
- 35246 string characters out of 6137904
- 97320 words of memory out of 5000000
- 5892 multiletter control sequences out of 15000+600000
+ 2516 strings out of 493315
+ 35230 string characters out of 6137904
+ 98320 words of memory out of 5000000
+ 5890 multiletter control sequences out of 15000+600000
  23900 words of font info for 68 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 42i,10n,26p,1997b,254s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,26p,2246b,252s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texl
@@ -402,7 +399,7 @@ ive/2013/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2013
 /texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2013/texmf-
 dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2013/texmf-dist/fo
 nts/type1/urw/palatino/uplri8a.pfb>
-Output written on proposal-description-2014.pdf (19 pages, 225452 bytes).
+Output written on proposal-description-2014.pdf (19 pages, 225470 bytes).
 PDF statistics:
  155 PDF objects out of 1000 (max. 8388607)
  104 compressed objects within 2 object streams

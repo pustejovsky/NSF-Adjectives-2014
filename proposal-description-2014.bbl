@@ -48,7 +48,13 @@ P.~Clark, W.R. Murray, J.~Thompson, P.~Harrison, J.~Hobbs, and C.~Fellbaum.
 C.~Condoravdi, V.~de~Paiva, and A.~Zaenen (eds.).
 \newblock {\em Linguistic Issues in Language Technology: Special Issue on
   Perspectives on Semantic Representations for Textual Inference}.
-\newblock Forthcoming.
+\newblock CSLI Publication, 2014.
+
+\bibitem{pascal}
+I.~Dagan, O.~Glickman, and B.~Magnini.
+\newblock The pascal recognising textual entailment challenge.
+\newblock {\em Machine Learning Challenges. Lecture Notes in Computer Science},
+  3944:177--190, 2006.
 
 \bibitem{davidov2008unsupervised}
 Dmitry Davidov and Ari Rappoport.
@@ -98,11 +104,6 @@ Christiane Fellbaum and Piek Vossen.
 Michael~C Frank and Noah~D Goodman.
 \newblock Predicting pragmatic reasoning in language games.
 \newblock {\em Science}, 336(6084):998--998, 2012.
-
-\bibitem{giegerich2005associative}
-Heinz~J Giegerich.
-\newblock Associative adjectives in english and the lexicon--syntax interface.
-\newblock {\em Journal of Linguistics}, 41(03):571--591, 2005.
 
 \bibitem{goodman2013knowledge}
 Noah~D Goodman and Andreas Stuhlm{\"u}ller.
@@ -185,11 +186,9 @@ Lauri Karttunen, Cleo Condoravdi, Miriam Connor, Stuart Melton, Kenny Moran,
   2013.
 
 \bibitem{csli-gang-cssp13}
-Lauri Karttunen, Annie Zaenen, Cleo Condoravdi, and Stanley Peters.
-\newblock When you are not stupid, you do not do stupid things: {E}valuative
-  uses of factive adjectives.
-\newblock Paper presented at the Colloque de Syntaxe et S\'emantique \`a Paris
-  (CSSP), September 2013.
+Lauri Karttunen, Annie Zaenen, Stanley Peters, and Cleo Condoravdi.
+\newblock The chameleon nature of evaluative adjectives.
+\newblock Empirical Issues in Syntax and Semantics, vol 10, 2014.
 
 \bibitem{kennedy2001polar}
 Christopher Kennedy.
@@ -214,7 +213,7 @@ John Lyons.
 \newblock Cambridge University Press, 1977.
 
 \bibitem{manning1999foundations}
-Christopher~D Manning and Hinrich Sch{\"u}tze.
+Christopher~D Manning and H~Sch{\"u}tze.
 \newblock {\em Foundations of statistical natural language processing}, volume
   999.
 \newblock MIT Press, 1999.
@@ -314,6 +313,12 @@ Rion Snow, Brendan O'Connor, Daniel Jurafsky, and Andrew~Y. Ng.
   for natural language tasks.
 \newblock In {\em Proceedings of EMNLP}, 2008.
 
+\bibitem{biutee}
+A.~Stern and I.~Dagan.
+\newblock The biutee research platform for transformation-based textual
+  entailment recognition.
+\newblock {\em Linguistic Issues in Language Technology}, 9(1), 2014.
+
 \bibitem{turney2008uniform}
 Peter Turney.
 \newblock A uniform approach to analogies, synonyms, antonyms, and
@@ -352,11 +357,6 @@ Marc Verhagen, Amber Stubbs, and James Pustejovsky.
 Larry Wasserman.
 \newblock {\em All of statistics: a concise course in statistical inference}.
 \newblock Springer, 2004.
-
-\bibitem{wiebe2000learning}
-Janyce Wiebe.
-\newblock Learning subjective adjectives from corpora.
-\newblock In {\em AAAI/IAAI}, pages 735--740, 2000.
 
 \bibitem{wilkinson:1970}
 Robert Wilkinson.
