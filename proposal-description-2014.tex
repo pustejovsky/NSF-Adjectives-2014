@@ -12,7 +12,7 @@
 \usepackage{lingmacros}
 \usepackage{multicol}
 \usepackage{wrapfig}
-
+\usepackage{MnSymbol}
 \setlength{\parskip}{1 mm}
 
 \renewcommand{\baselinestretch}{1}
@@ -288,7 +288,7 @@ In the construction, [A N], an adjective A is:  {\sc subsective} if the object i
 Even two of the examples given above---\emph{tall} and \emph{alleged}---are associated with inferences of this type, and are not well-treated on the standard model. Our preliminary investigations suggest that this a common profile, and that simply intersective or non-scalar adjectives are rare in natural corpora.
 
 To capture the manner in which adjectives impact the interpretation of text in what appear to be  non-compositional ways, 
-it is necessary to identify those contextual factors at work when making such inferences. In this research, we propose both a methodology that identifies these contextual interpretive factors, and an encoding scheme that associates an adjective with specific inferences and implicatures, as interpreted from a context. We call these {\it Context-dependent Inferences (CDIs)}. 
+it is necessary to identify those contextual factors at work when making such inferences. In this research, we propose both a methodology that identifies these contextual interpretive factors, and an encoding scheme that associates an adjective with specific inferences and implicatures, as interpreted from a context. We call these {\it Context-dependent Inferences (\textsc{cdi}s)}. 
 
 % (Previous text Nov. 6, 2014)
 %As we demonstrate here, however,  the inferential reach of adjectives extends far beyond the treatment of the adjective on its own,  even if we extend the classification to  account for subsective, privative, and non-subsective adjectives.\footnote{
@@ -448,9 +448,10 @@ As discussed in the introduction, language understanding requires active reconst
 This is true in particular for scalar adjectives, which have highly context-sensitive meanings (e.g., compare the inferred size of a \emph{big baby}, \emph{big tree}, or \emph{big planet}). Many scalar adjectives are organized into entailment scales, where items high on the scale asymmetrically entail lower items \cite{horn89,horn2000pick}. The use of items lower on the scale, in turn, can lead to a defeasible inference that the sentence would be false if the lower item were replaced by the higher \cite{grice1975logic,horn89,lassiter10a}.
  \vspace{-.05in} 
 \eenumsentence{
-\item warm $<$ hot $<$ scorching
+\item  {\sc heat\_scale}: warm $<$ hot $<$ scorching
  \vspace{-.05in}
 \item \emph{Dallas is scorching} \textbf{entails} \emph{Dallas is hot}, \textbf{which entails} \emph{Dallas is warm}
+\label{heat-entail}
  \vspace{-.05in}
 \item \emph{Dallas is warm} \textbf{implicates} \emph{Dallas is not hot} and \emph{Dallas is not scorching}
  \vspace{-.05in}
@@ -467,6 +468,7 @@ As a further example of importance of rich linguistic context, compare these thr
 \item Is Dallas scorching?
 \vspace{-.1in}
 \item It is hot.
+\label{scorching-hot}
 }
 \eenumsentence{\label{11}
 \item Is Dallas hot?
@@ -483,12 +485,25 @@ As a further example of importance of rich linguistic context, compare these thr
 \noindent
 (\ref{10}) illustrates a standard scalar implicature, where the choice to use ``hot'' when ``scorching'' is relevant leads to an inference that Dallas is not scorching. In (\ref{11}), this inference is much less robust, presumably because it is not clear whether ``scorching'' is a relevant alternative. In (\ref{12}) no implicature regarding ``scorching'' arises, but (perhaps surprisingly) there is a robust inference that Dallas is not beautiful. These examples illustrate the importance of taking context into account when drawing inferences from scalar adjectives. 
 
-For each scalar adjective, we define a context-dependent inference (CDI). 
+For each scalar adjective, we define the appropriate context-dependent inferences (\textsc{cdi}s) for a specific usage. 
+For example, using the generic scalar \textsc{cdi} in (\ref{cdi1}), we can  recover the entailments given in (\ref{heat-entail}) above. 
 
+\vspace{-0.5em}
 \enumsentence{
-a. $ [ \mbox{NP} \; \; \mbox{be} \;\;  \mbox{A$_i$} ] $ \\
-b.  $\nvDash  \;\;  [ \mbox{NP} \;\; \mbox{be} \;\;  \mbox{A$_j$} ] $, given a scale, where $A_i < A_j $
-}
+a. \hspace {5mm}$ [ \mbox{NP} \; \; \mbox{be} \;\;  \mbox{A$_i$} ] $ \\
+b.  $\vDash  \;\;  [ \mbox{NP} \;\; \mbox{be} \;\;  \mbox{A$_j$} ] $, given a scale, where $A_j < A_i $ \\
+c. warm $<$ hot $<$ scorching
+\label{cdi1}}
+\vspace{-0.5em}
+
+\noindent Similarly, many   scalar implicatures   can be identified as 
+ \textsc{cdi}s, as illustrated in (\ref{cdi-implic}), corresponding to that given in (\ref{scorching-hot}). 
+
+\vspace{-0.5em}
+\enumsentence{
+a. \hspace {4mm} $\langle$$ [ \mbox{be} \;\; \mbox{NP} \; \;   \mbox{A$_i$} ?] $, $[ \mbox{NP} \; \; \mbox{be} \;\;  \mbox{A$_j$} ] $$\rangle$ \\
+b.  $\leadsto  \; [ \mbox{NP} \;\; \mbox{be}   \mbox{ $\neg$A$_i$} ] $, given a scale, where $A_j < A_i $
+\label{cdi-implic}}
 \vspace{-0.5em}
 
 
@@ -921,59 +936,39 @@ $[ A_{int}\; N ] \;  \vDash$ $N'$  where $N \subseteq N'$
 \subsection{Methodology\label{prelim}}
 \vspace {-3mm}
 
-Much work in modern computational linguistics relies on the creation of annotated datasets focused on one or more related linguistic phenomena. Such gold standard corpora are essential for training and tuning the statistical models on which natural language processing tasks largely rely.
+Much work in modern computational linguistics relies on the creation of annotated datasets focused on one or on several related linguistic phenomena. Such gold standard corpora are essential for training and tuning the statistical models on which natural language processing tasks largely rely.
 
 In the development of a gold standard corpus using rich linguistic annotation, it is typical to establish an initial model for the phenomena being studied. This includes a model, which is a triple, $M = \langle T,R,I \rangle$, consisting of a vocabulary of terms, $T$, the relations between these terms, $R$, and their interpretation,
 $I$. This is often a partial characterization of quite extensive theoretical research in an area, encoded as specification elements for subsequent annotation. These annotations provide the features that are then used for training and testing classification or labeling algorithms over the dataset. Depending on a system's performance, various aspects of the model or related specification will be revised, retrained, and then retested. 
-For this reason, we can refer to this methodology as the MATTER cycle: {\it Model}-{\it Annotate}-{\it Train}-{\it Test}-{\it Evaluate}-{\it Revise}  \cite{pustejovsky2012natural}, as illustrated in Figure (\ref{fig:matter}). 
+For this reason, we can refer to this methodology as the MATTER cycle: {\it Model}-{\it Annotate}-{\it Train}-{\it Test}-{\it Evaluate}-{\it Revise} \cite{pustejovsky2012natural}, as illustrated in Figure (\ref{fig:matter}). 
 
 \begin{wrapfigure}{r}{.48\textwidth}
 \vspace {-9mm}
 
-  \centering
-  \scalebox{.5}{\includegraphics{matter.pdf}}
-  \vspace {-4mm}
-  \caption{The \textsc{matter} Methodology}
-  \label{fig:matter}
+\centering
+\scalebox{.5}{\includegraphics{matter.pdf}}
+\vspace {-4mm}
+\caption{The \textsc{matter} Methodology}
+\label{fig:matter}
 
-  \vspace {-2mm}
+\vspace {-2mm}
 
 \end{wrapfigure}
 
-The ``Model Testing'' phase of this cycle involves iterating over model development followed by subsequent testing by annotation. This  (Model-Annotate)$^*$ technique assumes a classic iterative software development cycle, as applied to the creation of a rich specification language to be used for linguistic annotation.  That is, as issues are encountered with the model when instantiated in a specification and applied to data through the annotation process, the model is revised to accommodate these observations. [Need an arrow between annotate and model]
+The ``Model Testing'' phase of this cycle involves iterating over model development followed by subsequent testing by annotation. This (Model-Annotate)$^*$ technique [don't we need a Kleene + instead of a Kleene star here?] assumes a classic iterative software development cycle, as applied to the creation of a rich specification language to be used for linguistic annotation.  That is, as issues are encountered with the model when instantiated in a specification and applied to data through the annotation process, the model is revised to accommodate these observations. 
+
+
+Isolating the factors that contribute to the perception of an inference is  notoriously difficult. Testing contrastive contexts with a large number of native speakers is one way to discover the precise factors at work.
+For instance, from FactBank we learn that 'NP be lucky to VP' has the meaning 'it is highly unlikely that NP VP'. In previous work project consultants Karttunen and Zaenen \cite{karttunen:2012b,zaenen+karttunen:2013} observe that this is far too general, and that the ``unlikely'' meaning is mainly found in future-tense sentences, whereas past tense sentences are overwhelmingly factive. Experimental work has confirmed this while also pointing to further factors that influence the interpretation \cite{Peters et al}, \cite{karttunen2014}.
 
 \medskip
-In the present work, we propose a significant enrichment to this methodology. Traditionally, annotation is done by two more or less trained annotators and a trained adjudicator. This is sufficient as long as the phenomena to be annotated fall in reasonable clearcut categories; one does not need many judgments to conclude that native speakers of English interpret \emph{table} as a piece of furniture in a sentence such as \emph{Jane put the food on the table.} But once we get to 
-%in order to better model contextual and pragmatic factors that are often ignored or down-played in this strategy. 
-linguistic phenomena, such as the adjective classes studied here, reliance on a few judgments might not lead to reliable conclusions because contextual factors and pragmatic effects are critical.  
-%% Annie's prose revised by Dan 10/9/13
-%For practical reasons, 
-Moreover, the corpora that can be created using linguistically trained annotators are rather limited and rarely exhibit all the combinations of relevant context factors, resulting in lack of data capturing what a rich, human-like understanding of texts should be. This limits the usefulness of many machine learning methods that are widely used in natural language understanding \cite{manning1999foundations,wasserman2004all,murphy2012machine}: sophisticated statistical models cannot produce rich understanding without a linguistically informed understanding of what is being modeled. Our project seeks to augment standard annotation practices with both new experimental methods based on crowdsourcing and corpus studies in order to address this lacuna for the important, understudied category of adjectives.
+In  light of this, we propose in the present work a significant enrichment to the standard methodology. Traditionally, annotation is done by two more or less trained annotators and a trained adjudicator. This is sufficient as long as the phenomena to be annotated fall in reasonable clearcut categories; one does not need many judgments to conclude that native speakers of English interpret \emph{table} as a piece of furniture in a sentence such as \emph{Jane put the food on the table.} But, once we get to 
+linguistic phenomena such as the adjective classes studied here, reliance on a few judgments might not lead to reliable conclusions because contextual factors and pragmatic effects are critical.  
+Moreover, the corpora that can be created using linguistically trained annotators are rather limited and rarely exhibit all the combinations of relevant context factors, resulting in lack of data capturing what a rich, human-like understanding of texts should be. This limits the usefulness of many machine learning methods that are widely used in natural language understanding \cite{manning1999foundations,wasserman2004all,murphy2012machine}: sophisticated statistical models cannot produce rich understanding without a linguistically informed understanding of what is being modeled. Our project seeks to augment standard annotation practices with both new experimental methods based on crowdsourcing and corpus studies, in order to address this lacuna for the important, understudied category of adjectives.
 
-Crowdsourced annotations tasks, when carefully constructed and analyzed, have been shown in previous work to have reliability comparable to traditional expert annotations in some domains including certain RTE tasks \cite{snow:08,munroetal2010} [more refs]. Adopting this method as part of our approach will help us achieve three related goals. First, it makes possible systematic testing of the factors that have been claimed in the linguistic literature to be relevant to the inferences licensed by the use of an adjective, as well as patterns isolated on the basis of existing annotations. Second, statistical analysis of the results of larger-scale annotations gathered by experimental means make it possible to reliably identify inferences which are probabilistic, rather than deterministic, in nature; for example, the defeasible inference that someone described as \emph{attractive} is probably not \emph{stunning}. Third, systematic use of untrained annotators will make available data on the interpretations of people with backgrounds that go beyond those typically involved in standard annotation efforts. We conjecture they will bring in contextual factors that linguists have been trained to ignore.  
-
-%It is well known that 
-Isolating the factors that contribute to the perception of an inference is 
-%extremely 
-notoriously difficult. Testing contrastive contexts with a large number of native speakers is one way to discover the precise factors at work.
-%check whether the hypothesized factors are indeed the ones that are at work and whether they have been circumscribed sufficiently.
-For instance, from FactBank we learn that 'NP be lucky to VP' has the meaning 'it is highly unlikely that NP VP'. In previous work project consultants Karttunen and Zaenen \cite{karttunen:2012b,zaenen+karttunen:2013} observe that this is far too general, and that the ``unlikely'' meaning is mainly found in future-tense sentences, whereas past tense sentences are overwhelmingly factive. Experimental work has confirmed this while also pointing to further factors that influence the interpretation [new ref:  \cite{Peters et al}]
-
-%However, they show that the facts are more subtle even when tense is taken into account: in (\ref{lucky-1}), the (a) example has the highly unlikely meaning, whereas the (b) example does not (note that replacing `at least' with `in any case' makes the highly unlikely reading again more prominent).
-% \vspace{-.1in}
-%
-%\enumsentence{
-%a. Your son will be lucky to escape a jail term. \\
-%b.  At least your son will be lucky to escape a jail term.
-%\label{lucky-1}}
-%\vspace{-.1in}
+Crowdsourced annotations tasks, when carefully constructed and analyzed, have been shown in previous work to have reliability comparable to traditional expert annotations in some domains including certain RTE tasks \cite{snow:08,munroetal2010}. Adopting this method as part of our approach will help us achieve three related goals. First, it makes possible systematic testing of the factors that have been claimed in the linguistic literature to be relevant to the inferences licensed by the use of an adjective, as well as patterns isolated on the basis of existing annotations. Second, statistical analysis of the results of larger-scale annotations gathered by experimental means make it possible to reliably identify inferences which are probabilistic, rather than deterministic, in nature; for example, the defeasible inference that someone described as \emph{attractive} is probably not \emph{stunning}. Third, systematic use of untrained annotators will make available data on the interpretations of people with backgrounds that go beyond those typically involved in standard annotation efforts. We conjecture they will bring in contextual factors that linguists have been trained to ignore.  
 
 We take it for granted that in the adjective classes under study the inferential potential is in general influenced in a non-deterministic way by linguistic and non-linguistic context.
-
-%The discovery and treatment of such data involving evaluative adjectives in \cite{karttunen:2012b,zaenen+karttunen:2013,csli-gang-cssp13} relied crucially on a mixture of experimental investigation, standard annotation (done in FactBank), corpus work, and linguistic analysis of the type proposed here, and serves as an example of the promise of the methods. 
-%
-
-
 
 Five key elements play a role in our methodology:
 \eenumsentence{
@@ -991,9 +986,86 @@ Five key elements play a role in our methodology:
 \item The product of the iterative refinement is a new annotation standard. 
 %incorporating probabilistic information. 
 In contrast to traditionally annotations which give a value that is based on a few judgments, our methods provide probabilistic information based on large scale annotation. To make this information more easily interpretable while maintaining a reasonably high degree of granularity, we map it on a seven point scale. 
-%If desired, these probabilities can be reduced to categorical judgments but we hypothesize that using the probabilistic data will improve results for inference depended tasks: for each annotated text fragment our new standard gives a probability distribution of the values a particular [random variable in the] annotation can take. [this needs to be rephrased, i don't have the right terminology].  We also provide a model corpus using this standard. 
 \moveup
 }
+
+%%% old Methodology (pre-11/8/14)
+%\subsection{Methodology\label{prelim}}
+%\vspace {-3mm}
+%
+%Much work in modern computational linguistics relies on the creation of annotated datasets focused on one or more related linguistic phenomena. Such gold standard corpora are essential for training and tuning the statistical models on which natural language processing tasks largely rely.
+%
+%In the development of a gold standard corpus using rich linguistic annotation, it is typical to establish an initial model for the phenomena being studied. This includes a model, which is a triple, $M = \langle T,R,I \rangle$, consisting of a vocabulary of terms, $T$, the relations between these terms, $R$, and their interpretation,
+%$I$. This is often a partial characterization of quite extensive theoretical research in an area, encoded as specification elements for subsequent annotation. These annotations provide the features that are then used for training and testing classification or labeling algorithms over the dataset. Depending on a system's performance, various aspects of the model or related specification will be revised, retrained, and then retested. 
+%For this reason, we can refer to this methodology as the MATTER cycle: {\it Model}-{\it Annotate}-{\it Train}-{\it Test}-{\it Evaluate}-{\it Revise}  \cite{pustejovsky2012natural}, as illustrated in Figure (\ref{fig:matter}). 
+%
+%\begin{wrapfigure}{r}{.48\textwidth}
+%\vspace {-9mm}
+%
+%  \centering
+%  \scalebox{.5}{\includegraphics{matter.pdf}}
+%  \vspace {-4mm}
+%  \caption{The \textsc{matter} Methodology}
+%  \label{fig:matter}
+%
+%  \vspace {-2mm}
+%
+%\end{wrapfigure}
+%
+%The ``Model Testing'' phase of this cycle involves iterating over model development followed by subsequent testing by annotation. This  (Model-Annotate)$^*$ technique assumes a classic iterative software development cycle, as applied to the creation of a rich specification language to be used for linguistic annotation.  That is, as issues are encountered with the model when instantiated in a specification and applied to data through the annotation process, the model is revised to accommodate these observations. [Need an arrow between annotate and model]
+%
+%\medskip
+%In the present work, we propose a significant enrichment to this methodology. Traditionally, annotation is done by two more or less trained annotators and a trained adjudicator. This is sufficient as long as the phenomena to be annotated fall in reasonable clearcut categories; one does not need many judgments to conclude that native speakers of English interpret \emph{table} as a piece of furniture in a sentence such as \emph{Jane put the food on the table.} But once we get to 
+%%in order to better model contextual and pragmatic factors that are often ignored or down-played in this strategy. 
+%linguistic phenomena, such as the adjective classes studied here, reliance on a few judgments might not lead to reliable conclusions because contextual factors and pragmatic effects are critical.  
+%%% Annie's prose revised by Dan 10/9/13
+%%For practical reasons, 
+%Moreover, the corpora that can be created using linguistically trained annotators are rather limited and rarely exhibit all the combinations of relevant context factors, resulting in lack of data capturing what a rich, human-like understanding of texts should be. This limits the usefulness of many machine learning methods that are widely used in natural language understanding \cite{manning1999foundations,wasserman2004all,murphy2012machine}: sophisticated statistical models cannot produce rich understanding without a linguistically informed understanding of what is being modeled. Our project seeks to augment standard annotation practices with both new experimental methods based on crowdsourcing and corpus studies in order to address this lacuna for the important, understudied category of adjectives.
+%
+%Crowdsourced annotations tasks, when carefully constructed and analyzed, have been shown in previous work to have reliability comparable to traditional expert annotations in some domains including certain RTE tasks \cite{snow:08,munroetal2010} [more refs]. Adopting this method as part of our approach will help us achieve three related goals. First, it makes possible systematic testing of the factors that have been claimed in the linguistic literature to be relevant to the inferences licensed by the use of an adjective, as well as patterns isolated on the basis of existing annotations. Second, statistical analysis of the results of larger-scale annotations gathered by experimental means make it possible to reliably identify inferences which are probabilistic, rather than deterministic, in nature; for example, the defeasible inference that someone described as \emph{attractive} is probably not \emph{stunning}. Third, systematic use of untrained annotators will make available data on the interpretations of people with backgrounds that go beyond those typically involved in standard annotation efforts. We conjecture they will bring in contextual factors that linguists have been trained to ignore.  
+%
+%%It is well known that 
+%Isolating the factors that contribute to the perception of an inference is 
+%%extremely 
+%notoriously difficult. Testing contrastive contexts with a large number of native speakers is one way to discover the precise factors at work.
+%%check whether the hypothesized factors are indeed the ones that are at work and whether they have been circumscribed sufficiently.
+%For instance, from FactBank we learn that 'NP be lucky to VP' has the meaning 'it is highly unlikely that NP VP'. In previous work project consultants Karttunen and Zaenen \cite{karttunen:2012b,zaenen+karttunen:2013} observe that this is far too general, and that the ``unlikely'' meaning is mainly found in future-tense sentences, whereas past tense sentences are overwhelmingly factive. Experimental work has confirmed this while also pointing to further factors that influence the interpretation [new ref:  \cite{Peters et al}]
+%
+%%However, they show that the facts are more subtle even when tense is taken into account: in (\ref{lucky-1}), the (a) example has the highly unlikely meaning, whereas the (b) example does not (note that replacing `at least' with `in any case' makes the highly unlikely reading again more prominent).
+%% \vspace{-.1in}
+%%
+%%\enumsentence{
+%%a. Your son will be lucky to escape a jail term. \\
+%%b.  At least your son will be lucky to escape a jail term.
+%%\label{lucky-1}}
+%%\vspace{-.1in}
+%
+%We take it for granted that in the adjective classes under study the inferential potential is in general influenced in a non-deterministic way by linguistic and non-linguistic context.
+%
+%%The discovery and treatment of such data involving evaluative adjectives in \cite{karttunen:2012b,zaenen+karttunen:2013,csli-gang-cssp13} relied crucially on a mixture of experimental investigation, standard annotation (done in FactBank), corpus work, and linguistic analysis of the type proposed here, and serves as an example of the promise of the methods. 
+%%
+%
+%
+%
+%Five key elements play a role in our methodology:
+%\eenumsentence{
+%\vspace{-.1in}
+%\item The interpretation, $I$, focuses on determining (\textsc{cdi}s), indicating how a given adjective type associated with its environment, which we will call a \textsc{pattern}, contributes to or enables inferences. These \textsc{cdi}s will be formulated by experts. The initial \textsc{cdi}s will by and large be categorical.
+%\moveup
+%\item The \textsc{cdi}s, encoded in the initial interpretation, are checked against large corpus data. This step is heuristic: we analyze large corpora (en-Ten-Ten, CoCa, BNC, the web itself, ...) by means of finite-state templates to find instances of the patterns of our \textsc{cdi}s. The templates will depend on the available syntactic analysis of the various corpora. The data collected in this way will inform an updated formulation of the \textsc{cdi}s, which are then used to construct experimental material. 
+%\moveup
+%\item This experimental material is presented for annotation to Amazon Mechanical Turk workers (AMT). The material will cover the combination of features isolated by experts. Annotation instructions will be adapted for use by linguistically untrained native speakers, borrowing methods from experimental psychology, where appropriate. Given the complexity of the factors, the test items will often be larger than one sentence. 
+%\moveup
+%\item The heart of the project is the iterative refinement and enrichment of \textsc{cdi} models importing new contextual factors. This will be done through the loop of hypothesis construction by the experts and experimental evaluation by native annotators.
+%\moveup
+%%\moveup
+%%\moveup
+%\item The product of the iterative refinement is a new annotation standard. 
+%%incorporating probabilistic information. 
+%In contrast to traditionally annotations which give a value that is based on a few judgments, our methods provide probabilistic information based on large scale annotation. To make this information more easily interpretable while maintaining a reasonably high degree of granularity, we map it on a seven point scale. 
+%%If desired, these probabilities can be reduced to categorical judgments but we hypothesize that using the probabilistic data will improve results for inference depended tasks: for each annotated text fragment our new standard gives a probability distribution of the values a particular [random variable in the] annotation can take. [this needs to be rephrased, i don't have the right terminology].  We also provide a model corpus using this standard. 
+%\moveup
+%}
 %% previous as of Nov 6, 2014
 
 %Five key elements play a role in our methodology:
@@ -1281,13 +1353,22 @@ This representation is amenable to external evaluation with systems like \cite{c
 %the same 1,000 snippets and submit them to the Brandeis TARSQI system to mark up the events. We consider all the events as being factual. We develop a set of rules based on our classifications and evaluate how well the resulting system identifies the events using the scale used in the last MTurker experiment. 
 %MORE
 
-For the evaluation of the veridicity inferences, we will do a web search for naturally occurring data exhibiting the factors we have discovered as being relevant for the inference profiles of our \textsc{cdi}s. On the basis of the web texts we construct an RTE-like test (using the snippets as Text and constructing Hypotheses based on our conjectures) for the 20 most used adjectives of each pattern, developing at least 4 pairs per pattern. We associate with these pairs predictions based on our conceptual models encoded in the \textsc{cdi}s. We submit the pairs to AMT workers, ensuring we get at least 30 judgments per TH pair. For each item, we map the results on our -3 to +3 scale and calculate the discrepancy between our predicted values and the actually obtained values. We also map our initial \textsc{cdi}s on our 7 point scale and calculate their discrepancy with our predictions. A measure of our success is the comparative closeness of the final experimental results to our predictions. 
+For the evaluation of the veridicity inferences, we perform  a web search for naturally occurring data exhibiting the factors we have discovered as being relevant for the inference profiles of our \textsc{cdi}s. On the basis of the web texts, we also construct an RTE-like task (using the snippets as {\sc text} and constructing {\sc hypotheses} based on our conjectures) for the 20 most used adjectives of each pattern, developing at least 4 pairs per pattern. We associate with these pairs predictions based on our conceptual models encoded in the \textsc{cdi}s. We submit the pairs to AMT workers, ensuring we get at least 30 judgments per TH pair. For each item, we map the results on our -3 to +3 scale and calculate the discrepancy between our predicted values and the actually obtained values. We also map our initial \textsc{cdi}s on our 7 point scale and calculate their discrepancy with our predictions. A measure of our success is the comparative closeness of the final experimental results to our predictions. 
 
-The evaluation for intensional adjectives is similar in approach to that above. We will use the 2,000 snippet corpus  to train both a Naive Bayes and a MaxEnt classifier, where we take all mentions of the adjective to be invoking the   wide-scope reading rule. We take this as our baseline and compare the same two classifiers trained on the differentiated structure-to-inference mappings that were discovered, first by the linguists, and then, as they were enriched by the inferences in the wild. 
 
-%%% new material from Marc, 12/17/12 Do we need this????
+The evaluation for intensional adjectives is similar in approach to that above for  veridicity. 
+Using the 1,000 snippets of naturally occurring data containing intensional adjectives, we will construct an RTE-like test (with {\sc text}-{\sc hypothesis} pairs), exploiting the inference profiles from the \textsc{cdi}s. We develop at least 4 pairs/pattern for the most frequent 30 adjectives in the class. 
+The  {\sc text} consists of the full snippet, and the {\sc hypothesis} is derived from the \textsc{cdi}s associated with the adjective set. 
+As above, we use AMT workers to judge each TH-pair, making sure we
+collect at least 30 judgments/pair, the output of which is mapped to
+the -3 to +3 point scale mentioned earlier. The difference is
+calculated against the initial \textsc{cdi}s, where accuracy is measured
+as relative proximity of the results  to those predicted. 
+%
+%We will use the  corpus  to train both a Naive Bayes and a MaxEnt classifier, where we take all mentions of the adjective to be invoking the   wide-scope reading rule. We take this as our baseline and compare the same two classifiers trained on the differentiated structure-to-inference mappings that were discovered, first by the linguists, and then, as they were enriched by the inferences in the wild. 
 
-Finally, the structure-to-inference mappings for all three adjective classes are evaluated by applying the mappings to a held out evaluation set of snippets. We compare the mappings as generated after the corpus mining phase to the revised mappings that were created after analysis of the crowdsourcing results. Additional annotated snippets may be generated for this evaluation if needed. 
+% 11/8/14 [This is now irrelevant, right? -JDP]
+%Finally, the structure-to-inference mappings for all three adjective classes are evaluated by applying the mappings to a held out evaluation set of snippets. We compare the mappings as generated after the corpus mining phase to the revised mappings that were created after analysis of the crowdsourcing results. Additional annotated snippets may be generated for this evaluation if needed. 
 
 \vspace {-2mm}
 \vspace {-2mm}
