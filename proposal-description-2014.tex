@@ -262,33 +262,34 @@ Discovering Inference Patterns for Adjectives}
 %%and how it differs from the baseline established from gold standard corpora, 
 %we begin to identify the pragmatic factors contributing to the interpretation of lexical items in richer contexts.
 %
+
 Linguistic communication relies on the ability of language users to identify the often implicit semantic dependencies in an utterance. It is on the basis of 
 %decoding 
 interpreting the lexical and structural  patterns encoding these implicit dependencies that we make ``semantic inferences''. An understanding of how speakers identify and exploit such lexical and structural inference patterns has the potential to significantly enrich models in theoretical linguistics. 
 At the same time, it furthers a major goal of current {\sc nlp} research: allowing natural language understanding systems to recover more of the rich semantic information encoded in the text, e.g.: Did the event mentioned in the text actually occur? When did it happen? What sentiment was conveyed regarding the event? What qualities are being attributed to the participants in the event? 
 %was it considered desirable? what qualities are being attributed to entities in the text?
 
-Identifying such inferences in a computational setting requires the reconstruction of lexical, syntactic, and contextual information in texts, for the same reason that effective communication requires language users to recover information not expressed explicitly. Existing systems typically rely on training or development corpora annotated manually or automatically, using information derived from lexical classes or from syntax-semantics correspondences.
+Identifying such inferences in a computational setting requires the reconstruction of lexical, syntactic, and contextual information in texts, for the same reason that effective communication requires language users to recover information not expressed explicitly. For this reason, existing systems typically rely on training or development corpora annotated manually or automatically, using information derived from lexical classes or from syntax-semantics correspondences.
 % (SYSTEMS REFS). 
-To date, most research in the field has concentrated on identifying events and their participants; this has led to a focus on identifying verbs and verb senses, and nouns within {\it named entities}. While many of these semantic relations follow directly from the syntax accompanying a verb and its associated semantic roles, there are many crucial semantic relations that cannot be read off the syntactic structure as readily: for example, comparative information about graded properties of the  individuals and events described, and information about the stance of the author of a text towards the events described. This information that is more \emph{evaluative} in nature is frequently conveyed by the use of adjectives. For instance, in scalar adjectives, the entity characterized is evaluated against others of the same class; in intensional adjectives the truth of the description given to an entity is evaluated and and predicative evaluative, emotive and epistemic adjectives express both the author's stance with respect to the truth of the event described in the complement and, in the case of evaluative and emotive ones, an evaluation of the character of the protagonist of that event. 
+To date, most research in the field has concentrated on identifying events and their participants; this has led to a focus on identifying verbs and verb senses, and nouns within {\it named entities}. While many of these semantic relations follow directly from the syntax accompanying a verb and its associated semantic roles, there are many other crucial semantic relations that cannot be read off the syntactic structure as readily: for example, comparative information about graded properties of the  individuals and events described, and information about the stance of the author of a text towards the events described. This information that is more \emph{evaluative} in nature is frequently conveyed by the use of adjectives. For instance, in scalar adjectives, the entity characterized is evaluated against others of the same class; in intensional adjectives the truth of the description given to an entity is evaluated and and predicative evaluative, emotive and epistemic adjectives express both the author's stance with respect to the truth of the event described in the complement and, in the case of evaluative and emotive ones, an evaluation of the character of the protagonist of that event. 
 
-Adjectives make up a significant portion of typical English texts, usually between 5\%, and 10\%. They influence the interpretation of texts in ways that make their study particularly interesting, now that information extraction is going beyond simple entity and event identification, in order to take into account both modal and subjective factors in the text. For instance, Wiebe \cite{wiebe2000learning} notes that the presence of an adjective is a good indicator of the subjective stance of an utterance. This statistic could be improved upon if instead of looking at a simple POS tag, we had  tagging and patterns based on a more refined  classification of adjective types. For example, the most common treatment of adjectives is to assume that they are, by default, {\sc intersective} -- that is, an  object described by [A N] is both ``an A" and ``an N". Hence, an ``American woman'' is both an American and a woman; a ``tall building" is both tall and a building, and so on. 
+Adjectives make up a significant portion of typical English texts, usually between 5\%, and 10\%. They influence the interpretation of texts in ways that make their study particularly interesting, now that information extraction is going beyond simple entity and event identification, in order to take into account both modal and subjective factors in the text. For instance, Wiebe \cite{wiebe00learningsubjective} notes that the presence of an adjective is a good indicator of the subjective stance of an utterance. This statistic could be improved upon if instead of looking at a simple POS tag, we had  tagging and patterns based on a more refined  classification of adjective types. The most common treatment of adjectives is to assume that they are, by default, {\sc intersective} -- that is, an object described by [A N] is both ``an A" and ``an N". Hence, an ``American woman'' is both an American and a woman; a ``tall building" is both tall and a building, and so on. 
 It is usually assumed that such uses are objective, but in fact most adjectives are rarely interpreted intersectively \cite{giegerich2005associative}. Nevertheless, most computational treatments  within the field have ignored the non-intersective behavior of most adjectives.   When exceptions are noted, they are usually handled by simply blocking the inference: e.g., an ``alleged thief" cannot be inferred to be a thief, or to be alleged (whatever this would mean). 
 
 
 As we demonstrate here, however,  the inferential reach of adjectives extends far beyond the treatment of the adjective on its own,  even if we extend the classification to  account for subsective, privative, and non-subsective adjectives.\footnote{
 In the construction, [A N], an adjective A is:  {\sc subsective} if the object is A relative to N, but not necessarily in general; {\sc privative} if the object 
- is not an N, by virtue of being A; and 
- {\sc non-subsective} if the A  does not determine whether object is N.}
- Each of the three classes of adjectives that we investigate ---scalar, veridicity, and intensional---will typically influence the interpretation  of the surrounding linguistic context, and generate robust but  predictable inferences.  They do this by taking semantic scope over significant portions of text in a context-sensitive way, or by generating entailments and implicatures involving comparisons to non-textual material 
- % are not overtly present in the text
-  \cite{lassiter14adjectives}. 
+is not an N, by virtue of being A; and 
+{\sc non-subsective} if the A  does not determine whether object is N.}
+Each of the three classes of adjectives that we investigate ---scalar, veridicity, and intensional---will typically influence the interpretation  of the surrounding linguistic context, and generate robust and predictable inferences.  They do this by taking semantic scope over significant portions of text in a context-sensitive way, or by generating entailments and implicatures involving comparisons to non-textual material 
+% are not overtly present in the text
+\cite{lassiter14adjectives}. 
 %[don't understand the original text: my first reaction: how can something be an adjective that is not in the text? I kinda see what you want to say but i don't think it is a clear way to state it.]
 %
 Even two of the examples given above---\emph{tall} and \emph{alleged}---are associated with inferences of this type, and are not well-treated on the standard model. Our preliminary investigations suggest that this a common profile, and that simply intersective or non-scalar adjectives are rare in natural corpora.
 
-To capture the manner in which adjectives impact the interpretation of text in what appear to be  non-compositional ways, 
-it is necessary to identify those contextual factors at work when making such inferences. In this research, we propose both a methodology that identifies these contextual interpretive factors, and an encoding scheme that associates an adjective with specific inferences and implicatures, as interpreted from a context. We call these {\it Context-dependent Inferences (\textsc{cdi}s)}. 
+%To capture the manner in which adjectives impact the interpretation of text in what appear to be  non-compositional ways, 
+%it is necessary to identify those contextual factors at work when making such inferences. In this research, we propose both a methodology that identifies these contextual interpretive factors, and an encoding scheme that associates an adjective with specific inferences and implicatures, as interpreted from a context. We call these {\it Context-dependent Inferences (CDIs)}. 
 
 % (Previous text Nov. 6, 2014)
 %As we demonstrate here, however,  the inferential reach of adjectives extends far beyond the treatment of the adjective on its own,  even if we extend the classification to  account for subsective, privative, and non-subsective adjectives.\footnote{
@@ -303,11 +304,14 @@ it is necessary to identify those contextual factors at work when making such in
 %Considering the importance of adjectives in conveying information in texts, their semantic variability, and the poor fit of a one-size-fits-all model of their meaning, it is perhaps surprising that 
 % (end of Previous text Nov. 6, 2014)
 
-In the case of nouns, the WordNet hierarchies have proved useful in numerous studies (e.g., \cite{snow04}); for verbs, there is VerbNet and FrameNet as well as lists of special inference patterns have been constructed starting from the work of \cite{kiparsky+kiparsky:1970,karttunen:1971} by \cite{nairn+condoravdi+karttunen:2006,sauri:2008phd,factbank:2009,lotan:2012}. Information about the inferential properties of adjectives is, however, much less easy to come by. For the categories of adjectives that we are interested in, the existing resources have severe shortcomings or are non-existent, in part because the contribution of adjectives tends to be more subtle and more dependent on the rest of the linguistic context. A few resources have been developed in the area of sentiment analysis (e.g. H\&K) but even in those, as in the few proposals to annotate adjectives (cf. RASKIN/NIRENBURG), there is no attempt to model adjective senses, and no consistent methodology has been developed for characterizing and encoding their inferences or their relations. While WordNet does contain a certain amount of adjective information, the `dumbbell' model is fairly impoverished for these purposes, as discussed below. As a consequence most of the shared tasks in the SemEval challenges in the field have had to largely ignore the semantic role and inferential impact contributed by adjectives in the language.
+In the case of nouns, the WordNet hierarchies have proved useful in numerous studies (e.g., \cite{snow04}); for verbs, there is VerbNet and FrameNet as well as lists of special inference patterns have been constructed starting from the work of \cite{kiparsky+kiparsky:1970,karttunen:1971} by \cite{nairn+condoravdi+karttunen:2006,sauri:2008phd,factbank:2009,lotan:2012}. Information about the inferential properties of adjectives is, however, much less easy to come by. For the categories of adjectives that we are interested in, the existing resources have severe shortcomings or are non-existent, in part because the contribution of adjectives tends to be more subtle and more dependent on the rest of the linguistic context. A few resources have been developed in the area of sentiment analysis (e.g. \cite{Hatzivassiloglou97predictingthe}) but even in those, as in the few proposals to annotate adjectives (cf.\cite{Raskin95lexicalsemantics}), there is no attempt to model adjective senses, and no consistent methodology has been developed for characterizing and encoding their inferences or their relations. While WordNet does contain a certain amount of adjective information, the `dumbbell' model is fairly impoverished for these purposes, as discussed below. As a consequence most of the shared tasks in the SemEval challenges in the field have had to largely ignore the semantic role and inferential impact contributed by adjectives in the language.
 
 There is thus a serious gap between current practice and available resources, on the one hand, and the needs of robust inference-enabled systems on the other. The research proposed here addresses this issue with an in-depth investigation of the lexical semantics of three well-attested adjective classes, using a new and coherent methodology for identifying and annotating the semantic inferences associated with adjectives in texts. The methodology proposed goes beyond what is the practice in the NLT annotation community by integrating corpus research and experimental data and by relying on the judgments of non expert native speakers rather than on those of students in linguistics.
-% I don't understand the following sentence, now commented out. -DL
+% I don't understand the following sentence, now commented out. -DL It means that it is the nature of adjectives that motivate us but that it is also the case that this methodology has broader uses. But we can do without it AZ. 
 % We expect that this methodology will be useful to computational linguists in obtaining richer information than is currently the case but it is motivated by the fact that the use of adjectives specifically tends to be more oriented towards the evaluation of states of affairs rather than to the plain description of them and that this leads to more variation in their interpretation. 
+
+To capture the manner in which adjectives impact the interpretation of text in what appear to be  non-compositional ways, 
+it is necessary to identify those contextual factors at work when making such inferences. In this research, we propose both a methodology that identifies these contextual interpretive factors, and an encoding scheme that associates an adjective with specific inferences and implicatures, as interpreted from a context. We call these {\it Context-dependent Inferences (CDIs)}. 
 
 The availability of digital corpora (the biggest one being the Web itself) and crowd-sourcing techniques to elicit the judgments of a larger and more diverse group of native speakers allow us to go beyond the narrow evidential base of traditional lexical semantic studies. Our methodology aims to discover systematic linguistic inferences of specific lexical classes in natural language through an integration of lexical resources and corpus annotation and to construct  inferential model for these classes of lexical items. It differs from current annotation methodology by
 \begin{itemize}
@@ -336,7 +340,7 @@ The availability of digital corpora (the biggest one being the Web itself) and c
 %\item Extent the current format of annotation schemes to take probabilistic information into account.  
 %\end{itemize}
 %\moveup
- 
+
 In this proposal, we concentrate on three diverse semantic classes of adjectives, with the aim of testing the validity of this methodology and articulating precise conceptual models for each lexical class. The adjective types studied are: (i) dimensional and evaluative adjectives with scalar values and associated scalar implicatures, e.g., \textit{pretty, beautiful, large, huge}; (ii) veridicity-related adjectives, showing varying implications of veridicity over a clausal complement, e.g., \textit{rude, annoying, likely}, etc.; and (iii) intensional adjectives, introducing implications of modal subordination, e.g., \textit{alleged, supposed, so-called}. 
 
 Together these classes cover attributive as well as predicative uses of adjectives and the major non-intersective classes that have rich and unexpected inferential properties\footnote{Classic semantic field analysis (cf. \cite{dixon:91,lyons:77,raskin1995lexical}) categorizes attributes denoted by adjectives according to a thematic organization lexically encoded in the language. Only \cite{raskin1995lexical} discusses inferential patterns for distinct classes.}. Quantitatively, these classes contain hundreds of the most frequently used adjectives. A list of the 2000 most used words in the BNC (AK), contains 274 adjectives. Among these, 13 are epistemic adjectives and 94 can have either emotive or evaluative propositional complements; 81 are scalar adjectives. 
@@ -344,8 +348,8 @@ Together these classes cover attributive as well as predicative uses of adjectiv
 %The three classes illustrate \emph{evaluative} uses of adjectives, the kind of use, we think, sets the typical use of that POS apart from the typical use of nouns and verbs; the choice of a scalar adjective evaluates the entity characterized compared to others of the same class; the intensional adjectives evaluate the truth of the description given to an entity and the predicative adjectives express the author's stance wrt the truth of the event described in the complement and, in the case of evaluative and emotive adjectives, an evaluation of the character of the protagonist of that event. 
 %\noindent 
 %An alternative is to adopt a more formally descriptive and operational distinction which grouping adjectives into inferential classes. \cite{amoia2006adjective,amoia2008test} make such a move, adopting a four-class distinction based on inferential properties noted by \cite{Kamp75twotheories,Kamp95prototypetheory}:
- 
-The work will start out with developing initial inferential models for our classes of adjectives based on existing annotation efforts, focusing in particular on FactBank (ref).
+
+The work will start out with developing initial inferential models for our classes of adjectives based on existing annotation efforts, focusing in particular on FactBank (\cite{factbank:2009}).
 % standard inference corpus created by using a standard linguistic annotation effort following explicit guidelines indicating the structure-to-inference mapping for each type of adjective (some work already done in FactBank will be repurposed here). 
 % Unlike most previous efforts, this standard is not the end product to be used in learning but constitutes a baseline: 
 We will then test these models against large corpus data and analyze sources of deviation from the models. Next, we will use this information to design test sets to elicit inferential judgments from non-expert native speakers, in particular Mechanical Turk workers (MTurkers). Our preliminary studies have lead us to expect that there will be considerable deviation from the linguistically-derived models. We hypothesize that an important part of this variance is caused by textual factors that are abstracted away in linguistic studies, but are important to explain the non-expert judgments. On the basis of this study, we will develop a gold standard and test it again with non-expert native speakers. We will then build a model to gauge how well our distinctions explain the behavior of these speakers. Our approach will allow us to account for the interactions of different structural and lexical factors instead of seeing them as independent from each other. 
@@ -368,6 +372,115 @@ The end product will be, for each class of adjectives,
 \end{itemize} 
 
 This research is significant in two major respects. First, it develops inference models for adjectives that are richer than the ones currently envisioned. Second, it develops a new method for textual annotation, combining crowdsourcing and corpus exploitation and producing probabilistic annotations.
+
+% (pre-11/8/14 intro material)
+
+%Linguistic communication relies on the ability of language users to identify the often implicit semantic dependencies in an utterance. It is on the basis of 
+%%decoding 
+%interpreting the lexical and structural  patterns encoding these implicit dependencies that we make ``semantic inferences''. An understanding of how speakers identify and exploit such lexical and structural inference patterns has the potential to significantly enrich models in theoretical linguistics. 
+%At the same time, it furthers a major goal of current {\sc nlp} research: allowing natural language understanding systems to recover more of the rich semantic information encoded in the text, e.g.: Did the event mentioned in the text actually occur? When did it happen? What sentiment was conveyed regarding the event? What qualities are being attributed to the participants in the event? 
+%%was it considered desirable? what qualities are being attributed to entities in the text?
+%
+%Identifying such inferences in a computational setting requires the reconstruction of lexical, syntactic, and contextual information in texts, for the same reason that effective communication requires language users to recover information not expressed explicitly. Existing systems typically rely on training or development corpora annotated manually or automatically, using information derived from lexical classes or from syntax-semantics correspondences.
+%% (SYSTEMS REFS). 
+%To date, most research in the field has concentrated on identifying events and their participants; this has led to a focus on identifying verbs and verb senses, and nouns within {\it named entities}. While many of these semantic relations follow directly from the syntax accompanying a verb and its associated semantic roles, there are many crucial semantic relations that cannot be read off the syntactic structure as readily: for example, comparative information about graded properties of the  individuals and events described, and information about the stance of the author of a text towards the events described. This information that is more \emph{evaluative} in nature is frequently conveyed by the use of adjectives. For instance, in scalar adjectives, the entity characterized is evaluated against others of the same class; in intensional adjectives the truth of the description given to an entity is evaluated and and predicative evaluative, emotive and epistemic adjectives express both the author's stance with respect to the truth of the event described in the complement and, in the case of evaluative and emotive ones, an evaluation of the character of the protagonist of that event. 
+%
+%Adjectives make up a significant portion of typical English texts, usually between 5\%, and 10\%. They influence the interpretation of texts in ways that make their study particularly interesting, now that information extraction is going beyond simple entity and event identification, in order to take into account both modal and subjective factors in the text. For instance, Wiebe \cite{wiebe2000learning} notes that the presence of an adjective is a good indicator of the subjective stance of an utterance. This statistic could be improved upon if instead of looking at a simple POS tag, we had  tagging and patterns based on a more refined  classification of adjective types. For example, the most common treatment of adjectives is to assume that they are, by default, {\sc intersective} -- that is, an  object described by [A N] is both ``an A" and ``an N". Hence, an ``American woman'' is both an American and a woman; a ``tall building" is both tall and a building, and so on. 
+%It is usually assumed that such uses are objective, but in fact most adjectives are rarely interpreted intersectively \cite{giegerich2005associative}. Nevertheless, most computational treatments  within the field have ignored the non-intersective behavior of most adjectives.   When exceptions are noted, they are usually handled by simply blocking the inference: e.g., an ``alleged thief" cannot be inferred to be a thief, or to be alleged (whatever this would mean). 
+%
+%
+%As we demonstrate here, however,  the inferential reach of adjectives extends far beyond the treatment of the adjective on its own,  even if we extend the classification to  account for subsective, privative, and non-subsective adjectives.\footnote{
+%In the construction, [A N], an adjective A is:  {\sc subsective} if the object is A relative to N, but not necessarily in general; {\sc privative} if the object 
+% is not an N, by virtue of being A; and 
+% {\sc non-subsective} if the A  does not determine whether object is N.}
+% Each of the three classes of adjectives that we investigate ---scalar, veridicity, and intensional---will typically influence the interpretation  of the surrounding linguistic context, and generate robust but  predictable inferences.  They do this by taking semantic scope over significant portions of text in a context-sensitive way, or by generating entailments and implicatures involving comparisons to non-textual material 
+% % are not overtly present in the text
+%  \cite{lassiter14adjectives}. 
+%%[don't understand the original text: my first reaction: how can something be an adjective that is not in the text? I kinda see what you want to say but i don't think it is a clear way to state it.]
+%%
+%Even two of the examples given above---\emph{tall} and \emph{alleged}---are associated with inferences of this type, and are not well-treated on the standard model. Our preliminary investigations suggest that this a common profile, and that simply intersective or non-scalar adjectives are rare in natural corpora.
+%
+%To capture the manner in which adjectives impact the interpretation of text in what appear to be  non-compositional ways, 
+%it is necessary to identify those contextual factors at work when making such inferences. In this research, we propose both a methodology that identifies these contextual interpretive factors, and an encoding scheme that associates an adjective with specific inferences and implicatures, as interpreted from a context. We call these {\it Context-dependent Inferences (\textsc{cdi}s)}. 
+%
+%% (Previous text Nov. 6, 2014)
+%%As we demonstrate here, however,  the inferential reach of adjectives extends far beyond the treatment of the adjective on its own,  even if we extend the classification to  account for subsective, privative, and non-subsective adjectives.\footnote{
+%%In the construction, [A N], an adjective A is:  {\sc subsective} if the object is A relative to N, but not necessarily in general; {\sc privative} if the object 
+%% is not an N, by virtue of being A; and 
+%% {\sc non-subsective} if the A  does not determine whether object is N.}
+%% Each of the three classes of adjectives that we propose to study below---scalar, veridicity, and intensional---will typically influence the interpretation of significant portions of the surrounding linguistic context, generating robust inferences. They do this by taking semantic scope over significant portions of text in a context-sensitive way, or by generating entailments and implicatures involving comparisons that are not overtly present in the text \cite{lassiter14adjectives}. 
+%%%[don't understand the original text: my first reaction: how can something be an adjective that is not in the text? I kinda see what you want to say but i don't think it is a clear way to state it.]
+%%%
+%%Even two of the examples given above---\emph{tall} and \emph{alleged}---are associated with inferences of this type, and are not well-treated on the standard model. Our preliminary investigations suggest that this a common profile, and that simply intersective, non-scalar adjectives are rare in natural corpora.
+%%
+%%Considering the importance of adjectives in conveying information in texts, their semantic variability, and the poor fit of a one-size-fits-all model of their meaning, it is perhaps surprising that 
+%% (end of Previous text Nov. 6, 2014)
+%
+%In the case of nouns, the WordNet hierarchies have proved useful in numerous studies (e.g., \cite{snow04}); for verbs, there is VerbNet and FrameNet as well as lists of special inference patterns have been constructed starting from the work of \cite{kiparsky+kiparsky:1970,karttunen:1971} by \cite{nairn+condoravdi+karttunen:2006,sauri:2008phd,factbank:2009,lotan:2012}. Information about the inferential properties of adjectives is, however, much less easy to come by. For the categories of adjectives that we are interested in, the existing resources have severe shortcomings or are non-existent, in part because the contribution of adjectives tends to be more subtle and more dependent on the rest of the linguistic context. A few resources have been developed in the area of sentiment analysis (e.g. H\&K) but even in those, as in the few proposals to annotate adjectives (cf. RASKIN/NIRENBURG), there is no attempt to model adjective senses, and no consistent methodology has been developed for characterizing and encoding their inferences or their relations. While WordNet does contain a certain amount of adjective information, the `dumbbell' model is fairly impoverished for these purposes, as discussed below. As a consequence most of the shared tasks in the SemEval challenges in the field have had to largely ignore the semantic role and inferential impact contributed by adjectives in the language.
+%
+%There is thus a serious gap between current practice and available resources, on the one hand, and the needs of robust inference-enabled systems on the other. The research proposed here addresses this issue with an in-depth investigation of the lexical semantics of three well-attested adjective classes, using a new and coherent methodology for identifying and annotating the semantic inferences associated with adjectives in texts. The methodology proposed goes beyond what is the practice in the NLT annotation community by integrating corpus research and experimental data and by relying on the judgments of non expert native speakers rather than on those of students in linguistics.
+%% I don't understand the following sentence, now commented out. -DL
+%% We expect that this methodology will be useful to computational linguists in obtaining richer information than is currently the case but it is motivated by the fact that the use of adjectives specifically tends to be more oriented towards the evaluation of states of affairs rather than to the plain description of them and that this leads to more variation in their interpretation. 
+%
+%The availability of digital corpora (the biggest one being the Web itself) and crowd-sourcing techniques to elicit the judgments of a larger and more diverse group of native speakers allow us to go beyond the narrow evidential base of traditional lexical semantic studies. Our methodology aims to discover systematic linguistic inferences of specific lexical classes in natural language through an integration of lexical resources and corpus annotation and to construct  inferential model for these classes of lexical items. It differs from current annotation methodology by
+%\begin{itemize}
+%\moveup
+%\item using many linguistically untrained speakers instead of a few experts;
+%\moveup
+%\item treating inference as graded rather than categorical;
+%\moveup
+%\item taking into consideration a rich set of semantic interactions of the textual elements involved instead of artificially constraining them.
+%\moveup
+%\end{itemize}
+%
+
+%Specifically, we propose to:
+%%%% end of edits [JDP 9/23/14]
+%\begin{itemize}
+%\moveup
+%\item Establish an initial model for each adjective class, combining existing background from linguistic theory with data mining over large corpora to identify structure-to-inference mappings, i.e., syntactic and distributional correlates of judgments by trained annotators.
+%\moveup
+%\item Create larger labeled data sets using linguistically untrained annotators recruited on crowdsourcing platforms, notably Amazon Mechanical Turk (AMT).
+%\moveup
+%\item Revise and enrich models in light of results, with the goal of enriching lexical resources, e.g.,  WordNet. 
+%\moveup
+%\moveup
+%\moveup
+%\item Extent the current format of annotation schemes to take probabilistic information into account.  
+%\end{itemize}
+%\moveup
+% 
+%In this proposal, we concentrate on three diverse semantic classes of adjectives, with the aim of testing the validity of this methodology and articulating precise conceptual models for each lexical class. The adjective types studied are: (i) dimensional and evaluative adjectives with scalar values and associated scalar implicatures, e.g., \textit{pretty, beautiful, large, huge}; (ii) veridicity-related adjectives, showing varying implications of veridicity over a clausal complement, e.g., \textit{rude, annoying, likely}, etc.; and (iii) intensional adjectives, introducing implications of modal subordination, e.g., \textit{alleged, supposed, so-called}. 
+%
+%Together these classes cover attributive as well as predicative uses of adjectives and the major non-intersective classes that have rich and unexpected inferential properties\footnote{Classic semantic field analysis (cf. \cite{dixon:91,lyons:77,raskin1995lexical}) categorizes attributes denoted by adjectives according to a thematic organization lexically encoded in the language. Only \cite{raskin1995lexical} discusses inferential patterns for distinct classes.}. Quantitatively, these classes contain hundreds of the most frequently used adjectives. A list of the 2000 most used words in the BNC (AK), contains 274 adjectives. Among these, 13 are epistemic adjectives and 94 can have either emotive or evaluative propositional complements; 81 are scalar adjectives. 
+%
+%%The three classes illustrate \emph{evaluative} uses of adjectives, the kind of use, we think, sets the typical use of that POS apart from the typical use of nouns and verbs; the choice of a scalar adjective evaluates the entity characterized compared to others of the same class; the intensional adjectives evaluate the truth of the description given to an entity and the predicative adjectives express the author's stance wrt the truth of the event described in the complement and, in the case of evaluative and emotive adjectives, an evaluation of the character of the protagonist of that event. 
+%%\noindent 
+%%An alternative is to adopt a more formally descriptive and operational distinction which grouping adjectives into inferential classes. \cite{amoia2006adjective,amoia2008test} make such a move, adopting a four-class distinction based on inferential properties noted by \cite{Kamp75twotheories,Kamp95prototypetheory}:
+% 
+%The work will start out with developing initial inferential models for our classes of adjectives based on existing annotation efforts, focusing in particular on FactBank (ref).
+%% standard inference corpus created by using a standard linguistic annotation effort following explicit guidelines indicating the structure-to-inference mapping for each type of adjective (some work already done in FactBank will be repurposed here). 
+%% Unlike most previous efforts, this standard is not the end product to be used in learning but constitutes a baseline: 
+%We will then test these models against large corpus data and analyze sources of deviation from the models. Next, we will use this information to design test sets to elicit inferential judgments from non-expert native speakers, in particular Mechanical Turk workers (MTurkers). Our preliminary studies have lead us to expect that there will be considerable deviation from the linguistically-derived models. We hypothesize that an important part of this variance is caused by textual factors that are abstracted away in linguistic studies, but are important to explain the non-expert judgments. On the basis of this study, we will develop a gold standard and test it again with non-expert native speakers. We will then build a model to gauge how well our distinctions explain the behavior of these speakers. Our approach will allow us to account for the interactions of different structural and lexical factors instead of seeing them as independent from each other. 
+%
+%The end product will be, for each class of adjectives,
+%\begin{itemize}
+%\moveup
+%\item annotation guidelines for crowd source annotation;
+%\moveup
+%\item annotated corpora in the RTE style (T-H pairs);
+%\moveup
+%\item conceptual models that capture the behavior of the adjective classes studied;
+%\moveup
+%\item statistical models that evaluate how well the hypothesized factors explain the data of the experiments;
+%\moveup
+%\moveup
+%\moveup
+%\item a RTE style corpus and an evaluation study on that corpus.
+%\moveup
+%\end{itemize} 
+%
+%This research is significant in two major respects. First, it develops inference models for adjectives that are richer than the ones currently envisioned. Second, it develops a new method for textual annotation, combining crowdsourcing and corpus exploitation and producing probabilistic annotations.
 
 %First, it lays theoretical and methodological groundwork for a large-scale annotation of adjectives in order to support automatic systems in inferencing tasks. Second, it leads to a more sophisticated theory of textual inferencing. By studying inferencing ``in the wild'' we begin to identify the pragmatic factors contributing to the interpretation of lexical items in richer contexts.
 
@@ -486,7 +599,7 @@ As a further example of importance of rich linguistic context, compare these thr
 (\ref{10}) illustrates a standard scalar implicature, where the choice to use ``hot'' when ``scorching'' is relevant leads to an inference that Dallas is not scorching. In (\ref{11}), this inference is much less robust, presumably because it is not clear whether ``scorching'' is a relevant alternative. In (\ref{12}) no implicature regarding ``scorching'' arises, but (perhaps surprisingly) there is a robust inference that Dallas is not beautiful. These examples illustrate the importance of taking context into account when drawing inferences from scalar adjectives. 
 
 For each scalar adjective, we define the appropriate context-dependent inferences (\textsc{cdi}s) for a specific usage. 
-For example, using the generic scalar \textsc{cdi} in (\ref{cdi1}), we can  recover the entailments given in (\ref{heat-entail}) above. 
+For example, using the generic scalar \textsc{cdi} in (\ref{cdi1}), we can  recover the entailments given in (\ref{heat-entail}) above (where `$\vDash$' stands for ``entails" and `$\leadsto$'  for ``implicates"). 
 
 \vspace{-0.5em}
 \enumsentence{

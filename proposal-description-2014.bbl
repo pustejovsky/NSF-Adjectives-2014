@@ -91,9 +91,9 @@ Christiane Fellbaum and Collin Baker.
 
 \bibitem{bakerfellbaum2008}
 Christiane Fellbaum and Collin~F. Baker.
-\newblock Can {W}ord{N}et and {F}rame{N}et be made “interoperable?
+\newblock Can {W}ord{N}et and {F}rame{N}et be made √íinteroperable?
 \newblock In {\em Proceedings of The First International Conference on Global
-  Interoperability for Language Resources}, page 67–74, 2008.
+  Interoperability for Language Resources}, page 67√ê74, 2008.
 
 \bibitem{fellbaumvossen2012}
 Christiane Fellbaum and Piek Vossen.
@@ -104,6 +104,11 @@ Christiane Fellbaum and Piek Vossen.
 Michael~C Frank and Noah~D Goodman.
 \newblock Predicting pragmatic reasoning in language games.
 \newblock {\em Science}, 336(6084):998--998, 2012.
+
+\bibitem{giegerich2005associative}
+Heinz~J. Giegerich.
+\newblock Associative adjectives in english and the lexicon‚Äìsyntax interface.
+\newblock {\em Journal of Linguistics}, 41(3):571--591, 2005.
 
 \bibitem{goodman2013knowledge}
 Noah~D Goodman and Andreas Stuhlm{\"u}ller.
@@ -121,6 +126,12 @@ Joy~E Hanna, Michael~K Tanenhaus, and John~C Trueswell.
 \newblock The effects of common ground and perspective on domains of
   referential interpretation.
 \newblock {\em Journal of Memory and Language}, 49(1):43--61, 2003.
+
+\bibitem{Hatzivassiloglou97predictingthe}
+Vasileios Hatzivassiloglou and Kathleen~R. McKeown.
+\newblock Predicting the semantic orientation of adjectives.
+\newblock In {\em Proceedings of the 35th Annual Meeting of the Association for
+  Computational Linguistics}, pages 174--181, 1997.
 
 \bibitem{hearst1992automatic}
 Marti Hearst.
@@ -166,6 +177,11 @@ H.~Kamp and B.~Partee.
 \newblock Prototype theory and compositionality.
 \newblock {\em Cognition}, pages 57--129, 1995.
 
+\bibitem{karttunen2014}
+L.~Karttunen.
+\newblock Three ways of not being lucky.
+\newblock In {\em Semantics and Linguistic Theory: Proceedings of SALT 24}.
+
 \bibitem{karttunen:1971}
 Lauri Karttunen.
 \newblock Implicative verbs.
@@ -201,6 +217,18 @@ Paul Kiparsky and Carol Kiparsky.
 \newblock In M.~Bierwisch and K.~E. Heidolph, editors, {\em Progress in
   Linguistics}, pages 143--173. Mouton, Hague, 1970.
 
+\bibitem{lassiter10a}
+Daniel Lassiter.
+\newblock Gradable epistemic modals, probability, and scale structure.
+\newblock In Nan Li and David Lutz, editors, {\em Semantics \& {L}inguistic
+  {T}heory {(SALT)} 20}, pages 197--215. CLC Publications, 2010.
+
+\bibitem{lassiter14adjectives}
+Daniel Lassiter.
+\newblock Adjectival modification and gradation.
+\newblock In Shalom Lappin and Chris Fox, editors, {\em Handbook of
+  Contemporary Semantic Theory}. Blackwell, 2014.
+
 \bibitem{lotan:2012}
 Amnon Lotan.
 \newblock A syntax-based rule-base for textual entailment and a semantic truth
@@ -211,6 +239,11 @@ Amnon Lotan.
 John Lyons.
 \newblock {\em Semantics}.
 \newblock Cambridge University Press, 1977.
+
+\bibitem{wiebe00learningsubjective}
+Janyce M.
+\newblock Learning subjective adjectives from corpora.
+\newblock In {\em In AAAI}, pages 735--740, 2000.
 
 \bibitem{manning1999foundations}
 Christopher~D Manning and H~Sch{\"u}tze.
@@ -268,6 +301,11 @@ V.~Raskin and S.~Nirenburg.
 \newblock Lexical semantics of adjectives.
 \newblock {\em New Mexico State University, Computing Research Laboratory
   Technical Report, MCCS-95-288}, 1995.
+
+\bibitem{Raskin95lexicalsemantics}
+Victor Raskin and Sergei Nirenburg.
+\newblock Lexical semantics of adjectives: A microtheory of adjectival meaning,
+  1995.
 
 \bibitem{sauri:2008phd}
 Roser Saur\'{i}.
@@ -338,7 +376,7 @@ Marc Verhagen, Robert Gaizauskas, Frank Schilder, Mark Hepple, Graham Katz, and
   James Pustejovsky.
 \newblock Semeval-2007 task 15: Tempeval temporal relation identification.
 \newblock In {\em Proceedings of the Fourth International Workshop on Semantic
-  Evaluations (SemEval- 2007)}, page 75–80, Prague, Czech Republic, 2007.
+  Evaluations (SemEval- 2007)}, page 75√ê80, Prague, Czech Republic, 2007.
   Association for Computational Linguistics.
 
 \bibitem{verhagen-pustejovsky:2007:Interoperability}
