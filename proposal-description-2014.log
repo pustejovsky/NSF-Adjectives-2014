@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  8 NOV 2014 18:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  8 NOV 2014 18:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -532,37 +532,37 @@ a-tion to Ama-zon Me-chan-i-cal Turk work-ers (AMT).
  []
 
 [9] [10] [11] [12]
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1507--1532
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1508--1533
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1507--1532
+Underfull \hbox (badness 10000) in paragraph at lines 1508--1533
 
  []
 
 
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1536--1560
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1537--1561
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1536--1560
+Underfull \hbox (badness 10000) in paragraph at lines 1537--1561
 
  []
 
 
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1566--1591
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1567--1592
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1566--1591
+Underfull \hbox (badness 10000) in paragraph at lines 1567--1592
 
  []
 
 [13]
-Overfull \hbox (1.47044pt too wide) in paragraph at lines 1660--1665
+Overfull \hbox (1.47044pt too wide) in paragraph at lines 1658--1663
 \OT1/ppl/m/n/10 James Puste-jovsky) 9/2008-8/2013; \TS1/ppl/m/n/10 $\OT1/ppl/m/
 n/10 503,620. This col-lab-o-ra-tive ef-fort with the EU-funded FLaReNet projec
 t
@@ -614,7 +614,7 @@ type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/ur
 w/palatino/uplb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/palat
 ino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/palatino/upl
 ri8a.pfb>
-Output written on proposal-description-2014.pdf (19 pages, 242628 bytes).
+Output written on proposal-description-2014.pdf (19 pages, 242586 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  111 compressed objects within 2 object streams
