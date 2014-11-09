@@ -56,12 +56,6 @@ I.~Dagan, O.~Glickman, and B.~Magnini.
 \newblock {\em Machine Learning Challenges. Lecture Notes in Computer Science},
   3944:177--190, 2006.
 
-\bibitem{davidov2008unsupervised}
-Dmitry Davidov and Ari Rappoport.
-\newblock Unsupervised discovery of generic relationships using pattern
-  clusters and its evaluation by automatically generated sat analogy questions.
-\newblock In {\em Proceedings of ACL-08: HCL}, pages 692--700, 2008.
-
 \bibitem{demelo2012}
 G.~de~Melo, C.~Baker, N.~Ide, R.~Passonneau, and C.~Fellbaum.
 \newblock Empirical comparisons of {\sc masc} word sense annotations.
@@ -356,13 +350,6 @@ A.~Stern and I.~Dagan.
 \newblock The biutee research platform for transformation-based textual
   entailment recognition.
 \newblock {\em Linguistic Issues in Language Technology}, 9(1), 2014.
-
-\bibitem{turney2008uniform}
-Peter Turney.
-\newblock A uniform approach to analogies, synonyms, antonyms, and
-  associations.
-\newblock {\em Proceedings of the 22nd International Conference on
-  Computational Linguistics (Coling 2008)}, pages 905--912, 2008.
 
 \bibitem{vanlinden+davidse:2009}
 An~{Van linden} and Kristin Davidse.
