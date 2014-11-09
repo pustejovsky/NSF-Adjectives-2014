@@ -283,7 +283,7 @@ As we demonstrate here, however,  the inferential reach of adjectives extends fa
 In the construction $[$A N$]$, an adjective A is:  {\sc subsective} if the object described is A relative to N, but not necessarily in general; {\sc privative} if the object 
 is not an N, by virtue of being A; and 
 {\sc non-subsective} if the object may or may be N.}
-Each of the three classes of adjectives that we investigate ---scalar, veridicity, and intensional---will typically influence the interpretation  of the surrounding linguistic context, and generate robust and predictable inferences.  They do this by taking semantic scope over significant portions of text in a context-sensitive way, or by generating entailments and implicatures involving comparisons to non-textual material 
+Each of the three classes of adjectives that we investigate---veridicity, intensional, and scalar---will typically influence the interpretation  of the surrounding linguistic context, and generate robust and predictable inferences.  They do this by taking semantic scope over significant portions of text in a context-sensitive way, or by generating entailments and implicatures involving comparisons to non-textual material 
 % are not overtly present in the text
 \cite{lassiter14adjectives}. 
 %[don't understand the original text: my first reaction: how can something be an adjective that is not in the text? I kinda see what you want to say but i don't think it is a clear way to state it.]
@@ -343,7 +343,7 @@ The availability of digital corpora (the biggest one being the Web itself) and c
 %\end{itemize}
 %\moveup
 
-In this proposal, we concentrate on three diverse semantic classes of adjectives, with the aim of testing the validity of this methodology and articulating precise conceptual models for each lexical class. The adjective types studied are: (i) dimensional and evaluative adjectives with scalar values and associated scalar implicatures, e.g., \textit{pretty, beautiful, large, huge}; (ii) veridicity-related adjectives, showing varying implications of veridicity over a clausal complement, e.g., \textit{rude, annoying, likely}, etc.; and (iii) intensional adjectives, introducing implications of modal subordination, e.g., \textit{alleged, supposed, so-called}. 
+In this proposal, we concentrate on three diverse semantic classes of adjectives, with the aim of testing the validity of this methodology and articulating precise conceptual models for each lexical class. The adjective types studied are: (i) veridicity-related adjectives, showing varying implications of veridicity over a clausal complement, e.g., \textit{rude, annoying, likely}, etc.; (ii) intensional adjectives, introducing implications of modal subordination, e.g., \textit{alleged, supposed, so-called}; and (iii) dimensional and evaluative adjectives with scalar values and associated scalar implicatures, e.g., \textit{pretty, beautiful, large, huge}. 
 
 Together these classes cover attributive as well as predicative uses of adjectives and the major non-intersective classes that have rich and unexpected inferential properties\footnote{Classic semantic field analysis (cf. \cite{dixon:91,lyons:77,raskin1995lexical}) categorizes attributes denoted by adjectives according to a thematic organization lexically encoded in the language. Only \cite{raskin1995lexical} discusses inferential patterns for distinct classes.}. Quantitatively, these classes contain hundreds of the most frequently used adjectives. A list of the 2000 most used words in the BNC (AK), contains 274 adjectives. Among these, 13 are epistemic adjectives and 94 can have either emotive or evaluative propositional complements; 81 are scalar adjectives. 
 
@@ -373,7 +373,7 @@ The end product will be, for each class of adjectives,
 \moveup
 \end{itemize} 
 
-This research is significant in two major respects. First, it develops inference models for adjectives that are richer than the ones currently envisioned. Second, it develops a new method for textual annotation, combining crowdsourcing and corpus exploitation and producing probabilistic annotations.
+This research is significant in two major respects. First, it develops inference models for adjectives that are richer than the ones currently envisioned. Second, it develops a new method for textual annotation, combining crowdsourcing and corpus exploitation and producing multi-level annotations representing graded strength of inference.
 
 % (pre-11/8/14 intro material)
 
@@ -554,93 +554,11 @@ This research is significant in two major respects. First, it develops inference
 
 \section{Theoretical Background}
 \vspace{-.2mm}
-\subsection{\label{scalar-theory}Scalar adjectives}
-\vspace{-.15mm}
-As discussed in the introduction, language understanding requires active reconstruction of information which is merely implicit in an utterance, or which can be reconstructed on the basis of an utterance together with its linguistic, social, and worldly context \cite{grice1975logic,hobbs1993interpretation,clark1996using,hanna2003effects,piantadosi2012communicative}.
-%
-%
-%
-This is true in particular for scalar adjectives, which have highly context-sensitive meanings (e.g., compare the inferred size of a \emph{big baby}, \emph{big tree}, or \emph{big planet}). Many scalar adjectives are organized into entailment scales, where items high on the scale asymmetrically entail lower items \cite{horn89,horn2000pick}. The use of items lower on the scale, in turn, can lead to a defeasible inference that the sentence would be false if the lower item were replaced by the higher \cite{grice1975logic,horn89,lassiter10a}.
- \vspace{-.05in} 
-\eenumsentence{
-\item  {\sc heat\_scale}: warm $<$ hot $<$ scorching
- \vspace{-.05in}
-\item \emph{Dallas is scorching} \textbf{entails} \emph{Dallas is hot}, \textbf{which entails} \emph{Dallas is warm}
-\label{heat-entail}
- \vspace{-.05in}
-\item \emph{Dallas is warm} \textbf{implicates} \emph{Dallas is not hot} and \emph{Dallas is not scorching}
- \vspace{-.05in}
-\item \emph{Dallas is hot} \textbf{implicates} \emph{Dallas is not scorching} 
-}
-
- \vspace{-.05in}
-The entailments and pragmatic inferences illustrated here are both important parts of the total understood context of sentences involving scalar adjectives. However, whether the inference arises and how strong it is are highly context-sensitive matters, depending on defeasible assumptions about the speaker's information and the alternative possible utterances that are relevant in context \cite{hirschberg1991theory,frank2012predicting,goodman2013knowledge}. Already in the example above, we see implicatures of varying strength: the speaker's choice to use \emph{warm} will often lead to an inference that the sentence would have been false if \emph{hot} were used, and will likely lead to an even stronger inference that the sentence would have been false if \emph{scorching} were used. 
-
-As a further example of importance of rich linguistic context, compare these three dialogues: 
- \vspace{-.1in}
-\begin{multicols}{3}
-\eenumsentence{\label{10}
-\item Is Dallas scorching?
-\vspace{-.1in}
-\item It is hot.
-\label{scorching-hot}
-}
-\eenumsentence{\label{11}
-\item Is Dallas hot?
-\vspace{-.1in}
-\item It is hot.
-}
-\eenumsentence{\label{12}
-\item Is Dallas beautiful?
-\vspace{-.45in}
-\item It is hot. 
-}
-\end{multicols}
- \vspace{-.1in}
-\noindent
-(\ref{10}) illustrates a standard scalar implicature, where the choice to use ``hot'' when ``scorching'' is relevant leads to an inference that Dallas is not scorching. In (\ref{11}), this inference is much less robust, presumably because it is not clear whether ``scorching'' is a relevant alternative. In (\ref{12}) no implicature regarding ``scorching'' arises, but (perhaps surprisingly) there is a robust inference that Dallas is not beautiful. These examples illustrate the importance of taking context into account when drawing inferences from scalar adjectives. 
-
-For each scalar adjective, we define the appropriate context-dependent inferences (\textsc{cdi}s) for a specific usage. 
-For example, using the generic scalar \textsc{cdi} in (\ref{cdi1}), we can  recover the entailments given in (\ref{heat-entail}) above (where `$\vDash$' stands for ``entails" and `$\leadsto$'  for ``implicates"). 
-
-\vspace{-0.5em}
-\enumsentence{
-a. \hspace {5mm}$ [ \mbox{NP} \; \; \mbox{be} \;\;  \mbox{A$_i$} ] $ \\
-b.  $\vDash  \;\;  [ \mbox{NP} \;\; \mbox{be} \;\;  \mbox{A$_j$} ] $, given a scale, where $A_j < A_i $ \\
-c. warm $<$ hot $<$ scorching
-\label{cdi1}}
-\vspace{-0.5em}
-
-\noindent Similarly, many   scalar implicatures   can be identified as 
- \textsc{cdi}s, as illustrated in (\ref{cdi-implic}), corresponding to that given in (\ref{scorching-hot}). 
-
-\vspace{-0.5em}
-\enumsentence{
-a. \hspace {4mm} $\langle$$ [ \mbox{be} \;\; \mbox{NP} \; \;   \mbox{A$_i$} ?] $, $[ \mbox{NP} \; \; \mbox{be} \;\;  \mbox{A$_j$} ] $$\rangle$ \\
-b.  $\leadsto  \; [ \mbox{NP} \;\; \mbox{be}   \mbox{ $\neg$A$_i$} ] $, given a scale, where $A_j < A_i $
-\label{cdi-implic}}
-\vspace{-0.5em}
-
-
-
-A second complication in modeling inferences from scalar adjectives involves their \textsc{dimensionality}. While \emph{tall} and \emph{heavy} pick out a single scalar dimension (height and weight, respectively), multidimensional adjectives such as \emph{big} and \emph{huge} are more complex, placing requirements on multiple scalar dimensions (e.g., 3-D size and perhaps weight, in the case of \emph{big}). Emotive adjectives such as \emph{happy} are even more complex, since the dimensions that they rely on are not easy to identify or quantify. These relationships among adjectives thus raise difficult questions for an inferential model of adjective semantics. Since it is possible for something to be \emph{big} without being \emph{tall} (e.g., a \emph{big city}), these expressions do not share all of their dimensions and thus are not in an asymmetric entailment relationship. In addition, there are many cases in which it is simply not clear whether two adjectives are in a scalar relationship: does \emph{happy} asymmetrically entail \emph{content}? 
-
-In constructing a formal model of the inferences associated with scalar adjectives, it will be necessary to 
- \vspace{-.25in}
-\begin{itemize}
-\item [1.] determine which adjective pairs share scalar dimension and polarity, differing only in strength;\footnote{\label{polarity}This is the logical notion of ``polarity'' used in formal semantics \cite{kennedy2001polar}, not the emotive concept from sentiment analysis \cite{wilson2009recognizing,williams2009predicting}.}
-\item [2.] determine which adjective pairs differ only in polarity (\emph{cool} vs.\ \emph{warm}), or display partial overlap of dimensions (\emph{big} vs.\ \emph{tall});
-\item [3.] identify factors influencing the contextual weighting of dimensions for multidimensional adjectives.\end{itemize}
- \vspace{-.05in}
-
-As described below, we believe that building and refining a model which will allow NLU systems to approach human performance for such adjectives will require a combination of corpus- and annotation-based methodologies. The proposed methodology will build on existing work which uses hand-specified patterns to discover co-scalar adjective pairs \cite{sheinman2009adjscales,sheinmanetal2013}, enriching it with semi- and un-supervised methods for discovering patterns \cite{snow04,davidov2008unsupervised,turney2008uniform}. Using these results to formulate detailed hypotheses for our crowdsourcing effort, we will design methods for crowdsourcing annotation of total and partial dimensional overlap and adjectival polarity. 
-
-\vspace {-3mm}
 
 \subsection{Veridicity inferences of adjectives with clausal complements}\label{sec-veridicity}
 \vspace {-2mm}
 
-Another common and inferentially rich class of adjectives are predicative adjectives with clausal arguments (\emph{that} {\sc s}, \emph{to} {\sc vp}, or \emph{ing} complements). These adjectives are typically used to communicate an agent's epistemic stance on the likelihood that an eventuality will occur, and some convey in addition an emotive or evaluative attitude of the agent. The relevant agent as well as the type of inferences that arise depend
+A common and inferentially rich class of adjectives are predicative adjectives with clausal arguments (\emph{that} {\sc s}, \emph{to} {\sc vp}, or \emph{ing} complements). These adjectives are typically used to communicate an agent's epistemic stance on the likelihood that an eventuality will occur, and some convey in addition an emotive or evaluative attitude of the agent. The relevant agent as well as the type of inferences that arise depend
 on both the adjective and its syntactic frame.  The agent with the
 implied epistemic stance is sometimes the speaker/writer and sometimes
 the referent of the subject of the predicative construction (the
@@ -891,7 +809,7 @@ So far, we have identified 43 \textsc{cdi}s of the form given above that need fu
 
 \vspace {-1.5mm}
 
-The third adjective class we examine for their inferential properties is the set of non-subsective intensional adjectives. 
+The second adjective class we examine for their inferential properties is the set of non-subsective intensional adjectives. 
 
 This class is further divided into two classes: privatives such as {\it fake} or {\it pretend}, and non-subsective adjectives such as \emph{alleged}. 
 Privative adjectives can be analyzed as follows:
@@ -1047,6 +965,89 @@ d. Hypernym reading:  $\;\;\;\;\;\;\;\;\;\;$
 $[ A_{int}\; N ] \;  \vDash$ $N'$  where $N \subseteq N'$
 }
 
+\subsection{\label{scalar-theory}Scalar adjectives}
+\vspace{-.15mm}
+As discussed in the introduction, language understanding requires active reconstruction of information which is merely implicit in an utterance, or which can be reconstructed on the basis of an utterance together with its linguistic, social, and worldly context \cite{grice1975logic,hobbs1993interpretation,clark1996using,hanna2003effects,piantadosi2012communicative}.
+%
+%
+%
+This is true in particular for scalar adjectives, which have highly context-sensitive meanings (e.g., compare the inferred size of a \emph{big baby}, \emph{big tree}, or \emph{big planet}). Many scalar adjectives are organized into entailment scales, where items high on the scale asymmetrically entail lower items \cite{horn89,horn2000pick}. The use of items lower on the scale, in turn, can lead to a defeasible inference that the sentence would be false if the lower item were replaced by the higher \cite{grice1975logic,horn89,lassiter10a}.
+ \vspace{-.05in} 
+\eenumsentence{
+\item  {\sc heat\_scale}: warm $<$ hot $<$ scorching
+ \vspace{-.05in}
+\item \emph{Dallas is scorching} \textbf{entails} \emph{Dallas is hot}, \textbf{which entails} \emph{Dallas is warm}
+\label{heat-entail}
+ \vspace{-.05in}
+\item \emph{Dallas is warm} \textbf{implicates} \emph{Dallas is not hot} and \emph{Dallas is not scorching}
+ \vspace{-.05in}
+\item \emph{Dallas is hot} \textbf{implicates} \emph{Dallas is not scorching} 
+}
+
+ \vspace{-.05in}
+The entailments and pragmatic inferences illustrated here are both important parts of the total understood context of sentences involving scalar adjectives. However, whether the inference arises and how strong it is are highly context-sensitive matters, depending on defeasible assumptions about the speaker's information and the alternative possible utterances that are relevant in context \cite{hirschberg1991theory,frank2012predicting,goodman2013knowledge}. Already in the example above, we see implicatures of varying strength: the speaker's choice to use \emph{warm} will often lead to an inference that the sentence would have been false if \emph{hot} were used, and will likely lead to an even stronger inference that the sentence would have been false if \emph{scorching} were used. 
+
+As a further example of importance of rich linguistic context, compare these three dialogues: 
+ \vspace{-.1in}
+\begin{multicols}{3}
+\eenumsentence{\label{10}
+\item Is Dallas scorching?
+\vspace{-.1in}
+\item It is hot.
+\label{scorching-hot}
+}
+\eenumsentence{\label{11}
+\item Is Dallas hot?
+\vspace{-.1in}
+\item It is hot.
+}
+\eenumsentence{\label{12}
+\item Is Dallas beautiful?
+\vspace{-.45in}
+\item It is hot. 
+}
+\end{multicols}
+ \vspace{-.1in}
+\noindent
+(\ref{10}) illustrates a standard scalar implicature, where the choice to use ``hot'' when ``scorching'' is relevant leads to an inference that Dallas is not scorching. In (\ref{11}), this inference is much less robust, presumably because it is not clear whether ``scorching'' is a relevant alternative. In (\ref{12}) no implicature regarding ``scorching'' arises, but (perhaps surprisingly) there is a robust inference that Dallas is not beautiful. These examples illustrate the importance of taking context into account when drawing inferences from scalar adjectives. 
+
+For each scalar adjective, we define the appropriate context-dependent inferences (\textsc{cdi}s) for a specific usage. 
+For example, using the generic scalar \textsc{cdi} in (\ref{cdi1}), we can  recover the entailments given in (\ref{heat-entail}) above (where `$\vDash$' stands for ``entails" and `$\leadsto$'  for ``implicates"). 
+
+\vspace{-0.5em}
+\enumsentence{
+a. \hspace {5mm}$ [ \mbox{NP} \; \; \mbox{be} \;\;  \mbox{A$_i$} ] $ \\
+b.  $\vDash  \;\;  [ \mbox{NP} \;\; \mbox{be} \;\;  \mbox{A$_j$} ] $, given a scale, where $A_j < A_i $ \\
+c. warm $<$ hot $<$ scorching
+\label{cdi1}}
+\vspace{-0.5em}
+
+\noindent Similarly, many   scalar implicatures   can be identified as 
+ \textsc{cdi}s, as illustrated in (\ref{cdi-implic}), corresponding to that given in (\ref{scorching-hot}). 
+
+\vspace{-0.5em}
+\enumsentence{
+a. \hspace {4mm} $\langle$$ [ \mbox{be} \;\; \mbox{NP} \; \;   \mbox{A$_i$} ?] $, $[ \mbox{NP} \; \; \mbox{be} \;\;  \mbox{A$_j$} ] $$\rangle$ \\
+b.  $\leadsto  \; [ \mbox{NP} \;\; \mbox{be}   \mbox{ $\neg$A$_i$} ] $, given a scale, where $A_j < A_i $
+\label{cdi-implic}}
+\vspace{-0.5em}
+
+
+
+A second complication in modeling inferences from scalar adjectives involves their \textsc{dimensionality}. While \emph{tall} and \emph{heavy} pick out a single scalar dimension (height and weight, respectively), multidimensional adjectives such as \emph{big} and \emph{huge} are more complex, placing requirements on multiple scalar dimensions (e.g., 3-D size and perhaps weight, in the case of \emph{big}). Emotive adjectives such as \emph{happy} are even more complex, since the dimensions that they rely on are not easy to identify or quantify. These relationships among adjectives thus raise difficult questions for an inferential model of adjective semantics. Since it is possible for something to be \emph{big} without being \emph{tall} (e.g., a \emph{big city}), these expressions do not share all of their dimensions and thus are not in an asymmetric entailment relationship. In addition, there are many cases in which it is simply not clear whether two adjectives are in a scalar relationship: does \emph{happy} asymmetrically entail \emph{content}? 
+
+In constructing a formal model of the inferences associated with scalar adjectives, it will be necessary to 
+ \vspace{-.25in}
+\begin{itemize}
+\item [1.] determine which adjective pairs share scalar dimension and polarity, differing only in strength;\footnote{\label{polarity}This is the logical notion of ``polarity'' used in formal semantics \cite{kennedy2001polar}, not the emotive concept from sentiment analysis \cite{wilson2009recognizing,williams2009predicting}.}
+\item [2.] determine which adjective pairs differ only in polarity (\emph{cool} vs.\ \emph{warm}), or display partial overlap of dimensions (\emph{big} vs.\ \emph{tall});
+\item [3.] identify factors influencing the contextual weighting of dimensions for multidimensional adjectives.\end{itemize}
+ \vspace{-.05in}
+
+%As described below, we believe that building and refining a model which will allow NLU systems to approach human performance for such adjectives will require a combination of corpus- and annotation-based methodologies. The proposed methodology will build on existing work which uses hand-specified patterns to discover co-scalar adjective pairs \cite{sheinman2009adjscales,sheinmanetal2013}, enriching it with semi- and un-supervised methods for discovering patterns \cite{snow04,davidov2008unsupervised,turney2008uniform}. Using these results to formulate detailed hypotheses for our crowdsourcing effort, we will design methods for crowdsourcing annotation of total and partial dimensional overlap and adjectival polarity. 
+
+\vspace {-3mm}
+
 
 \subsection{Methodology\label{prelim}}
 \vspace {-3mm}
@@ -1081,7 +1082,7 @@ In  light of this, we propose in the present work a significant enrichment to th
 linguistic phenomena such as the adjective classes studied here, reliance on a few judgments might not lead to reliable conclusions because contextual factors and pragmatic effects are critical.  
 Moreover, the corpora that can be created using linguistically trained annotators are rather limited and rarely exhibit all the combinations of relevant context factors, resulting in lack of data capturing what a rich, human-like understanding of texts should be. This limits the usefulness of many machine learning methods that are widely used in natural language understanding \cite{manning1999foundations,wasserman2004all,murphy2012machine}: sophisticated statistical models cannot produce rich understanding without a linguistically informed understanding of what is being modeled. Our project seeks to augment standard annotation practices with both new experimental methods based on crowdsourcing and corpus studies, in order to address this lacuna for the important, understudied category of adjectives.
 
-Crowdsourced annotations tasks, when carefully constructed and analyzed, have been shown in previous work to have reliability comparable to traditional expert annotations in some domains including certain RTE tasks \cite{snow:08,munroetal2010}. Adopting this method as part of our approach will help us achieve three related goals. First, it makes possible systematic testing of the factors that have been claimed in the linguistic literature to be relevant to the inferences licensed by the use of an adjective, as well as patterns isolated on the basis of existing annotations. Second, statistical analysis of the results of larger-scale annotations gathered by experimental means make it possible to reliably identify inferences which are probabilistic, rather than deterministic, in nature; for example, the defeasible inference that someone described as \emph{attractive} is probably not \emph{stunning}. Third, systematic use of untrained annotators will make available data on the interpretations of people with backgrounds that go beyond those typically involved in standard annotation efforts. We conjecture they will bring in contextual factors that linguists have been trained to ignore.  
+Crowdsourced annotations tasks, when carefully constructed and analyzed, have been shown in previous work to have reliability comparable to traditional expert annotations in some domains including certain RTE tasks \cite{snow:08,munroetal2010}. Adopting this method as part of our approach will help us achieve three related goals. First, it makes possible systematic testing of the factors that have been claimed in the linguistic literature to be relevant to the inferences licensed by the use of an adjective, as well as patterns isolated on the basis of existing annotations. Second, statistical analysis of the results of larger-scale annotations gathered by experimental means make it possible to reliably identify inferences which are reliable but not categorical: for example, the defeasible inference that someone described as \emph{attractive} is probably not \emph{stunning}. Third, systematic use of untrained annotators will make available data on the interpretations of people with backgrounds that go beyond those typically involved in standard annotation efforts. We conjecture they will bring in contextual factors that linguists have been trained to ignore.  
 
 We take it for granted that in the adjective classes under study the inferential potential is in general influenced in a non-deterministic way by linguistic and non-linguistic context.
 
@@ -1100,7 +1101,7 @@ Five key elements play a role in our methodology:
 %\moveup
 \item The product of the iterative refinement is a new annotation standard. 
 %incorporating probabilistic information. 
-In contrast to traditionally annotations which give a value that is based on a few judgments, our methods provide probabilistic information based on large scale annotation. To make this information more easily interpretable while maintaining a reasonably high degree of granularity, we map it on a seven point scale. 
+In contrast to traditionally annotations which give a value that is based on a few judgments, our methods provide graded strength information derived from statistical patterns in large scale annotations. To make this information more easily interpretable while maintaining a reasonably high degree of granularity, we map it on a seven point scale. 
 \moveup
 }
 
@@ -1253,106 +1254,6 @@ Our approach to inferring quantitative patterns of inference as well as inferenc
 %degrees of a given attribute. 
  
 \vspace{-.1in}
-\subsection{\label{scalar}Scalar Adjectives}
-
-\vspace {-3mm}
-
-%We will begin with experimental and corpus study of two groups of adjectives of interest: a corpus of 100 frequent adjectives with scalar properties expressing different values of twelve different attributes, and a corpus of 300 scalar adjectives for which we have pairwise intensity ratings collected on AMT (10 each). 
-\cite{sheinmanetal2013,sheinman2009adjscales} used a methodology similar to Hearst's \cite{hearst1992automatic} to demonstrate the usefulness of  hand-selected syntactic patterns in identifying co-scalarity and relative intensity of adjective pairs. 
-\cite{sheinmanetal2013} showed that when adjectives $X$ and $Y$ are ``semantically similar'' according to WordNet --- and so likely to be co-scalar --- it is possible to learn which is stronger by examining the frequency of patterns ``$X$, even $Y$'' and ``if not $Y$, at least $X$''. If these and other carefully chosen patterns are frequent, $Y$ is likely to entail $X$ asymmetrically. A recent pilot experiment revealed that this method has high precision but low recall as applied to 40 scalar adjectives in the Google Web1T corpus. We propose to extend it by learning the relevant patterns from dependency-parsed corpora, following Snow et al. \cite{snow04,snow2006semantic}. This approach reduces noise inherent in the use of raw counts, and should result in an improvement on WordNet's baseline in both precision and recall. In using the web or other corpora where dependency parsing is impossible or impractical, we will also explore methods for reducing noise by iteratively refining the patterns employed by careful error analysis and weighting based on results from parsed corpora.
-%Previous work has shown that applying patterns to the Web using regular expressions generates false positives. Many of these can be classified and eliminated with refined searches, including the following ones for scalar adjectives. 
-%The pattern \emph{x but not y} yields strings with identical adjectives: \emph{big but not as big as, heavy but not so heavy as to, the best but not good enough}. A simple adjustment that excludes identical adjectives eliminates these false positives. Second, antonyms for gradable adjectives may occur in hits like \emph{(not) tall but not short (either)}.  These unwanted pairings from both ends of a WordNet ?dumbbell? can be eliminated by excluding pre-classified WordNet antonyms in the searches. Occasionally, the order of the adjective will not be the one associated with a given pattern, as in \emph{scorching but not hot enough to kill the bacteria} and \emph{ancient perhaps even old enough to have existed before dinosaurs}. These seem to limited to the co-occurrence with \emph{enough}, and the search queries can be modified accordingly.
-Building on the results of these investigations, we will design AMT-based annotation tasks which allow us to collect inferential judgments for the 500 most common adjectives in English, a set which includes hundreds of scalar adjectives. Finally, we will iterate by evaluating the success of the patterns learned from text in predicting human judgments.
-
-Given the theoretical background on graded and context-dependent inference, it is necessary to return not just categorical judgments about entailment and implicature, but also graded information about the \textbf{strength} of an inference on a multi-level scale (e.g., -3 to 3, where a negative number indicates that the truth of the first supports the judgment that the second is false).  Strength of inference will be estimated from quantitative patterns in annotators' judgments. With these results in hand, we will revisit the original, context-independent judgments used to build the model, exploring in what ways the inclusion of richer context modulates entailment and implicature judgments. We will also explore methods for predicting context-dependent judgments from tagged and parsed corpora, considering at all available linguistic features of the context. The final product can be conceptualized as a three-dimensional matrix, where each pair of adjectives investigated is tagged with a number (-3 to 3) indicating the strength of the inference from the truth of the first to the truth of the second, in each context identified as modulating the strength of the inference. If there is significant variability among adjectives in the reliability of these tags, we will also include a second matrix giving a confidence rating for each judgment.
-
-%A given lexically filled pattern will be applied with the lexemes in both orders to identify lexemes that are semantically 
-%similar enough to be considered synonyms rather than different in strength or variation inter-speaker variation. 
-%Given the pairwise orderings, we construct scales as follows. We process each half of a WordNet ``dumbbell'' 
-%(a central adjective like \emph{rich} plus its ``similar'' adjectives \emph{wealthy, comfortable, loaded} etc.) separately. 
-%For each pair (centroid, similar-adjective), we instantiate each pattern $p$ in patterns that were extracted in
-%the preprocessing stage to obtain phrases $s_{1}=p(\mbox{head-word, similar-word})$
-%and $s_{2}=p(\mbox{similar-word, centroid})$. We send $s1$ and $s2$ to a search engine as two separate queries and check whether
-%$df\footnote{df represents \concept{document frequency}.}(s_{1})>weight\times df(s_{2})$ and whether $df(s_{1})>threshold$. The higher the values are for the $threshold\footnote{\emph{threshold} regulates the number of pages returned by the search engine that is considered sufficient to trust the result.} $ and $weight\footnote{\concept{weight} regulates the gap between $s_1$ over $s_2$ that is required to prefer one over the other.} $ parameters,
-%the more reliable are the results. If $p$ is of the type \concept{intense}, then a positive value is added to the similar-word's score, otherwise
-%if $p$ is of the type \concept{mild} a negative value is added. When all the patterns are tested, similar-words with positive values are
-%classified as intense, while the similar-words with negative values are classified as mild. Words that score 0 are classified
-%as \concept{unconfirmed}. For each pair of words in each one of the subsets (mild and intense), the same procedure is repeated, 
-%creating further subsets of \concept{mildest} words that have the most negative values within the mild subset, and \concept{most intense}
-%words for the words with the highest positive values within the intense subset.  Adjectives of similar intensity are grouped together.
-% 
-% \vspace{-1.em}
-% 
-%\paragraph{The Gold standard for scalar adjectives}
-%We plan to collect human judgments from linguistically sophisticated native speakers of the relative intensity of a subset of the adjectives. 
-%Our specific goals are (a) to determine whether the ordering derived from the Web data are consistent with human judgments, and (b) 
-%which lexical-semantic patterns are more reliable in revealing partial orderings among adjective scalemates. 
-%We build on informal pilot work.  
-%In one task, we asked Princeton University students to construct scales from randomly ordered groups of the emotion verbs investigated by \cite{mathieu2010verbs}. 
-%Results showed good agreement among the judges and between the judges and corpus data (70\% and 77\%, respectively), 
-%in line with other semantic similarity judgments. \footnote{Interestingly, the students also judged that one  
-%adjective as not being a member of the scale to which it had been pre-assigned in WordNet, indicating the need for a revision of that cluster.} 
-
-%A recent small experiment presented twenty Princeton University students with ten adjectives denoting 
-%size (\textit{big, large, enormous, gigantic, huge, tremendous, colossal, gargantuan, monumental, humongous}). 
-%The adjectives were arranged two sets of five pairs, one set presenting them in the inverse order from the other set. 
-%Two groups of students were each given one set and 
-%asked to indicate which member of a given pair expressed a greater value of the attribute ``size;''
-%the option of equal value was allowed for as well. Across both groups, there was complete agreement on most pairs (e.g., all 
-%students agreed that \textit{gigantic} is greater than \textit{large} and that \textit{huge} is smaller than \textit{tremendous}).
-%We found that for the groups agreed well with each other and the judgments for all ratings yielded a coherent picture, as follows: 
-%There was complete (100\%) agreement on the weakest and the strongest member of each scale. For other adjectives, 
-%there some some disagreement with respect to their pairwise ordering (e.g., whether \emph{colossal} was stronger than 
-%\emph{gigantic} or vise versa). The lower frequency of these adjectives may in part account for the lower agreement. 
-%
-%A subsequent task presenting the same adjectives in random order asked the students to place them 
-%on a single scale, again allowing for more than one adjective to occupy the same point on the scale. 
-%The scales that the raters constructed were consistent with the pairwise judgments, though the students were not able 
-%to consult their pairwise ratings when constructing the scales. 
-%All judges rated both \textit{big} and \textit{large} as being the least intensive adjective on the scale. There was also 
-%strong agreement that \textit{colossal, gargantuan} and \textit{monumental} expressed the most intense values of "size."
-%\textit{Gigantic} and \textit{enormous} were placed towards the end of the scale; 
-%some disagreement was found towards the center of the scale, where \textit{humongous} and \textit{tremendous} 
-%were not clearly discriminated. In sum, the small experiment confirmed previous findings by \cite{sheinman2009adjscales} and \cite{mathieu2010verbs} 
-%and showed that (a) human judges could perform the task, 
-%given clear, explicit instructions and illustrative examples; (b) there was good agreement among the judges with respect 
-%to the pairwise ordering as well as the scalar orderings; (c) the scales clearly reflected the pairwise orderings; (d) the 
-%scales showed the highest agreement at either end and less (though still good) agreement towards the center.
-%These pilot studies confirm that speakers have scalar values as part of their representation of adjectives, that 
-%they can access these representations and that there is significant agreement across speakers. 
-%
-%As it is not practicable to collect judgments for the 100 target adjectives with the methodology applied in the pilot work, 
-%we collect the Gold standard using the {\sc rte} format.
-%In the absence of existing Text-Hypothesis pairs that crucially involve scalar adjectives, we construct  
-%pairs such as exemplified below and ask for an evaluation of the Hypothesis, covering fifty frequent adjectives from six scales. 
-%(The exact nature of the data will depend on the outcome of the Web searches; some patterns may yield many fewer 
-%hits than others and might not be considered further.) 
-%
-%\enumsentence{
-%(T): Pat's daughter is gorgeous.
-%\\
-%(H): Pat's daughter is nice-looking.
-%}
-%
-%\enumsentence{
-%(T): Kim's twin girls are nice-looking
-%\\
-%(H): Kim's twin girls are gorgeous
-%}
-
-%\noindent 
-%We then compare the judgments with the data mining results and evaluate their agreement with the different lexical-semantic patterns. 
-%We expect some patterns to discriminate more clearly than others among adjectives expressing different intensities of the shared underlying attribute. 
-
-%\paragraph{The ``Wild" standard for scalar adjectives}
-%We submit the same T-H pairs to the Turkers and compare their judgments to the Gold standard. Given the large sample 
-%of speakers, we do not expect significant differences with respect to the orderings of specific adjective pairs. However, 
-%the results will indicate, first, whether specific lexical-semantic patterns better capture speakers' representation of the adjectives' 
-%meaning differences and second, whether the patterns that are better discriminators are the same for linguistically 
-%sophisticated and linguistically non-expert speakers. If such differences are found, they are likely to guide the future encoding of scalar adjectives 
-%in WordNet and the application of WordNet's data to automatic reasoning tasks, where the aim is to train systems to emulate human reasoning. 
-
-\vspace{-.1in}
 \subsection{Veridicity of Adjectival Complement Clauses}
 
 \vspace {-3mm}
@@ -1448,6 +1349,105 @@ Wide-Scope Reading: \\
 
 \vspace {-3mm}
 
+\subsection{\label{scalar}Scalar Adjectives}
+
+\vspace {-3mm}
+
+%We will begin with experimental and corpus study of two groups of adjectives of interest: a corpus of 100 frequent adjectives with scalar properties expressing different values of twelve different attributes, and a corpus of 300 scalar adjectives for which we have pairwise intensity ratings collected on AMT (10 each). 
+\cite{sheinmanetal2013,sheinman2009adjscales} used a methodology similar to Hearst's \cite{hearst1992automatic} to demonstrate the usefulness of  hand-selected syntactic patterns in identifying co-scalarity and relative intensity of adjective pairs. 
+\cite{sheinmanetal2013} showed that when adjectives $X$ and $Y$ are ``semantically similar'' according to WordNet --- and so likely to be co-scalar --- it is possible to learn which is stronger by examining the frequency of patterns ``$X$, even $Y$'' and ``if not $Y$, at least $X$''. If these and other carefully chosen patterns are frequent, $Y$ is likely to entail $X$ asymmetrically. A recent pilot experiment revealed that this method has high precision but low recall as applied to 40 scalar adjectives in the Google Web1T corpus. We propose to extend it by learning the relevant patterns from dependency-parsed corpora, following Snow et al. \cite{snow04,snow2006semantic}. This approach reduces noise inherent in the use of raw counts, and should result in an improvement on WordNet's baseline in both precision and recall. In using the web or other corpora where dependency parsing is impossible or impractical, we will also explore methods for reducing noise by iteratively refining the patterns employed by careful error analysis and weighting based on results from parsed corpora.
+%Previous work has shown that applying patterns to the Web using regular expressions generates false positives. Many of these can be classified and eliminated with refined searches, including the following ones for scalar adjectives. 
+%The pattern \emph{x but not y} yields strings with identical adjectives: \emph{big but not as big as, heavy but not so heavy as to, the best but not good enough}. A simple adjustment that excludes identical adjectives eliminates these false positives. Second, antonyms for gradable adjectives may occur in hits like \emph{(not) tall but not short (either)}.  These unwanted pairings from both ends of a WordNet ?dumbbell? can be eliminated by excluding pre-classified WordNet antonyms in the searches. Occasionally, the order of the adjective will not be the one associated with a given pattern, as in \emph{scorching but not hot enough to kill the bacteria} and \emph{ancient perhaps even old enough to have existed before dinosaurs}. These seem to limited to the co-occurrence with \emph{enough}, and the search queries can be modified accordingly.
+Building on the results of these investigations, we will design AMT-based annotation tasks which allow us to collect inferential judgments for the 500 most common adjectives in English, a set which includes hundreds of scalar adjectives. Finally, we will iterate by evaluating the success of the patterns learned from text in predicting human judgments.
+
+Given the theoretical background on graded and context-dependent inference, it is necessary to return not just categorical judgments about entailment and implicature, but also graded information about the \textbf{strength} of an inference on a multi-level scale (-3 to 3, where a negative number indicates that the truth of the first supports the judgment that the second is false).  Strength of inference will be estimated from quantitative patterns in annotators' judgments. With these results in hand, we will revisit the original, context-independent judgments used to build the model, exploring in what ways the inclusion of richer context modulates entailment and implicature judgments. We will also explore methods for predicting context-dependent judgments from tagged and parsed corpora, considering at all available linguistic features of the context. The product of this work will be similar to the adjective-context ratings of inference strength which will be employed in the veridicity and intensional components of the project, but with an additional dimension since we are examining \emph{pairs} of adjectives in various contexts. For every context and pair of adjectives in the set investigated, the triple  (context, adjective1, adjective2) will be annotated with a number from -3 to 3 indicating the strength of the inference from the first to the second, with negative numbers representing likely falsehood. If there is significant variability among adjectives in annotators' reliability, we will also include a second set of ratings giving a confidence rating for each judgment, and use this information to set penalties in the RTE task that we now describe.
+
+%A given lexically filled pattern will be applied with the lexemes in both orders to identify lexemes that are semantically 
+%similar enough to be considered synonyms rather than different in strength or variation inter-speaker variation. 
+%Given the pairwise orderings, we construct scales as follows. We process each half of a WordNet ``dumbbell'' 
+%(a central adjective like \emph{rich} plus its ``similar'' adjectives \emph{wealthy, comfortable, loaded} etc.) separately. 
+%For each pair (centroid, similar-adjective), we instantiate each pattern $p$ in patterns that were extracted in
+%the preprocessing stage to obtain phrases $s_{1}=p(\mbox{head-word, similar-word})$
+%and $s_{2}=p(\mbox{similar-word, centroid})$. We send $s1$ and $s2$ to a search engine as two separate queries and check whether
+%$df\footnote{df represents \concept{document frequency}.}(s_{1})>weight\times df(s_{2})$ and whether $df(s_{1})>threshold$. The higher the values are for the $threshold\footnote{\emph{threshold} regulates the number of pages returned by the search engine that is considered sufficient to trust the result.} $ and $weight\footnote{\concept{weight} regulates the gap between $s_1$ over $s_2$ that is required to prefer one over the other.} $ parameters,
+%the more reliable are the results. If $p$ is of the type \concept{intense}, then a positive value is added to the similar-word's score, otherwise
+%if $p$ is of the type \concept{mild} a negative value is added. When all the patterns are tested, similar-words with positive values are
+%classified as intense, while the similar-words with negative values are classified as mild. Words that score 0 are classified
+%as \concept{unconfirmed}. For each pair of words in each one of the subsets (mild and intense), the same procedure is repeated, 
+%creating further subsets of \concept{mildest} words that have the most negative values within the mild subset, and \concept{most intense}
+%words for the words with the highest positive values within the intense subset.  Adjectives of similar intensity are grouped together.
+% 
+% \vspace{-1.em}
+% 
+%\paragraph{The Gold standard for scalar adjectives}
+%We plan to collect human judgments from linguistically sophisticated native speakers of the relative intensity of a subset of the adjectives. 
+%Our specific goals are (a) to determine whether the ordering derived from the Web data are consistent with human judgments, and (b) 
+%which lexical-semantic patterns are more reliable in revealing partial orderings among adjective scalemates. 
+%We build on informal pilot work.  
+%In one task, we asked Princeton University students to construct scales from randomly ordered groups of the emotion verbs investigated by \cite{mathieu2010verbs}. 
+%Results showed good agreement among the judges and between the judges and corpus data (70\% and 77\%, respectively), 
+%in line with other semantic similarity judgments. \footnote{Interestingly, the students also judged that one  
+%adjective as not being a member of the scale to which it had been pre-assigned in WordNet, indicating the need for a revision of that cluster.} 
+
+%A recent small experiment presented twenty Princeton University students with ten adjectives denoting 
+%size (\textit{big, large, enormous, gigantic, huge, tremendous, colossal, gargantuan, monumental, humongous}). 
+%The adjectives were arranged two sets of five pairs, one set presenting them in the inverse order from the other set. 
+%Two groups of students were each given one set and 
+%asked to indicate which member of a given pair expressed a greater value of the attribute ``size;''
+%the option of equal value was allowed for as well. Across both groups, there was complete agreement on most pairs (e.g., all 
+%students agreed that \textit{gigantic} is greater than \textit{large} and that \textit{huge} is smaller than \textit{tremendous}).
+%We found that for the groups agreed well with each other and the judgments for all ratings yielded a coherent picture, as follows: 
+%There was complete (100\%) agreement on the weakest and the strongest member of each scale. For other adjectives, 
+%there some some disagreement with respect to their pairwise ordering (e.g., whether \emph{colossal} was stronger than 
+%\emph{gigantic} or vise versa). The lower frequency of these adjectives may in part account for the lower agreement. 
+%
+%A subsequent task presenting the same adjectives in random order asked the students to place them 
+%on a single scale, again allowing for more than one adjective to occupy the same point on the scale. 
+%The scales that the raters constructed were consistent with the pairwise judgments, though the students were not able 
+%to consult their pairwise ratings when constructing the scales. 
+%All judges rated both \textit{big} and \textit{large} as being the least intensive adjective on the scale. There was also 
+%strong agreement that \textit{colossal, gargantuan} and \textit{monumental} expressed the most intense values of "size."
+%\textit{Gigantic} and \textit{enormous} were placed towards the end of the scale; 
+%some disagreement was found towards the center of the scale, where \textit{humongous} and \textit{tremendous} 
+%were not clearly discriminated. In sum, the small experiment confirmed previous findings by \cite{sheinman2009adjscales} and \cite{mathieu2010verbs} 
+%and showed that (a) human judges could perform the task, 
+%given clear, explicit instructions and illustrative examples; (b) there was good agreement among the judges with respect 
+%to the pairwise ordering as well as the scalar orderings; (c) the scales clearly reflected the pairwise orderings; (d) the 
+%scales showed the highest agreement at either end and less (though still good) agreement towards the center.
+%These pilot studies confirm that speakers have scalar values as part of their representation of adjectives, that 
+%they can access these representations and that there is significant agreement across speakers. 
+%
+%As it is not practicable to collect judgments for the 100 target adjectives with the methodology applied in the pilot work, 
+%we collect the Gold standard using the {\sc rte} format.
+%In the absence of existing Text-Hypothesis pairs that crucially involve scalar adjectives, we construct  
+%pairs such as exemplified below and ask for an evaluation of the Hypothesis, covering fifty frequent adjectives from six scales. 
+%(The exact nature of the data will depend on the outcome of the Web searches; some patterns may yield many fewer 
+%hits than others and might not be considered further.) 
+%
+%\enumsentence{
+%(T): Pat's daughter is gorgeous.
+%\\
+%(H): Pat's daughter is nice-looking.
+%}
+%
+%\enumsentence{
+%(T): Kim's twin girls are nice-looking
+%\\
+%(H): Kim's twin girls are gorgeous
+%}
+
+%\noindent 
+%We then compare the judgments with the data mining results and evaluate their agreement with the different lexical-semantic patterns. 
+%We expect some patterns to discriminate more clearly than others among adjectives expressing different intensities of the shared underlying attribute. 
+
+%\paragraph{The ``Wild" standard for scalar adjectives}
+%We submit the same T-H pairs to the Turkers and compare their judgments to the Gold standard. Given the large sample 
+%of speakers, we do not expect significant differences with respect to the orderings of specific adjective pairs. However, 
+%the results will indicate, first, whether specific lexical-semantic patterns better capture speakers' representation of the adjectives' 
+%meaning differences and second, whether the patterns that are better discriminators are the same for linguistically 
+%sophisticated and linguistically non-expert speakers. If such differences are found, they are likely to guide the future encoding of scalar adjectives 
+%in WordNet and the application of WordNet's data to automatic reasoning tasks, where the aim is to train systems to emulate human reasoning. 
+
 \subsection{Evaluation}
 
 \vspace {-3mm}
@@ -1485,8 +1485,7 @@ as relative proximity of the results  to those predicted.
 % 11/8/14 [This is now irrelevant, right? -JDP]
 %Finally, the structure-to-inference mappings for all three adjective classes are evaluated by applying the mappings to a held out evaluation set of snippets. We compare the mappings as generated after the corpus mining phase to the revised mappings that were created after analysis of the crowdsourcing results. Additional annotated snippets may be generated for this evaluation if needed. 
 
-\vspace {-2mm}
-\vspace {-2mm}
+\vspace {-3mm}
 \subsection{Coordination Plan}
 \vspace {-2mm}
 
