@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  8 NOV 2014 18:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  8 NOV 2014 23:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -489,28 +489,28 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 70.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 77.
-LaTeX Font Info:    Try loading font information for U+msa on input line 280.
+LaTeX Font Info:    Try loading font information for U+msa on input line 282.
  (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 280.
+LaTeX Font Info:    Try loading font information for U+msb on input line 282.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for TS1+ppl on input line 319.
+LaTeX Font Info:    Try loading font information for TS1+ppl on input line 321.
 
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 ) [2]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 572.
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 574.
  [3]
 [4] [5]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 754.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 756.
 
  (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -518,51 +518,51 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 [6] [7] <matter.pdf, id=38, 369.38pt x 223.83624pt>
 File: matter.pdf Graphic file (type pdf)
  <use matter.pdf>
-Package pdftex.def Info: matter.pdf used on input line 1062.
+Package pdftex.def Info: matter.pdf used on input line 1064.
 (pdftex.def)             Requested size: 369.37909pt x 223.8357pt.
 
 
 LaTeX Warning: Citation `Peters et al' on page D--8 undefined on input line 107
-5.
+7.
 
 [8 <./matter.pdf>]
-Overfull \hbox (5.08014pt too wide) in paragraph at lines 1103--1103
+Overfull \hbox (5.08014pt too wide) in paragraph at lines 1105--1105
 [] []\OT1/ppl/m/n/10 This ex-per-i-men-tal ma-te-rial is pre-sented for an-no-t
 a-tion to Ama-zon Me-chan-i-cal Turk work-ers (AMT).
  []
 
 [9] [10] [11] [12]
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1508--1533
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1510--1535
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1508--1533
+Underfull \hbox (badness 10000) in paragraph at lines 1510--1535
 
  []
 
 
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1537--1561
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1539--1563
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1537--1561
+Underfull \hbox (badness 10000) in paragraph at lines 1539--1563
 
  []
 
 
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1567--1592
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1569--1594
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1567--1592
+Underfull \hbox (badness 10000) in paragraph at lines 1569--1594
 
  []
 
 [13]
-Overfull \hbox (1.47044pt too wide) in paragraph at lines 1658--1663
+Overfull \hbox (1.47044pt too wide) in paragraph at lines 1660--1665
 \OT1/ppl/m/n/10 James Puste-jovsky) 9/2008-8/2013; \TS1/ppl/m/n/10 $\OT1/ppl/m/
 n/10 503,620. This col-lab-o-ra-tive ef-fort with the EU-funded FLaReNet projec
 t
@@ -614,7 +614,7 @@ type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/ur
 w/palatino/uplb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/palat
 ino/uplr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/palatino/upl
 ri8a.pfb>
-Output written on proposal-description-2014.pdf (19 pages, 242586 bytes).
+Output written on proposal-description-2014.pdf (19 pages, 242492 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  111 compressed objects within 2 object streams
