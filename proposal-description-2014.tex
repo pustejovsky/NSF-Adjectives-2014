@@ -1089,9 +1089,9 @@ We take it for granted that in the adjective classes under study the inferential
 Five key elements play a role in our methodology:
 \eenumsentence{
 \vspace{-.1in}
-\item The interpretation, $I$, focuses on determining (\textsc{cdi}s), indicating how a given adjective type associated with its environment, which we will call a \textsc{pattern}, contributes to or enables inferences. These \textsc{cdi}s will be formulated by experts. The initial \textsc{cdi}s will by and large be categorical.
+\item The interpretation, $I$, focuses on determining \textsc{cdi}s, indicating how a given adjective type associated with its environment, which we will call a \textsc{context}, contributes to or enables inferences. These \textsc{cdi}s will be formulated by experts. The initial \textsc{cdi}s will by and large be categorical.
 \moveup
-\item The \textsc{cdi}s, encoded in the initial interpretation, are checked against large corpus data. This step is heuristic: we analyze large corpora (en-Ten-Ten, CoCa, BNC, the web itself, ...) by means of finite-state templates to find instances of the patterns of our \textsc{cdi}s. The templates will depend on the available syntactic analysis of the various corpora. The data collected in this way will inform an updated formulation of the \textsc{cdi}s, which are then used to construct experimental material. 
+\item The \textsc{cdi}s, encoded in the initial interpretation, are checked against large corpus data. This step is heuristic: we analyze large corpora (en-Ten-Ten, CoCa, BNC, the web itself) by means of finite-state templates to find instances of the patterns of our \textsc{cdi}s. The templates will depend on the available syntactic analysis of the various corpora. The data collected in this way will inform an updated formulation of the \textsc{cdi}s, which are then used to construct experimental material. 
 \moveup
 \item This experimental material is presented for annotation to Amazon Mechanical Turk workers (AMT). The material will cover the combination of features isolated by experts. Annotation instructions will be adapted for use by linguistically untrained native speakers, borrowing methods from experimental psychology, where appropriate. Given the complexity of the factors, the test items will often be larger than one sentence. 
 \moveup
@@ -1454,14 +1454,6 @@ Given the theoretical background on graded and context-dependent inference, it i
 
 Our evaluations adopt the format of RTE tasks as developed in [\cite{pascal}]. This format has been shown to lead to improvements of NLP inference capabilities and will allow for the further use of our results by teams building NLP systems. 
 
-For scalar adjectives, we propose to evaluate the scales constructed in an {\sc rte} task using methods for measuring the contribution of specific WordNet relations developed by \cite{clark2008using,clark2008augmenting,clark2007role}. 
-We will similarly quantify the contribution of scalar orderings among adjectives in WordNet to the {\sc rte} task using a new test set involving adjectives that we have analyzed. 
-To perform the evaluation, will encode new scales in WordNet following the model described in 
-\cite{sheinmanetal2013}, where WordNet's ``dumbbells'' are augmented with arcs connecting some  adjectives on each half of the dumbbells to specific 
-points on the scale. This preserves the original WordNet representation for one central 
-adjective (e.g., \emph{rich}) and a set of ``semantically similar'' adjectives (\emph{wealthy, comfortable}, etc.) while also indicating their intensity relative to the central adjective and one another.
-This representation is amenable to external evaluation with systems like \cite{clark2007role}.
-
 %Concerning the evaluation of predicative adjectives with clausal complements, we base a first, controlled evaluation on the Brandeis TARSQI system.  We submit our final 1,000 snippets to the system and consider a baseline markup where all the events are factual. We then develop a set of rules based on our findings and evaluate how well the resulting TARSQI system identifies the events.  Larger-scale evaluation proceeds by incorporating our rules and lexical patterns to BiuTee and evaluating the resulting improvement.
 
 %Concerning the evaluation of the predicative adjectives with clausal complements,  we will use
@@ -1479,6 +1471,18 @@ collect at least 30 judgments/pair, the output of which is mapped to
 the -3 to +3 point scale mentioned earlier. The difference is
 calculated against the initial \textsc{cdi}s, where accuracy is measured
 as relative proximity of the results  to those predicted. 
+
+
+
+For scalar adjectives, we propose to evaluate the scales constructed in an {\sc rte} task using methods for measuring the contribution of specific WordNet relations developed by \cite{clark2008using,clark2008augmenting,clark2007role}. 
+We will similarly quantify the contribution of scalar orderings among adjectives in WordNet to the {\sc rte} task using a new test set involving adjectives that we have analyzed. 
+To perform the evaluation, will encode new scales in WordNet following the model described in 
+\cite{sheinmanetal2013}, where WordNet's ``dumbbells'' are augmented with arcs connecting some  adjectives on each half of the dumbbells to specific 
+points on the scale. This preserves the original WordNet representation for one central 
+adjective (e.g., \emph{rich}) and a set of ``semantically similar'' adjectives (\emph{wealthy, comfortable}, etc.) while also indicating their intensity relative to the central adjective and one another.
+This representation is amenable to external evaluation with systems like \cite{clark2007role}.
+
+
 %
 %We will use the  corpus  to train both a Naive Bayes and a MaxEnt classifier, where we take all mentions of the adjective to be invoking the   wide-scope reading rule. We take this as our baseline and compare the same two classifiers trained on the differentiated structure-to-inference mappings that were discovered, first by the linguists, and then, as they were enriched by the inferences in the wild. 
 
