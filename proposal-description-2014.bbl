@@ -358,26 +358,6 @@ An~{Van linden} and Kristin Davidse.
 \newblock {\em Folia Linguistica: Acta Societatis Linguisticae Europaeae},
   43:171--211, 2009.
 
-\bibitem{verhagen-EtAl:2007:SemEval-2007}
-Marc Verhagen, Robert Gaizauskas, Frank Schilder, Mark Hepple, Graham Katz, and
-  James Pustejovsky.
-\newblock Semeval-2007 task 15: Tempeval temporal relation identification.
-\newblock In {\em Proceedings of the Fourth International Workshop on Semantic
-  Evaluations (SemEval- 2007)}, page 75Ð80, Prague, Czech Republic, 2007.
-  Association for Computational Linguistics.
-
-\bibitem{verhagen-pustejovsky:2007:Interoperability}
-Marc Verhagen and James Pustejovsky.
-\newblock Interoperability of syntactic and semantic annotation schemes.
-\newblock In {\em Interoperability of Language Resources}, 2007.
-
-\bibitem{verhagen-stubbs-pustejovsky:2007:LAW}
-Marc Verhagen, Amber Stubbs, and James Pustejovsky.
-\newblock Combining independent syntactic and semantic annotation schemes.
-\newblock In {\em Proceedings of the Linguistic Annotation Workshop}, pages
-  109--112, Prague, Czech Republic, June 2007. Association for Computational
-  Linguistics.
-
 \bibitem{wasserman2004all}
 Larry Wasserman.
 \newblock {\em All of statistics: a concise course in statistical inference}.

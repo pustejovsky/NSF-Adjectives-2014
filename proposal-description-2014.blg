@@ -23,45 +23,45 @@ Warning--empty publisher in hearst1992automatic
 Warning--empty publisher in karttunen2014
 Warning--empty year in karttunen2014
 Warning--empty journal in munroetal2010
-You've used 72 entries,
+You've used 69 entries,
             2118 wiz_defined-function locations,
-            895 strings with 15958 characters,
-and the built_in function-call counts, 23850 in all, are:
-= -- 2322
-> -- 1072
-< -- 23
-+ -- 433
-- -- 348
-* -- 1440
-:= -- 3877
-add.period$ -- 229
-call.type$ -- 72
-change.case$ -- 373
+            877 strings with 15144 characters,
+and the built_in function-call counts, 22532 in all, are:
+= -- 2188
+> -- 1008
+< -- 21
++ -- 408
+- -- 326
+* -- 1359
+:= -- 3679
+add.period$ -- 218
+call.type$ -- 69
+change.case$ -- 353
 chr.to.int$ -- 0
-cite$ -- 77
-duplicate$ -- 1033
-empty$ -- 1975
-format.name$ -- 348
-if$ -- 5155
+cite$ -- 74
+duplicate$ -- 969
+empty$ -- 1875
+format.name$ -- 326
+if$ -- 4856
 int.to.chr$ -- 0
-int.to.str$ -- 72
-missing$ -- 76
-newline$ -- 361
-num.names$ -- 152
-pop$ -- 521
+int.to.str$ -- 69
+missing$ -- 73
+newline$ -- 346
+num.names$ -- 146
+pop$ -- 492
 preamble$ -- 1
-purify$ -- 314
+purify$ -- 297
 quote$ -- 0
-skip$ -- 735
+skip$ -- 686
 stack$ -- 0
-substring$ -- 1216
-swap$ -- 263
-text.length$ -- 23
+substring$ -- 1157
+swap$ -- 237
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 264
+type$ -- 252
 warning$ -- 5
-while$ -- 223
-width$ -- 74
-write$ -- 773
+while$ -- 213
+width$ -- 71
+write$ -- 737
 (There were 3 error messages)
