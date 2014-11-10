@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  9 NOV 2014 19:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  10 NOV 2014 07:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -518,46 +518,46 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 [6] [7] <matter.pdf, id=39, 369.38pt x 223.83624pt>
 File: matter.pdf Graphic file (type pdf)
  <use matter.pdf>
-Package pdftex.def Info: matter.pdf used on input line 1065.
+Package pdftex.def Info: matter.pdf used on input line 1064.
 (pdftex.def)             Requested size: 369.37909pt x 223.8357pt.
  [8 <./matter.pdf>]
-Overfull \hbox (5.08014pt too wide) in paragraph at lines 1106--1106
+Overfull \hbox (5.08014pt too wide) in paragraph at lines 1105--1105
 [] []\OT1/ppl/m/n/10 This ex-per-i-men-tal ma-te-rial is pre-sented for an-no-t
 a-tion to Ama-zon Me-chan-i-cal Turk work-ers (AMT).
  []
 
 [9] [10] [11] [12]
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1513--1538
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1512--1537
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1513--1538
+Underfull \hbox (badness 10000) in paragraph at lines 1512--1537
 
  []
 
 
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1542--1566
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1541--1565
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1542--1566
+Underfull \hbox (badness 10000) in paragraph at lines 1541--1565
 
  []
 
 
-Overfull \hbox (0.24498pt too wide) in paragraph at lines 1572--1597
+Overfull \hbox (0.24498pt too wide) in paragraph at lines 1571--1596
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1572--1597
+Underfull \hbox (badness 10000) in paragraph at lines 1571--1596
 
  []
 
 [13]
-Overfull \hbox (1.47044pt too wide) in paragraph at lines 1663--1668
+Overfull \hbox (1.47044pt too wide) in paragraph at lines 1662--1667
 \OT1/ppl/m/n/10 James Puste-jovsky) 9/2008-8/2013; \TS1/ppl/m/n/10 $\OT1/ppl/m/
 n/10 503,620. This col-lab-o-ra-tive ef-fort with the EU-funded FLaReNet projec
 t
@@ -606,7 +606,7 @@ r/local/texlive/2014/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/
 texlive/2014/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive
 /2014/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2014/t
 exmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on proposal-description-2014.pdf (19 pages, 263471 bytes).
+Output written on proposal-description-2014.pdf (19 pages, 263472 bytes).
 PDF statistics:
  164 PDF objects out of 1000 (max. 8388607)
  114 compressed objects within 2 object streams
